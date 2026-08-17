@@ -25,7 +25,7 @@ Os **Indicadores de Programa da Plataforma mareIA** mensuram o desempenho clíni
 
 ---
 
-## 7.2 Indicadores do ATENTO 60+ (UFPE / UFPB)
+## 7.2 Indicadores do ATENTO 60+ (UFPE / Recife-PE)
 
 ### 3. `MeasureAtento60CoberturaIVCF` — Cobertura de Rastreamento de Fragilidade
 * **ID Canônico:** `https://mareia.saude.gov.br/ig/Measure/MeasureAtento60CoberturaIVCF`

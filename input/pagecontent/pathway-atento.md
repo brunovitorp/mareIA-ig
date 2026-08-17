@@ -1,9 +1,9 @@
 # Pathway 2: ATENTO 60+ (Telemonitoramento da Pessoa Idosa)
 
 - **População-Alvo:** Pessoas idosas (>= 60 anos) cadastradas e acompanhadas na Atenção Primária à Saúde (APS / Estratégia Saúde da Família).
-- **Instituições Líderes:** UFPE (Universidade Federal de Pernambuco) e UFPB.
+- **Instituição Líder:** UFPE (Universidade Federal de Pernambuco / Recife-PE).
 - **ID Canônico FHIR:** `br.gov.mareia.atento60`
-- **Fonte L1:** *Protocolo Clínico Geral mareIA / Linha de Cuidado do Idoso (UFPE/UFPB)*.
+- **Fonte L1:** *Protocolo Clínico Geral mareIA / Linha de Cuidado do Idoso (UFPE)*.
 
 ---
 

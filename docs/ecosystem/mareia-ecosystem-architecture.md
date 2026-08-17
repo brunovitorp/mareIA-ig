@@ -26,9 +26,9 @@ O ecossistema adota integralmente a metodologia **WHO SMART Guidelines**, decomp
        │     CardioRemoto     │        │      ATENTO 60+      │        │   FamilIAr_Ativa     │        │       AgroSUS        │
        │    (DM / HAS / CV)   │        │   (Pessoa Idosa APS) │        │ (Cuidados Paliativos)│        │ (Trabalhador Rural)  │
        ├──────────────────────┤        ├──────────────────────┤        ├──────────────────────┤        ├──────────────────────┤
-       │ • HULW / UFPB        │        │ • UFPE / UFPB        │        │ • UFPel / CUIDATIVA  │        │ • FATEC Ferraz       │
+       │ • HULW / UFPB        │        │ • UFPE (Recife/PE)   │        │ • UFPel / CUIDATIVA  │        │ • FATEC Ferraz       │
        │ • IoT PA/Glicemia/FC │        │ • IVCF-20 (Fragilid.)│        │ • ESAS / Zarit / XAI │        │ • Colinesterase/NR-7 │
-       │ • Risco 3 níveis     │        │ • Risco Quedas/Sarc. │        │ • Sobrecarga Cuid.   │        │ • Alertas Exposição  │
+       │ • Risco 3 níveis     │        │ • Risco Quedas/Fragil│        │ • Sobrecarga Cuid.   │        │ • Alertas Exposição  │
        │ • Periodicidade 90/30│        │ • Teleintervenção APS│        │ • Apoio Domiciliar   │        │ • Periodicidade Sem. │
        └──────────────────────┘        └──────────────────────┘        └──────────────────────┘        └──────────────────────┘
 ```

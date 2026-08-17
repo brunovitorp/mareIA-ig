@@ -11,7 +11,7 @@ Este repositório consolida a adaptação digital de **4 Linhas de Cuidado (Path
 | Linha de Cuidado | Instituição Parceira | Foco Assistencial | Instrumentos Clínicos |
 |---|---|---|---|
 | 🫀 **CardioRemoto** | **UFPB / HULW** (João Pessoa/PB) | Diabetes Mellitus (DM) e Hipertensão Arterial (HAS) | IoT ANVISA (PA, FC, Glicemia) + Labs (HbA1c, Lipídios) |
-| 🧓 **ATENTO 60+** | **UFPE / UFPB** (Recife/PB) | Telemonitoramento da Pessoa Idosa na APS | Questionário IVCF-20 (Fragilidade) + Quedas/Sarcopenia |
+| 🧓 **ATENTO 60+** | **UFPE** (Recife/PE) | Telemonitoramento da Pessoa Idosa na APS | Questionário IVCF-20 (Fragilidade) + Sinais Vitais IoT |
 | 🏡 **FamilIAr_Ativa** | **UFPel / CUIDATIVA** (Pelotas/RS) | Cuidados Paliativos Domiciliares e Cuidadores | Escala ESAS (Sintomas) + Zarit (Sobrecarga) + IA/XAI |
 | 🌾 **AgroSUS** | **FATEC Ferraz** (Ferraz/SP) | Saúde do Trabalhador Rural | Anamnese Ocupacional + Colinesterase (NR-7) |
 

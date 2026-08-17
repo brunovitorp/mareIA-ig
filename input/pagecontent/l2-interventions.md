@@ -24,7 +24,7 @@ As **Intervenções e Recomendações de Saúde da Plataforma mareIA** traduzem 
 ## 1.2 🧓 ATENTO 60+ — Rastreamento e Gestão da Fragilidade na Pessoa Idosa
 
 * **População-Alvo:** Pessoas com 60 anos ou mais adscritas ao território da Estratégia Saúde da Família (ESF).
-* **Fontes L1:** Caderneta de Saúde da Pessoa Idosa (MS), Manual do IVCF-20 (Moraes et al.) e Protocolo Clínico mareIA Idoso (UFPE/UFPB).
+* **Fontes L1:** Caderneta de Saúde da Pessoa Idosa (MS), Manual do IVCF-20 (Moraes et al.) e Protocolo Clínico mareIA Idoso (UFPE / Recife-PE).
 * **Artefato FHIR L3:** `PlanDefinition/PlanDefinitionAtento60`
 
 ### Matriz de Recomendações e Intervenções:

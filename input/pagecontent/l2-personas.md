@@ -37,7 +37,7 @@ O ecossistema **mareIA** mapeia atores e papéis clínicos transversais e espec�
   <img src="actors-cardio.svg" alt="Atores CardioRemoto" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
 </div>
 
-### 🧓 ATENTO 60+ (UFPE / UFPB)
+### 🧓 ATENTO 60+ (UFPE / Recife-PE)
 1. **Pessoa Idosa na Comunidade:** Cidadão com 60 anos ou mais acompanhado pela ESF, respondente do IVCF-20.
 2. **Agente Comunitário de Saúde (ACS):** Aplica o questionário IVCF-20 em visita domiciliar via tablet/celular com funcionamento offline.
 3. **Enfermeira da ESF / Médico de Família:** Analisa o escore de fragilidade (Robusto / Risco / Frágil) e elabora o Projeto Terapêutico Singular (PTS).
