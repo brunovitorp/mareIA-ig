@@ -1,0 +1,32 @@
+@startuml
+title Casos de Uso — AgroSUS (Saúde do Trabalhador Rural)
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam actorStyle awesome
+
+actor "Trabalhador Rural" as TR
+actor "ACS Rural" as ACS
+actor "Médico / Enf.\nda UBS" as UBS
+actor "Laboratório\nde Toxicologia" as LAB
+actor "Vigilância em\nSaúde (VISAT)" as VISAT
+
+rectangle "Plataforma mareIA — AgroSUS" {
+  usecase "Responder anamnese\nocupacional no campo" as UC1
+  usecase "Coleta no tablet\n(Offline-First)" as UC2
+  usecase "Dosagem de colinesterase\n(Basal e NR-7)" as UC3
+  usecase "Avaliar laudos e\ndepressão enzimática" as UC4
+  usecase "Elaborar plano de\nacompanhamento" as UC5
+  usecase "Recomendar afastamento\ne proteção (EPI)" as UC6
+  usecase "Notificação compulsória\n(SINAN)" as UC7
+}
+
+TR --> UC1
+ACS --> UC2
+LAB --> UC3
+UBS --> UC4
+UBS --> UC5
+UBS --> UC6
+UBS --> UC7
+VISAT --> UC7
+@enduml

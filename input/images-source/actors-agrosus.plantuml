@@ -1,0 +1,33 @@
+@startuml
+title Atores e Papéis — AgroSUS (FATEC Ferraz / Saúde do Trabalhador Rural)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+
+left to right direction
+
+actor "Trabalhador Rural / Produtor" as Trabalhador
+actor "ACS Rural" as ACS
+actor "Médico / Enfermeiro da UBS" as ProfUBS
+actor "Analista de Laboratório Toxicológico" as Lab
+actor "Equipe da Vigilância em Saúde (VISAT)" as VISAT
+entity "Sistema SINAN" as SINAN
+
+package "Plataforma mareIA — AgroSUS" {
+  usecase "Responder anamnese ocupacional no campo" as UC1
+  usecase "Coletar anamnese e uso de EPIs (Offline)" as UC2
+  usecase "Realizar dosagem de colinesterase (NR-7)" as UC3
+  usecase "Avaliar laudos e sintomas de intoxicação" as UC4
+  usecase "Elaborar plano de cuidado e afastamento" as UC5
+  usecase "Investigar surtos e condições de trabalho" as UC6
+  usecase "Notificação compulsória de intoxicação" as UC7
+}
+
+Trabalhador --> UC1
+ACS --> UC2
+Lab --> UC3
+ProfUBS --> UC4
+ProfUBS --> UC5
+VISAT --> UC6
+SINAN <-- UC7
+ProfUBS --> UC7
+@enduml

@@ -19,10 +19,26 @@ O alívio do sofrimento, o controle de sintomas refratários e a preservação d
 
 ---
 
-## 2. Diagrama de Fluxo e Decisão Clínica (PlanDefinition)
+## 2. Diagramas de Fluxo, Decisão e Sequência
 
+### 2.1 Fluxo Clínico e Macrofases
+<div style="text-align: center; margin: 20px 0;">
+  <img src="process-familiarativa.svg" alt="Fluxo Clínico FamilIAr_Ativa" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
+</div>
+
+### 2.2 Algoritmo de Suporte à Decisão (PlanDefinition)
 <div style="text-align: center; margin: 20px 0;">
   <img src="plandef-familiarativa.svg" alt="Algoritmo de Decisão FamilIAr_Ativa" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
+</div>
+
+### 2.3 Atores e Casos de Uso
+<div style="text-align: center; margin: 20px 0;">
+  <img src="actors-familiarativa.svg" alt="Atores e Papéis FamilIAr_Ativa" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
+</div>
+
+### 2.4 Diagrama de Sequência de Alertas
+<div style="text-align: center; margin: 20px 0;">
+  <img src="scenario-sequence-familiarativa.svg" alt="Sequência de Intervenção FamilIAr_Ativa" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
 </div>
 
 ---

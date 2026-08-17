@@ -21,10 +21,26 @@ O Diabetes Mellitus (DM) e a Hipertensão Arterial Sistêmica (HAS) são os maio
 
 ---
 
-## 2. Diagrama de Fluxo e Decisão Clínica (PlanDefinition)
+## 2. Diagramas de Fluxo, Decisão e Sequência
 
+### 2.1 Fluxo Clínico e Macrofases
+<div style="text-align: center; margin: 20px 0;">
+  <img src="process-cardio.svg" alt="Fluxo Clínico CardioRemoto" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
+</div>
+
+### 2.2 Algoritmo de Suporte à Decisão (PlanDefinition)
 <div style="text-align: center; margin: 20px 0;">
   <img src="plandef-cardio.svg" alt="Algoritmo de Decisão CardioRemoto" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
+</div>
+
+### 2.3 Atores e Casos de Uso
+<div style="text-align: center; margin: 20px 0;">
+  <img src="actors-cardio.svg" alt="Atores e Papéis CardioRemoto" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
+</div>
+
+### 2.4 Diagrama de Sequência de Alertas
+<div style="text-align: center; margin: 20px 0;">
+  <img src="scenario-sequence-cardio.svg" alt="Sequência de Teleintervenção CardioRemoto" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
 </div>
 
 ---

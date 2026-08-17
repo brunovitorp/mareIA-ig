@@ -19,10 +19,26 @@ A exposição ocupacional a defensivos agrícolas (organofosforados, carbamatos,
 
 ---
 
-## 2. Diagrama de Fluxo e Decisão Clínica (PlanDefinition)
+## 2. Diagramas de Fluxo, Decisão e Sequência
 
+### 2.1 Fluxo Clínico e Vigilância Ocupacional
+<div style="text-align: center; margin: 20px 0;">
+  <img src="process-agrosus.svg" alt="Fluxo Clínico AgroSUS" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
+</div>
+
+### 2.2 Algoritmo de Suporte à Decisão (PlanDefinition)
 <div style="text-align: center; margin: 20px 0;">
   <img src="plandef-agrosus.svg" alt="Algoritmo de Decisão AgroSUS" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
+</div>
+
+### 2.3 Atores e Casos de Uso
+<div style="text-align: center; margin: 20px 0;">
+  <img src="actors-agrosus.svg" alt="Atores e Papéis AgroSUS" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
+</div>
+
+### 2.4 Diagrama de Sequência de Vigilância e Notificação
+<div style="text-align: center; margin: 20px 0;">
+  <img src="scenario-sequence-agrosus.svg" alt="Sequência de Vigilância AgroSUS" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
 </div>
 
 ---

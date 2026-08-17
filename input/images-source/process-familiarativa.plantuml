@@ -1,0 +1,38 @@
+@startuml
+title Fluxo Clínico FamilIAr_Ativa — Cuidados Paliativos Domiciliares
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+
+|Elegibilidade e Cadastro|
+start
+:Identificar paciente elegível em Cuidados Paliativos;
+:Cadastrar Paciente e Cuidador(a) Familiar Principal;
+:Instalar App Domiciliar FamilIAr_Ativa;
+
+|Monitoramento de Sintomas e Sobrecarga|
+:Coleta Periódica da Escala ESAS (Sintomas Físicos/Emocionais);
+:Coleta Periódica da Escala Zarit (Sobrecarga do Cuidador);
+:Cálculo automatizado dos escores parciais e totais;
+
+|Processamento Híbrido: Regras + IA Explicável (XAI)|
+:Avaliação de Regras Clínicas Determinísticas (RA-01 a RA-05);
+:Execução do Modelo de Aprendizado de Máquina (Predição de Descompensação);
+:Geração de Atributos Explicativos de Risco (SHAP);
+
+|Triagem de Alertas e Resposta Clínica|
+switch (Nível de Risco Consolidado)
+case ( Baixo: 0–30 )
+  :Manter rotina de telecuidado domiciliar;
+case ( Médio: 31–50 )
+  :Teleorientação de enfermagem e suporte psicológico;
+case ( Alto: 51–70 ou Gatilho Crítico )
+  :Gerar FlagClinicalAlert de alta prioridade;
+  :Notificar Equipe Multiprofissional CUIDATIVA / UFPel;
+  :Acionar Visita Domiciliar Imediata / Ajuste Terapêutico;
+endswitch
+
+|Apoio Contínuo ao Cuidador|
+:Acompanhamento da sobrecarga do cuidador;
+:Orientações de autocuidado e suporte comunitário;
+stop
+@enduml

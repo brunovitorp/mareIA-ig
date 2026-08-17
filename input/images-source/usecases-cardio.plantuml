@@ -1,0 +1,37 @@
+@startuml
+title Casos de Uso — CardioRemoto (DM/HAS)
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam actorStyle awesome
+
+actor "Paciente DM/HAS" as P
+actor "Agente / Técnico\nde Coleta" as TEC
+actor "Médico(a)\nEndocrinologista" as MED
+actor "Nutricionista" as NUT
+actor "Gestor do Serviço" as G
+
+rectangle "Plataforma mareIA — CardioRemoto" {
+  usecase "Aferir sinais vitais\n(IoT Bluetooth)" as UC1
+  usecase "Preencher triagem\nclínica (SDC)" as UC2
+  usecase "Estratificar risco\ncardiovascular" as UC3
+  usecase "Disparar alertas\nem 4 níveis" as UC4
+  usecase "Realizar teleconsulta\nespecializada" as UC5
+  usecase "Ajustar metas\ne prescrição" as UC6
+  usecase "Orientações\nnutricionais" as UC7
+  usecase "Sincronizar AGHUX\n(EBSERH)" as UC8
+  usecase "Painel de indicadores\n(HbA1c e PA)" as UC9
+}
+
+P --> UC1
+P --> UC2
+TEC --> UC1
+TEC --> UC2
+MED --> UC3
+MED --> UC4
+MED --> UC5
+MED --> UC6
+MED --> UC8
+NUT --> UC7
+G --> UC9
+@enduml

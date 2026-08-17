@@ -35,3 +35,27 @@ A Plataforma **mareIA** padroniza a esteira de atendimento em **7 Macrofases Ope
 | **M5. Sistema de Alertas** | 4 níveis de alerta (Vermelho Imediato a Sem disparo) | Alerta de fragilização aguda e risco de quedas | Alerta de dor aguda, dispneia e exaustão do cuidador | Alerta de queda >30% na colinesterase e intoxicação |
 | **M6. Condutas e Ações** | Teleconsulta com endocrinologista/nutricionista | Avaliação Geriátrica Ampla (AGA) e Projeto Terapêutico | Visita domiciliar multiprofissional e ajuste álgico | Encaminhamento médico, afastamento e SINAN |
 | **M7. Integração SUS/Hospital**| Interoperabilidade FHIR com AGHUX (EBSERH) | Exportação de dados para prontuário da APS (e-SUS) | Registro em prontuário de atenção domiciliar | Notificação de vigilância em saúde do trabalhador |
+
+---
+
+## 4.3 Diagramas de Processo Clínico por Linha de Cuidado
+
+### 🫀 CardioRemoto — Fluxo Clínico e Telessaúde
+<div style="text-align: center; margin: 20px 0;">
+  <img src="process-cardio.svg" alt="Fluxo Clínico CardioRemoto" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
+</div>
+
+### 🧓 ATENTO 60+ — Macrofases da Pessoa Idosa
+<div style="text-align: center; margin: 20px 0;">
+  <img src="process-atento60.svg" alt="Fluxo Clínico ATENTO 60+" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
+</div>
+
+### 🏡 FamilIAr_Ativa — Cuidados Paliativos Domiciliares & XAI
+<div style="text-align: center; margin: 20px 0;">
+  <img src="process-familiarativa.svg" alt="Fluxo Clínico FamilIAr_Ativa" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
+</div>
+
+### 🌾 AgroSUS — Vigilância Ocupacional e Toxicologia Rural
+<div style="text-align: center; margin: 20px 0;">
+  <img src="process-agrosus.svg" alt="Fluxo Clínico AgroSUS" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
+</div>

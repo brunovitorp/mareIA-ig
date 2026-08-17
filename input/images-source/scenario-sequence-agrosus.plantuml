@@ -1,0 +1,28 @@
+@startuml
+title Diagrama de Sequência — Cenário AgroSUS (Vigilância de Colinesterase e Afastamento)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+
+actor "Trabalhador Rural" as Trabalhador
+actor "ACS Rural" as ACS
+participant "App Móvel Offline\nAgroSUS" as App
+participant "Servidor FHIR\n(Plataforma mareIA)" as FHIR
+entity "Laboratório\nAnálises Clínicas" as Lab
+participant "Motor de Regras\n(AgroSUSLogic CQL)" as Engine
+actor "Médico / Enfermeiro\n(UBS / Atenção Básica)" as UBS
+entity "Sistema Nacional\n(SINAN / VISAT)" as SINAN
+
+ACS -> Trabalhador: Realiza visita no campo e aplica Anamnese Ocupacional
+ACS -> App: Registra exposição frequente a organofosforados sem EPI adequado
+App -> FHIR: Sincroniza AgroSUSVisitaACS e QuestionnaireResponse
+FHIR -> UBS: Agenda coleta laboratorial de Colinesterase na UBS
+Trabalhador -> UBS: Coleta amostra sanguínea
+UBS -> Lab: Envia amostra para análise enzimática
+Lab -> FHIR: POST AgroSUSResultadoLaboratorial (Colinesterase = 2.800 U/L - Queda 38% vs Basal)
+FHIR -> Engine: Avalia critérios da NR-7 e estratificação
+Engine -> FHIR: Dispara Alerta de Depressão Enzimática Significativa
+FHIR -> UBS: Notifica profissional da UBS com prioridade alta
+UBS -> Trabalhador: Convoca para consulta médica e orienta afastamento temporário da aplicação
+UBS -> FHIR: Registra AgroSUSPlanoAcompanhamento e conduta preventiva
+FHIR -> SINAN: Exporta ficha de notificação compulsória de intoxicação exógena
+@enduml

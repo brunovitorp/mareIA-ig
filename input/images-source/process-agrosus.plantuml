@@ -1,0 +1,41 @@
+@startuml
+title Fluxo Clínico AgroSUS — Saúde do Trabalhador Rural e Vigilância Biológica
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+
+|Busca Ativa e Anamnese no Campo|
+start
+:Visita Domiciliar do ACS Rural na Propriedade;
+:Aplicação do Questionnaire AgroSUSAnamnese (Offline-First);
+:Mapeamento de defensivos manipulados, EPIs e rotina agrícola;
+
+|Vigilância Laboratorial (NR-7)|
+:Agendamento de Coleta de Sangue na UBS;
+:Determinação da Colinesterase Plasmática e Eritrocitária;
+:Registro do Laudo em AgroSUSResultadoLaboratorial;
+
+|Estratificação de Exposição e Risco|
+:Comparação com a Linha de Base (Valor Basal Individual);
+:Execução da Library AgroSUSIntoxicacaoLogic (CQL);
+switch (Queda da Atividade Enzimática)
+case ( Normal: Redução < 30% )
+  :Manter monitoramento periódico semestral (NR-7);
+case ( Alerta: Queda 30% a 50% )
+  :Revisão urgente de EPIs e técnicas de pulverização;
+  :Repetir exame em 30 dias na UBS;
+case ( Crítico: Queda > 50% ou Sintomas Agudos )
+  :Diagnóstico de Intoxicação Aguda / Subaguda;
+  :Afastamento ocupacional temporário imediato;
+endswitch
+
+|Resposta Assistencial e Notificação|
+if (Caso Crítico ou Suspeita Grave?) then (sim)
+  :Consulta Médica Prioritária na UBS;
+  :Elaborar AgroSUSPlanoAcompanhamento;
+  :Emitir Notificação Compulsória no SINAN;
+  :Acionar Vigilância em Saúde do Trabalhador (VISAT);
+else (não)
+  :Acompanhamento longitudinal de saúde do trabalhador;
+endif
+stop
+@enduml

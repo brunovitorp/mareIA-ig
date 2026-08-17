@@ -1,0 +1,36 @@
+@startuml
+title Casos de Uso — FamilIAr_Ativa (Cuidados Paliativos)
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam actorStyle awesome
+
+actor "Paciente Paliativo" as P
+actor "Cuidador(a)\nFamiliar" as C
+actor "Médico(a)\nPaliativista" as MED
+actor "Enfermeiro(a)\nDomiciliar" as ENF
+actor "Psicólogo(a)" as PSI
+actor "Gestor CUIDATIVA" as G
+
+rectangle "Plataforma mareIA — FamilIAr_Ativa" {
+  usecase "Registrar sintomas\n(Escala ESAS)" as UC1
+  usecase "Registrar sobrecarga\n(Escala Zarit)" as UC2
+  usecase "Predição de risco\npor IA (XAI)" as UC3
+  usecase "Triagem de alertas\n(RA-01 a RA-05)" as UC4
+  usecase "Ajuste álgico e\nprescrição paliativa" as UC5
+  usecase "Visita domiciliar\nprioritária" as UC6
+  usecase "Suporte emocional\nao cuidador" as UC7
+  usecase "Auditoria clínica\ne explicabilidade" as UC8
+}
+
+P --> UC1
+C --> UC1
+C --> UC2
+MED --> UC4
+MED --> UC5
+MED --> UC8
+ENF --> UC4
+ENF --> UC6
+PSI --> UC7
+G --> UC8
+@enduml

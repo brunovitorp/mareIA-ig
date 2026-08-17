@@ -1,0 +1,25 @@
+@startuml
+title Diagrama de Sequência — Cenário CardioRemoto (Detecção de Alerta de PA/Glicemia)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+
+actor "Paciente com DM/HAS" as Paciente
+entity "Dispositivo IoT\n(Bluetooth ANVISA)" as IoT
+participant "App Móvel\nmareIA Cardio" as App
+participant "Servidor FHIR\n(Plataforma mareIA)" as FHIR
+participant "Motor de Regras\n(CardioLogic CQL)" as Engine
+actor "Médico / Enfermeiro\n(HULW / UFPB)" as Medico
+entity "Sistema AGHUX\n(EBSERH)" as AGHUX
+
+Paciente -> IoT: Realiza aferição domiciliar de PA / Glicemia
+IoT -> App: Transmite dados via Bluetooth LE
+App -> FHIR: POST Observation (PA = 185/115 mmHg, Glicemia = 320 mg/dL)
+FHIR -> Engine: Avalia critérios clínicos de risco
+Engine -> Engine: Identifica Alerta Crítico (Vermelho / Emergência)
+Engine -> FHIR: Gera ObservationCardioRisk (Status: Grave)
+FHIR -> Medico: Dispara notificação push / alerta prioritário no painel
+Medico -> App: Inicia contato telefônico / teleconsulta imediata
+Medico -> Paciente: Ajusta medicação e orienta busca ao pronto-atendimento
+Medico -> FHIR: Registra conduta clínica e laudo
+FHIR -> AGHUX: Sincroniza evolução e laudo no prontuário hospitalar
+@enduml

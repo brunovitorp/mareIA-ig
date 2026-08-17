@@ -1,0 +1,46 @@
+@startuml
+title Fluxo Clínico CardioRemoto — Macrofases Operacionais
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+
+|Acolhimento e Entrada|
+start
+:Identificar paciente com DM2 e/ou HAS
+no Ambulatório HULW / UFPB;
+:Assinatura do TCLE e Cadastro Inicial;
+:Pareamento de dispositivos IoT Bluetooth
+(Esfigmomanômetro e Glicosímetro ANVISA);
+
+|Triagem e Coleta de Sinais Vitais|
+:Aplicação do Questionnaire CardioTriage;
+:Aferição de PA (Sistólica/Diastólica), FC e Glicemia;
+:Coleta e importação de exames laboratoriais
+(HbA1c, Lipídios, Creatinina, TFG);
+
+|Análise e Estratificação de Risco|
+:Execução da Library CardioLogic (CQL);
+switch (Estratificação em 3 Níveis)
+case ( Verde: Controlado )
+  :Definir periodicidade de 90 dias;
+case ( Amarelo: Moderado )
+  :Definir periodicidade de 30 dias;
+  :Programar teleorientação nutricional/enfermagem;
+case ( Vermelho: Grave )
+  :Definir prioridade imediata;
+  :Acionar protocolo de alerta crítico;
+endswitch
+
+|Resposta Clínica e Telessaúde|
+:Classificar Alerta (Informativo, Atenção, Alerta, Emergência);
+if (Alerta Emergência / Grave?) then (sim)
+  :Notificar Médico Endocrinologista em tempo real;
+  :Teleconsulta prioritária / Encaminhamento urgente;
+else (não)
+  :Acompanhamento longitudinal assíncrono;
+endif
+
+|Integração Hospitalar|
+:Sincronizar dados e laudos com AGHUX (EBSERH);
+:Atualizar Prontuário Eletrônico do SUS;
+stop
+@enduml

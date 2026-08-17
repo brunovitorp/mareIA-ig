@@ -1,0 +1,33 @@
+@startuml
+title Atores e Papéis — FamilIAr_Ativa (UFPel / CUIDATIVA)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+
+left to right direction
+
+actor "Paciente em Cuidados Paliativos" as Paciente
+actor "Cuidador(a) Familiar Principal" as Cuidador
+actor "Médico(a) Paliativista" as Medico
+actor "Enfermeiro(a) Domiciliar" as Enf
+actor "Psicólogo(a) / Assistente Social" as Psico
+entity "Motor de IA Explicável (XAI)" as XAI
+
+package "Plataforma mareIA — FamilIAr_Ativa" {
+  usecase "Registrar sintomas diários (ESAS)" as UC1
+  usecase "Avaliar sobrecarga periódica (Zarit)" as UC2
+  usecase "Predição de risco de descompensação" as UC3
+  usecase "Triagem e priorização de alertas" as UC4
+  usecase "Ajuste de analgesia e suporte clínico" as UC5
+  usecase "Visita domiciliar multiprofissional" as UC6
+  usecase "Acolhimento emocional e autocuidado" as UC7
+}
+
+Paciente --> UC1
+Cuidador --> UC1
+Cuidador --> UC2
+XAI --> UC3
+Medico --> UC4
+Medico --> UC5
+Enf --> UC6
+Psico --> UC7
+@enduml

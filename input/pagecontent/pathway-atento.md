@@ -32,6 +32,16 @@ O envelhecimento populacional exige ferramentas ágeis de identificação precoc
   <img src="plandef-atento60.svg" alt="Algoritmo de Decisão ATENTO 60+" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
 </div>
 
+### 2.3 Atores e Casos de Uso
+<div style="text-align: center; margin: 20px 0;">
+  <img src="actors-atento60.svg" alt="Atores e Papéis ATENTO 60+" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
+</div>
+
+### 2.4 Diagrama de Sequência de Visita Domiciliar
+<div style="text-align: center; margin: 20px 0;">
+  <img src="scenario-sequence-atento60.svg" alt="Sequência de Intervenção ATENTO 60+" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
+</div>
+
 ---
 
 ## 3. Artefatos FHIR R4 Principais
