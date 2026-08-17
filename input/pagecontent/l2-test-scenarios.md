@@ -25,7 +25,7 @@ Os **Casos de Teste da Plataforma mareIA** fornecem a bateria formal de validaç
 * **Objetivo:** Validar o acionamento imediato de alerta de prioridade alta quando o idoso relata histórico de quedas, independentemente de ter escore baixo nas outras perguntas.
 * **Payload de Entrada:**
   * `q16` (Teve duas ou mais quedas no último ano) = `Sim` (`2 pts`).
-  * Dinamometria = `14 kg` (Critério de Sarcopenia para Mulher: < 16 kg).
+  * `q14` (Dificuldade para caminhar sem ajuda) = `Sim` (`2 pts`).
 * **Avaliação Esperada:**
   * Geração do recurso `FlagClinicalAlert` com status `active` e código de alerta `AlertaQuedaRecente`.
   * Criação de `Task` para a equipe da ESF com prioridade `urgent` e prazo de 7 dias para avaliação ambiental e de marcha.

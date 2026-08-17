@@ -43,7 +43,7 @@ Independentemente da faixa de risco do escore, os seguintes gatilhos disparam al
 | `GA-AT-03` | **Pressão Arterial Crítica** (PAS ≥ 180 mmHg ou PAD ≥ 110 mmHg) | `critical` | Disparo de alerta sonoro e visual no painel da UBS; Contato médico imediato. |
 | `GA-AT-04` | **Saturação de Oxigênio (SpO2) < 92%** ou FC < 50 / > 120 bpm | `critical` | Encaminhamento imediato ao acolhimento com classificação de risco da UBS/UPA. |
 | `GA-AT-05` | **Perda ponderal não intencional ≥ 4.5 kg** ou IMC < 22 kg/m² | `high` | Encaminhamento prioritário à Nutrição e investigação de fragilidade avançada. |
-| `GA-AT-06` | Piora aguda na **cognição ou humor** (`q08 = Sim` e `q10 = Sim`) | `medium` | Agendar avaliação psicológica e rastreio de depressão / demência (GDS-15 / MEEM). |
+| `GA-AT-06` | Piora aguda na **cognição ou humor** (`q08 = Sim` e `q10 = Sim`) | `medium` | Agendar avaliação clínica na UBS para investigação de declínio funcional. |
 
 ---
 

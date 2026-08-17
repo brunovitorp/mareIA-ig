@@ -53,14 +53,14 @@ O **Índice de Vulnerabilidade Clínico-Funcional (IVCF-20)** avalia 8 dimensõe
 | `q19` | **Comorbidades Múltiplas** | Usa 5 ou mais medicamentos diferentes todos os dias (Polifarmácia)? | `choice` | `IvcfItemCS#comorb-polifarmacia` | • Não (`0` pts)<br>• Sim (`2` pts) | **Grupo Comorbidades (q19–q20)**:<br>Teto máximo do grupo = **4 pontos** |
 | `q20` | **Internação Recente** | Esteve internado em hospital nos últimos 6 meses? | `choice` | `IvcfItemCS#comorb-internacao` | • Não (`0` pts)<br>• Sim (`4` pts) |
 
-### 5.2.2 Parâmetros Fisiológicos e Testes Funcionais do ATENTO 60+
+### 5.2.2 Parâmetros Fisiológicos e Sinais Vitais IoT do ATENTO 60+
 
 | Elemento | Código LOINC | Descrição Semântica | Unidade UCUM | Faixa Normal | Critério de Alerta |
 |---|---|---|---|---|---|
 | **Escore Total IVCF-20** | `96763-8` | Vulnerability index total score | `{score}` (0–40) | 0 a 6 (Robusto) | ≥ 7 (Risco) / ≥ 15 (Frágil) |
-| **Força de Preensão (Dinamometria)** | `76251-8` | Hand grip strength | `kg` | H: ≥ 27 kg / M: ≥ 16 kg | H: < 27 kg / M: < 16 kg (Sarcopenia provável) |
-| **Velocidade de Marcha (4m)** | `96764-6` | Gait speed timed 4m | `m/s` | ≥ 0.8 m/s | < 0.8 m/s (Fragilidade / Risco de queda) |
-| **Circunferência da Panturrilha** | `96765-3` | Calf circumference | `cm` | ≥ 31 cm | < 31 cm (Depleção de massa muscular) |
+| **Pressão Arterial Sistólica** | `8480-6` | Systolic blood pressure | `mm[Hg]` | < 140 mmHg | ≥ 180 mmHg |
+| **Pressão Arterial Diastólica** | `8462-4` | Diastolic blood pressure | `mm[Hg]` | < 90 mmHg | ≥ 110 mmHg |
+| **Frequência Cardíaca** | `8867-4` | Heart rate | `/min` | 60 a 100 bpm | < 50 bpm / > 120 bpm |
 | **Saturação de Oxigênio (SpO2)** | `59408-5` | Oxygen saturation in Arterial blood | `%` | 95% a 100% | < 92% (Alerta de hipoxemia) |
 | **Índice de Massa Corporal (IMC)** | `39156-5` | Body mass index | `kg/m2` | 22.0 a 27.0 (Idoso) | < 22.0 (Baixo peso) / > 27.0 (Sobrepeso) |
 

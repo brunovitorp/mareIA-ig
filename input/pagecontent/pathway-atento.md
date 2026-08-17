@@ -15,7 +15,7 @@ O envelhecimento populacional exige ferramentas ágeis de identificação precoc
    - **Robusto (0 a 6 pontos):** Acompanhamento anual ou semestral de rotina na APS.
    - **Em Risco de Fragilização (7 a 14 pontos):** Intervenção preventiva com plano de cuidado compartilhado e telemonitoramento trimestral.
    - **Frágil (>= 15 pontos):** Avaliação Geriátrica Ampla (AGA), visita domiciliar prioritária e teleintervenção mensal.
-3. **Detecção de Quedas e Sarcopenia:** Monitoramento ativo de eventos sentinela e força de preensão/velocidade de marcha.
+3. **Detecção de Quedas e Sinais Vitais IoT:** Monitoramento ativo de eventos sentinela (quedas, internações) e parâmetros hemodinâmicos via Bluetooth.
 4. **Resiliência Offline-First:** Coleta em tablets por Agentes Comunitários de Saúde (ACS) em domicílio sem necessidade de sinal de celular constante.
 
 ---

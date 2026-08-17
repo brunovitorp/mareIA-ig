@@ -35,7 +35,7 @@ Este Guia de Implementação unifica as **4 Linhas de Cuidado (Pathways)** desen
 | Linha de Cuidado | Instituição | Foco Assistencial & População | Instrumentos Principais | Página do Pathway |
 |---|---|---|---|---|
 | 🫀 **CardioRemoto** | UFPB / HULW (PB) | DM2, HAS e Risco Cardiovascular Aterosclerótico | IoT ANVISA (PA, FC, Glicemia) + Exames Labs (HbA1c, Lipídios) | [Ver CardioRemoto](pathway-cardio.html) |
-| 🧓 **ATENTO 60+** | UFPE / UFPB (PE/PB) | Pessoa Idosa na APS / Estratégia Saúde da Família | IVCF-20 (Índice de Vulnerabilidade Clínico-Funcional) + Sarcopenia | [Ver ATENTO 60+](pathway-atento.html) |
+| 🧓 **ATENTO 60+** | UFPE / UFPB (PE/PB) | Pessoa Idosa na APS / Estratégia Saúde da Família | IVCF-20 (Índice de Vulnerabilidade Clínico-Funcional) + Sinais Vitais IoT | [Ver ATENTO 60+](pathway-atento.html) |
 | 🏡 **FamilIAr_Ativa** | UFPel / CUIDATIVA (RS) | Cuidados Paliativos Domiciliares e Apoio ao Cuidador | Escala ESAS (Sintomas) + Zarit (Sobrecarga) + Predição IA (XAI) | [Ver FamilIAr_Ativa](pathway-familiar.html) |
 | 🌾 **AgroSUS** | FATEC Ferraz (SP) | Saúde do Trabalhador Rural e Intoxicação por Defensivos | Anamnese Ocupacional + Vigilância da Colinesterase (NR-7) | [Ver AgroSUS](pathway-agrosus.html) |
 
