@@ -1,34 +1,28 @@
 # 3. Cenários de Uso
 
-Os cenários de uso ilustram as principais jornadas de interação dos atores com a plataforma mareIA no âmbito do **CardioRemoto**:
+Os cenários de uso descrevem o fluxo operacional real ponta a ponta dos usuários e profissionais no ecossistema **mareIA**.
 
 ---
 
-### Cenário 1: Cadastro e Triagem Antropométrica/Vital Inicial
-* **Ator:** Agente de Saúde / Técnico de Coleta
-* **Contexto:** Paciente comparece ao HULW para realização de exames laboratoriais e entrada no programa.
-* **Fluxo:**
-  1. O agente realiza login seguro no aplicativo mareIA.
-  2. Cadastra os dados sociodemográficos, histórico de evento cardiovascular prévio (IAM, AVC, DAP), uso de estatina e anti-hipertensivo, tabagismo e prática de atividade física.
-  3. Coleta dados antropométricos (peso, altura, cálculo automático de IMC e circunferência da cintura) e sinais vitais (PA com 2 aferições e glicemia capilar).
-  4. O aplicativo salva os dados em banco local (offline-first) e os sincroniza com a nuvem da mareIA / AGHUX.
+## 3.1 🫀 Cenários do CardioRemoto
+- **Cenário CR-1 (Triagem Inicial e Cadastro):** O paciente com DM/HAS é acolhido no HULW, assina o TCLE digital e tem seus dados cadastrais, vitais IoT e exames basais sincronizados.
+- **Cenário CR-2 (Detecção de Crise Pressórica / Alerta Vermelho):** Paciente afere PA de 190/115 mmHg em domicílio. O sistema dispara alerta imediato no painel médico do HULW, acionando contato telefônico ou teleconsulta de emergência.
+- **Cenário CR-3 (Acompanhamento Longitudinal e Teleconsulta):** Paciente com risco Verde (controlado) realiza reavaliação periódica aos 90 dias, com envio prévio de exames laboratoriais e ajuste terapêutico assíncrono.
 
 ---
 
-### Cenário 2: Registro de Exames Laboratoriais e Disparo de Alertas
-* **Ator:** Equipe de Telessaúde / Integração AGHUX
-* **Contexto:** Resultados de exames laboratoriais (HbA1c, Perfil Lipídico, Creatinina, TFG) são liberados pelo laboratório do HULW.
-* **Fluxo:**
-  1. Os resultados são importados/registrados no prontuário do paciente.
-  2. O motor de regras da mareIA reavalia a estratificação: paciente com HbA1c 9.5%, PA 150/95 mmHg e LDL 170 mg/dL é classificado como **Vermelho (Grave)**.
-  3. O sistema emite **Alerta Amarelo/Laranja** para a equipe multiprofissional agendar teleconsulta e avaliação nutricional prioritária.
+## 3.2 🧓 Cenários do ATENTO 60+
+- **Cenário AT-1 (Aplicação Domiciliar Offline do IVCF-20):** ACS visita idoso em zona sem conectividade, preenche as 20 questões no tablet; o aplicativo calcula o escore (ex: 9 pontos - Risco de Fragilização) e sincroniza com o servidor da UBS ao retornar à base.
+- **Cenário AT-2 (Alerta de Fragilização Aguda e Quedas):** Idoso robusto sofre queda com fratura de membro. A reavaliação eleva o escore para 16 pontos (Frágil), gerando solicitação automática de Avaliação Geriátrica Ampla (AGA).
 
 ---
 
-### Cenário 3: Detecção de Crise Hipertensiva ou Hipoglicemia Aguda
-* **Ator:** Paciente / Agente de Saúde / Médica Especialista
-* **Contexto:** Durante uma aferição de rotina, a pressão arterial registrada é de 190/125 mmHg.
-* **Fluxo:**
-  1. A plataforma reconhece imediatamente o valor como crítico (PA ≥ 180/120 mmHg) e gera um **Alerta Vermelho (Imediato)**.
-  2. O aplicativo exibe orientações emergenciais imediatas ao paciente/cuidador.
-  3. A médica endocrinologista no HULW recebe notificação prioritária no dashboard e entra em contato via teleconsulta ou orienta encaminhamento à Unidade de Pronto Atendimento (UPA/Emergência).
+## 3.3 🏡 Cenários do FamilIAr_Ativa
+- **Cenário FA-1 (Registro Semanal de Sintomas pelo Cuidador):** A filha e cuidadora de paciente oncológico em cuidados paliativos registra semanalmente a escala ESAS e Zarit.
+- **Cenário FA-2 (Detecção Preditiva de Crise de Dor e Sobrecarga):** O motor de IA detecta curva ascendente de dor (de 3/10 para 8/10 em 48h) associada a esgotamento da cuidadora, emitindo flag de alerta prioritário para a equipe multiprofissional domiciliar.
+
+---
+
+## 3.4 🌾 Cenários do AgroSUS
+- **Cenário AG-1 (Mapeamento de Exposição na Propriedade Rural):** ACS Rural aplica anamnese em agricultor que relata pulverização de organofosforados sem máscara adequada. O sistema agenda exame basal de colinesterase na UBS.
+- **Cenário AG-2 (Alerta de Queda Enzimática e Afastamento):** Resultado laboratorial aponta queda de 35% na colinesterase eritrocitária. O sistema aciona o médico da UBS, gera recomendação de afastamento temporário da aplicação e notificação de agravo.

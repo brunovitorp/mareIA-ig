@@ -1,26 +1,49 @@
 # 6. Lógica de Suporte à Decisão Clínica
 
-A lógica de suporte à decisão do **CardioRemoto** compreende duas frentes principais:
-1. **Estratificação de Controle / Risco Cardiovascular**
-2. **Sistema de Alertas Clínicos em 4 Níveis**
+A lógica de decisão da Plataforma **mareIA** é formalizada em tabelas de decisão DMN e orquestrada no FHIR R4 através de recursos `PlanDefinition` e bibliotecas `Library` (CQL).
 
 ---
 
-### 1. Matriz de Estratificação de Risco / Controle Clínico
+## 6.1 🫀 Regras de Decisão do CardioRemoto
 
-| Estrato de Risco | Critérios Clínicos de Entrada | Periodicidade de Visitas | Ação Recomendada |
+### Estratificação de Risco Cardiovascular:
+| Condição Clínica | Classificação | Cor / Status | Periodicidade |
 |---|---|---|---|
-| **Verde (Controlado)** | PA < 140/90 mmHg E HbA1c < 7.0% E LDL < 130 mg/dL E sem evento cardiovascular no último ano | A cada **90 dias** (3 meses) | Manter conduta medicamentosa e monitoramento regular. |
-| **Amarelo (Moderado)** | 1 ou 2 parâmetros fora da meta E sem evento cardiovascular recente | A cada **30 dias** (1 mês) | Teleconsulta de ajuste farmacológico e encaminhamento nutricional. |
-| **Vermelho (Grave)** | ≥ 3 parâmetros fora da meta OU evento cardiovascular nos últimos 12 meses (IAM, AVC, DAP) | A cada **30 dias** (1 mês) | Avaliação médica prioritária e ajuste intensivo de tratamento. |
+| PA < 140/90 mmHg E Glicemia < 140 mg/dL E HbA1c < 7.0% | Controlado | 🟢 **Verde** | 90 dias |
+| PA 140–179/90–109 mmHg OU Glicemia 140–249 mg/dL OU HbA1c 7.0–8.9% | Moderado | 🟡 **Amarelo** | 30 dias |
+| PA ≥ 180/110 mmHg OU Glicemia ≥ 250 mg/dL (ou < 70) OU HbA1c ≥ 9.0% | Grave | 🔴 **Vermelho** | 30 dias |
+
+### Sistema de Alertas:
+- **Vermelho (Imediato):** PA ≥ 180/120 mmHg, Hipoglicemia severa (< 54 mg/dL), ou suspeita de evento cardiovascular agudo. Conduta: Contato médico imediato / SAMU 192.
+- **Laranja (Semanal/Quinzenal):** Descontrole persistente de PA em 3 aferições consecutivas ou HbA1c > 8.5%.
+- **Amarelo (Quinzenal/Trimestral):** Atraso de mais de 15 dias na realização da consulta ou renovação de exames.
 
 ---
 
-### 2. Matriz de Gatilhos de Alerta Clínico
+## 6.2 🧓 Regras de Decisão do ATENTO 60+ (IVCF-20)
 
-| Nível do Alerta | Gatilhos e Condições | Prazo de Ação | Conduta Clínica |
+| Escore IVCF-20 | Estratificação Funcional | Conduta Recomendada | Periodicidade |
 |---|---|---|---|
-| **Vermelho** *(Crítico/Imediato)* | PA ≥ 180/120 mmHg OU PA < 90/60 mmHg; Glicemia ≥ 250 mg/dL com sintomas OU < 70 mg/dL; Sinais de SCA/AVC; FC > 100 ou < 50 bpm | **Imediato** | Avaliação médica imediata / encaminhamento para emergência. |
-| **Laranja** *(Grave)* | Triglicerídeos > 1000 mg/dL (risco de pancreatite); Perda de peso não intencional ≥ 5% | **Semanal a Quinzenal** | Encaminhamento médico e avaliação nutricional intensiva. |
-| **Amarelo** *(Atenção)* | PA fora da meta não crítica (140–179 / 90–119 mmHg); LDL ≥ 190 mg/dL; HbA1c ≥ 7.0%; Glicemia > 300 mg/dL | **Quinzenal a Trimestral** | Agendamento de teleconsulta para ajuste terapêutico. |
-| **Sem disparo** *(Verde)* | Todos os parâmetros dentro das metas clínicas | Conforme risco | Continuar acompanhamento conforme periodicidade do estrato. |
+| **0 a 6 pontos** | **Idoso Robusto** | Ações de promoção da saúde e envelhecimento ativo na UBS | Anual |
+| **7 a 14 pontos**| **Em Risco de Fragilização** | Intervenção preventiva multiprofissional e reavaliação periódica | Trimestral |
+| **≥ 15 pontos**  | **Idoso Frágil** | Avaliação Geriátrica Ampla (AGA), visita domiciliar e telecuidado ativo | Mensal |
+
+---
+
+## 6.3 🏡 Regras de Decisão do FamilIAr_Ativa (Paliativos)
+
+| Gatilho Clínico | Nível de Alerta | Ação Automatizada |
+|---|---|---|
+| Dor ESAS ≥ 7/10 OU Dispneia ≥ 7/10 | 🔴 **Crítico** | Notificação imediata para médico e enfermeiro de cuidados paliativos |
+| Piora ≥ 3 pontos em qualquer sintoma em 48h | 🟡 **Moderado** | Sugestão de contato telefônico e reavaliação de posologia analgésica |
+| Escore Zarit ≥ 17 pontos (Sobrecarga Severa) | 🟠 **Alerta Cuidador** | Acionamento de equipe de apoio psicológico e serviço social |
+
+---
+
+## 6.4 🌾 Regras de Decisão do AgroSUS (Toxicologia Ocupacional)
+
+| Indicador Biológico (Colinesterase) | Classificação | Conduta Clínica / Ocupacional |
+|---|---|---|
+| Queda < 15% em relação ao basal | Normal / Sem restrição | Manutenção das atividades e reforço no uso correto de EPIs |
+| Queda de 15% a 30% em relação ao basal | Atenção / Vigilância | Redução da jornada de pulverização e retestagem em 30 dias |
+| Queda > 30% em relação ao basal OU Sintomas Agudos | **Intoxicação Provável** | **Afastamento temporário imediato da exposição**, solicitação de retestagem em 15 dias, avaliação médica na UBS e emissão de CAT/SINAN |

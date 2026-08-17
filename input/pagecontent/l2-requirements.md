@@ -1,30 +1,30 @@
 # 8. Requisitos Funcionais e Não-Funcionais
 
-Especificação de requisitos do **CardioRemoto** baseada no Documento de Requisitos V2 (UFPB / HULW):
+O ecossistema **mareIA** estabelece requisitos de software transversais e específicos para garantir conformidade técnica, segurança e usabilidade no SUS.
 
 ---
 
-### Requisitos Funcionais (RF)
+## 8.1 Requisitos Funcionais (RF)
 
-| ID | Nome | Descrição | Prioridade |
+| ID | Requisito Funcional | Descrição | Aplicabilidade |
 |---|---|---|---|
-| `RF001` | Logar no sistema | Autenticação segura do usuário com bloqueio temporário após 5 tentativas inválidas. | Essencial |
-| `RF002` | Cadastrar paciente | Registro de dados cadastrais, fatores de risco cardiovascular, tabagismo e atividade física. | Essencial |
-| `RF003` | Filtrar pacientes por risco | Exibição de listas filtradas por estrato de risco (Todos, Verde, Amarelo, Vermelho). | Importante |
-| `RF004` | Ordenar por prioridade de visita | Ordenação inteligente da fila de pacientes por dias de atraso e proximidade de visita. | Essencial |
-| `RF005` | Inserir nova visita | Registro de dados antropométricos, vitais IoT e laboratoriais com cálculo automático de IMC. | Essencial |
-| `RF006` | Visualizar evolução temporal | Apresentação em formato de tabela e gráficos de tendência dos parâmetros coletados. | Essencial |
-| `RF007` | Sincronizar dados manualmente | Disparo manual da sincronização de registros locais offline com o servidor central. | Importante |
-| `RF008` | Encerrar sessão | Finalização segura da sessão de trabalho do usuário. | Importante |
+| **RF001** | Autenticação Segura | Login com controle de acesso baseado em papéis (RBAC). | Transversal |
+| **RF002** | Cadastro com TCLE e CNS | Cadastro de cidadão com validação de CNS, CPF e aceite de TCLE. | Transversal |
+| **RF003** | Coleta com IoT Homologado | Conexão Bluetooth com esfigmomanômetros e glicosímetros ANVISA. | CardioRemoto / ATENTO |
+| **RF004** | Aplicação de Questionários | Renderização de questionários dinâmicos com scoring automatizado (SDC).| Todos os Pathways |
+| **RF005** | Estratificação e Alertas | Motor de regras computável que gera alertas em tempo real. | Todos os Pathways |
+| **RF006** | Sincronização Offline-First | Armazenamento local de coletas e reconciliação automática na rede. | Transversal (ACS) |
+| **RF007** | Linha do Tempo Longitudinal | Gráficos de evolução temporal de parâmetros vitais, scores e labs. | Todos os Pathways |
+| **RF008** | Interoperabilidade Hospitalar | Exportação e consumo de dados via FHIR REST API com AGHUX/EBSERH. | Transversal |
 
 ---
 
-### Requisitos Não-Funcionais (RNF)
+## 8.2 Requisitos Não-Funcionais (RNF)
 
-| ID | Nome | Descrição | Prioridade |
-|---|---|---|---|
-| `RNF001` | Funcionamento Offline-First | Armazenamento local seguro e sincronização passiva/ativa com o banco central. | Importante |
-| `RNF002` | Interface Responsiva | Adaptação para telas mobile (320–767px) e tablets (768–1024px) sem rolagem horizontal. | Desejável |
-| `RNF003` | Proteção de Dados Sensíveis (LGPD) | Criptografia em repouso e em trânsito (HTTPS/TLS) e minimização de dados sensíveis. | Essencial |
-| `RNF004` | Controle de Acesso Baseado em Papéis | Restrição de visualização de dados clínicos apenas a perfis autorizados. | Essencial |
-| `RNF005` | Trilha de Auditoria | Registro imutável de data, hora e usuário responsável por qualquer inclusão ou alteração. | Essencial |
+| ID | Requisito Não-Funcional | Descrição e Métrica |
+|---|---|---|
+| **RNF001**| Conformidade com LGPD | Criptografia em trânsito (TLS 1.3) e em repouso (AES-256) para dados sensíveis. |
+| **RNF002**| Padrão FHIR R4 e SMART Guidelines | 100% dos recursos semânticos compatíveis com FHIR R4 e guias da OMS. |
+| **RNF003**| Desempenho e Tempo de Resposta | Tempo de processamento da inferência de regras clínicas < 500 ms. |
+| **RNF004**| Responsividade e Acessibilidade | Interface adaptável para celulares, tablets e desktops (WCAG 2.1 AA). |
+| **RNF005**| Rastreabilidade e Auditoria | Registro imutável de logs de acesso e alterações via recurso `AuditEvent`. |

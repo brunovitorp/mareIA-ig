@@ -1,50 +1,33 @@
-# 4. Processos de Negócio e Workflows
+# 4. Processos de Negócio e Workflows (BPMN)
 
-O fluxo de atendimento do **CardioRemoto** é estruturado em 7 macrofases contínuas:
+A Plataforma **mareIA** padroniza a esteira de atendimento em **7 Macrofases Operacionais (M1 a M7)**, parametrizadas para as especificidades clínicas de cada linha de cuidado.
 
 ---
 
-### Macrofases do Processo Clínico
+## 4.1 As 7 Macrofases Universais da Plataforma mareIA
 
 ```
-[M1: Entrada / TCLE] ──> [M2: Coleta / IoT / Labs] ──> [M3: Estratificação de Risco]
-                                                                  │
-                                                                  ▼
-[M7: Integração AGHUX] <── [M6: Ação da Equipe] <── [M5: Alertas] <── [M4: Ciclo / Visitas]
+ ┌───────────────┐     ┌───────────────┐     ┌───────────────┐     ┌───────────────┐
+ │ M1. Entrada & │ ──> │ M2. Triagem & │ ──> │ M3. Análise   │ ──> │ M4. Ciclo de  │
+ │ Elegibilidade │     │ Coleta IoT/Q. │     │ de Risco Auto.│     │ Monitoramento │
+ └───────────────┘     └───────────────┘     └───────────────┘     └───────────────┘
+                                                                           │
+ ┌───────────────┐     ┌───────────────┐     ┌───────────────┐             │
+ │ M7. Integração│ <── │ M6. Condutas &│ <── │ M5. Sistema   │ <───────────┘
+ │ AGHUX / RNDS  │     │ Intervenções  │     │ de Alertas    │
+ └───────────────┘     └───────────────┘     └───────────────┘
 ```
 
-1. **Macrofase 1 — Elegibilidade e Entrada do Paciente:**
-   * Verificação de critérios de inclusão (DM e/ou HAS, idade ≥ 18 anos, risco aterosclerótico).
-   * Coleta do Termo de Consentimento Livre e Esclarecido (TCLE digital ou impresso).
-   * Registro cadastral e histórico cardiovascular prévio.
+---
 
-2. **Macrofase 2 — Triagem Inicial e Coleta:**
-   * Aferição de peso, altura, cálculo automático de IMC e circunferência da cintura.
-   * Aferição de sinais vitais IoT (Pressão Arterial em duplicata com repouso de 5 min, FC e Glicemia Capilar).
-   * Encaminhamento para coleta laboratorial no HULW (HbA1c, Perfil Lipídico, Creatinina, TFG, EAS, Microalbuminúria).
+## 4.2 Parametrização dos Processos por Pathway
 
-3. **Macrofase 3 — Análise de Risco e Classificação:**
-   * Classificação automatizada do controle clínico em:
-     * **Verde (Controlado):** PA < 140/90, HbA1c < 7%, LDL < 130 mg/dL, sem evento CV nos últimos 12 meses.
-     * **Amarelo (Moderado):** 1 a 2 parâmetros fora da meta e sem evento recente.
-     * **Vermelho (Grave):** ≥ 3 parâmetros fora da meta OU evento cardiovascular nos últimos 12 meses.
-
-4. **Macrofase 4 — Ciclo de Monitoramento Estratificado:**
-   * Cálculo da periodicidade da próxima visita:
-     * Pacientes Verdes: a cada **90 dias** (3 meses).
-     * Pacientes Amarelos / Vermelhos: a cada **30 dias** (1 mês).
-   * Ordenação automática da lista de pacientes por dias de atraso na visita.
-
-5. **Macrofase 5 — Sistema de Alertas em 4 Níveis:**
-   * **Vermelho (Imediato):** PA ≥ 180/120 ou < 90/60 mmHg; Glicemia ≥ 250 mg/dL c/ sintomas ou < 70 mg/dL; Sinais de SCA/AVC; FC > 100 ou < 50 bpm.
-   * **Laranja (Semanal/Quinzenal):** Triglicerídeos > 1000 mg/dL; Perda de peso não intencional ≥ 5%.
-   * **Amarelo (Quinzenal/Trimestral):** PA fora da meta não crítica; LDL ≥ 190 mg/dL; HbA1c ≥ 7%; Glicemia > 300 mg/dL.
-   * **Sem disparo (Verde):** Parâmetros na meta.
-
-6. **Macrofase 6 — Ações da Equipe Multiprofissional:**
-   * Teleconsulta médica, prescrição e ajuste farmacológico.
-   * Atendimento com nutricionista para controle metabólico/lipídico.
-   * Envio de orientações de autocuidado e educação em saúde para DCNT.
-
-7. **Macrofase 7 — Integração Hospitalar (AGHUX) e Ciclo Contínuo:**
-   * Sincronização FHIR de observações e relatórios de consulta com o prontuário AGHUX do HULW.
+| Macrofase | 🫀 CardioRemoto | 🧓 ATENTO 60+ | 🏡 FamilIAr_Ativa | 🌾 AgroSUS |
+|---|---|---|---|---|
+| **M1. Entrada & Elegibilidade** | Paciente adulto/idoso com DM/HAS no HULW | Pessoa idosa (>= 60 anos) cadastrada na ESF | Paciente em cuidados paliativos domiciliares | Trabalhador rural com exposição a defensivos |
+| **M2. Triagem e Coleta** | Dispositivos IoT (PA, FC, Glicemia) + Antropometria | Aplicação do questionário multidimensional IVCF-20 | Questionários ESAS (sintomas) e Zarit (cuidador) | Anamnese Ocupacional + Exame Basal Colinesterase |
+| **M3. Análise de Risco** | Estratificação em 3 níveis (Verde, Amarelo, Vermelho) | Classificação em Robusto (0-6), Risco (7-14) ou Frágil (>=15) | Classificação de sofrimento sintomático e sobrecarga | Avaliação de queda percentual da atividade enzimática |
+| **M4. Ciclo de Monitoramento**| 90 dias (Verde) / 30 dias (Amarelo/Vermelho) | Anual (Robusto), Trimestral (Risco) ou Mensal (Frágil) | Semanal ou quinzenal conforme estabilidade | Semestral (NR-7) ou quadrimestral se exposição alta |
+| **M5. Sistema de Alertas** | 4 níveis de alerta (Vermelho Imediato a Sem disparo) | Alerta de fragilização aguda e risco de quedas | Alerta de dor aguda, dispneia e exaustão do cuidador | Alerta de queda >30% na colinesterase e intoxicação |
+| **M6. Condutas e Ações** | Teleconsulta com endocrinologista/nutricionista | Avaliação Geriátrica Ampla (AGA) e Projeto Terapêutico | Visita domiciliar multiprofissional e ajuste álgico | Encaminhamento médico, afastamento e SINAN |
+| **M7. Integração SUS/Hospital**| Interoperabilidade FHIR com AGHUX (EBSERH) | Exportação de dados para prontuário da APS (e-SUS) | Registro em prontuário de atenção domiciliar | Notificação de vigilância em saúde do trabalhador |

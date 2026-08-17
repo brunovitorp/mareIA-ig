@@ -1,16 +1,17 @@
-# SUSHI configuration — Plataforma mareIA / Pathway CardioRemoto
-# Implementation Guide FHIR R4 (WHO SMART Guidelines L3) para a linha de cuidado
-# de pacientes com Diabetes Mellitus (DM) e Hipertensão Arterial Sistêmica (HAS)
-# com estratificação de risco cardiovascular aterosclerótico (UFPB / HULW).
-id: br.gov.mareia.cardio
-canonical: https://mareia.saude.gov.br/ig/cardio
-name: MareIACardioRemoto
-title: "mareIA — CardioRemoto (SMART Guideline para Telemonitoramento Cardiovascular)"
+# SUSHI configuration — Plataforma mareIA (WHO SMART Guidelines Implementation Guide)
+# Guia de Implementação FHIR R4 Integrado da Plataforma mareIA abrangendo 4 Pathways:
+# 1. CardioRemoto (DM/HAS e Risco Cardiovascular — UFPB/HULW)
+# 2. ATENTO 60+ (Telemonitoramento da Pessoa Idosa — UFPE/UFPB)
+# 3. FamilIAr_Ativa (Cuidados Paliativos Domiciliares — UFPel/CUIDATIVA)
+# 4. AgroSUS (Saúde do Trabalhador Rural — FATEC Ferraz)
+id: br.gov.mareia.ig
+canonical: https://mareia.saude.gov.br/ig
+name: MareIAImplementationGuide
+title: "Plataforma mareIA — SMART Guidelines IG (Guia Integrado de Telemonitoramento)"
 description: >-
-  Implementation Guide da linha de cuidado CardioRemoto da Plataforma mareIA,
-  adaptação digital (WHO SMART Guidelines L2/L3) do Protocolo Clínico UFPB/HULW
-  para o telemonitoramento de pacientes com Diabetes Mellitus e Hipertensão Arterial
-  Sistêmica no Ambulatório de Telessaúde do Hospital Universitário Lauro Wanderley.
+  Implementation Guide integrado da Plataforma mareIA, adaptação digital
+  (WHO SMART Guidelines L2/L3) das linhas de cuidado no SUS: CardioRemoto (DM/HAS),
+  ATENTO 60+ (Pessoa Idosa), FamilIAr_Ativa (Cuidados Paliativos) e AgroSUS (Trabalhador Rural).
   Programa RNP Redes de Colaboração em Saúde Digital 2025.
 status: draft
 version: 0.1.0
@@ -28,10 +29,18 @@ dependencies:
   hl7.fhir.uv.sdc: 3.0.0
   hl7.fhir.uv.cpg: 1.0.0
 
-# Páginas da narrativa (L1 resumida + L2 humano-legível)
+# Páginas da narrativa (L1 + L2 DAK)
 pages:
   index.md:
     title: Início
+  pathway-cardio.md:
+    title: 🫀 CardioRemoto (DM / HAS)
+  pathway-atento.md:
+    title: 🧓 ATENTO 60+ (Pessoa Idosa)
+  pathway-familiar.md:
+    title: 🏡 FamilIAr_Ativa (Cuidados Paliativos)
+  pathway-agrosus.md:
+    title: 🌾 AgroSUS (Trabalhador Rural)
   l2-interventions.md:
     title: 1. Intervenções e Recomendações
   l2-personas.md:
@@ -55,17 +64,23 @@ pages:
 
 menu:
   Início: index.html
+  Linhas de Cuidado (Pathways):
+    🫀 CardioRemoto (DM/HAS): pathway-cardio.html
+    🧓 ATENTO 60+ (Idoso): pathway-atento.html
+    🏡 FamilIAr_Ativa (Paliativos): pathway-familiar.html
+    🌾 AgroSUS (Rural): pathway-agrosus.html
   Componentes DAK (L2):
     1. Intervenções: l2-interventions.html
     2. Personas: l2-personas.html
     3. Cenários de Uso: l2-user-scenarios.html
-    4. Processos: l2-business-process.html
-    5. Dados: l2-data-dictionary.html
+    4. Processos (BPMN): l2-business-process.html
+    5. Dados (Dicionário): l2-data-dictionary.html
     6. Decisão: l2-decision-logic.html
     7. Indicadores: l2-indicators.html
     8. Requisitos: l2-requirements.html
     9. Testes: l2-test-scenarios.html
-  Artefatos (L3): artifacts.html
+  Artefatos Computáveis (L3): artifacts.html
+  Portal Institucional: portal/index.html
   Downloads: downloads.html
 
 # Parâmetros do IG Publisher

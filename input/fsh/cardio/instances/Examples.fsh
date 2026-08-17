@@ -7,6 +7,7 @@ Usage: #example
 * name[+].use = #official
 * name[=].family = "Silva"
 * name[=].given[+] = "João"
+* name[=].text = "João Silva"
 * gender = #male
 * birthDate = "1960-05-15"
 

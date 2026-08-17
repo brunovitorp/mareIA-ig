@@ -1,53 +1,48 @@
 # 5. Elementos de Dados Centrais (Dicionário de Dados)
 
-O DAK do **CardioRemoto** mapeia os elementos clínicos centrais para terminologias padronizadas de interoperabilidade em saúde (**LOINC**, **CID-10** e **UCUM**).
+O Dicionário de Dados do ecossistema **mareIA** estabelece o mapeamento formal entre variáveis clínicas, tipos de dados e terminologias médicas internacionais (**LOINC**, **CID-10**, **SNOMED CT** e **UCUM**).
 
 ---
 
-### Tabela de Dados Antropométricos e Sinais Vitais (IoT)
+## 5.1 Elementos de Dados Transversais (Core mareIA)
 
-| ID do Elemento | Rótulo (PT-BR) | Tipo | Unidade / Valores | Código Padrão | Obrigatório |
-|---|---|---|---|---|---|
-| `body_weight` | Peso Corporal | Quantity | kg | LOINC: 29463-7 | Não |
-| `body_height` | Altura | Quantity | cm | LOINC: 8302-2 | Não |
-| `bmi` | Índice de Massa Corporal (IMC) | Quantity | kg/m² | LOINC: 39156-5 | Não (auto) |
-| `waist_circ` | Circunferência da Cintura | Quantity | cm | LOINC: 8280-0 | Não |
-| `sbp` | Pressão Arterial Sistólica | Quantity | mmHg | LOINC: 8480-6 | Não |
-| `dbp` | Pressão Arterial Diastólica | Quantity | mmHg | LOINC: 8462-4 | Não |
-| `heart_rate` | Frequência Cardíaca | Quantity | bpm | LOINC: 8867-4 | Não |
-| `capillary_glucose` | Glicemia Capilar | Quantity | mg/dL | LOINC: 14743-9 | Não |
-
----
-
-### Tabela de Exames Laboratoriais
-
-| ID do Elemento | Rótulo (PT-BR) | Tipo | Unidade | Código Padrão | Obrigatório |
-|---|---|---|---|---|---|
-| `fasting_glucose` | Glicemia de Jejum | Quantity | mg/dL | LOINC: 1558-6 | Não |
-| `hba1c` | Hemoglobina Glicada (HbA1c) | Quantity | % | LOINC: 4548-4 | Não |
-| `total_cholesterol` | Colesterol Total | Quantity | mg/dL | LOINC: 2093-3 | Não |
-| `hdl_cholesterol` | Colesterol HDL | Quantity | mg/dL | LOINC: 2085-9 | Não |
-| `ldl_cholesterol` | Colesterol LDL | Quantity | mg/dL | LOINC: 13457-7 | Não |
-| `triglycerides` | Triglicerídeos | Quantity | mg/dL | LOINC: 2571-8 | Não |
-| `serum_creatinine` | Creatinina Sérica | Quantity | mg/dL | LOINC: 2160-0 | Não |
-| `serum_urea` | Ureia Sérica | Quantity | mg/dL | LOINC: 3094-0 | Não |
-| `tsh` | TSH | Quantity | uIU/mL | LOINC: 3016-3 | Não |
-| `tgo` | TGO / AST | Quantity | U/L | LOINC: 1920-8 | Não |
-| `tgp` | TGP / ALT | Quantity | U/L | LOINC: 1742-6 | Não |
-| `cpk` | CPK | Quantity | U/L | LOINC: 2157-6 | Não |
-| `egfr_ckd_epi` | Taxa de Filtração Glomerular (CKD-EPI) | Quantity | mL/min/1.73m² | LOINC: 33914-3 | Não (auto) |
-| `non_hdl_cholesterol` | Colesterol Não-HDL | Quantity | mg/dL | LOINC: 43396-1 | Não (auto) |
+| Campo | Descrição | Tipo FHIR | Sistema / Terminologia |
+|---|---|---|---|
+| `cns` | Cartão Nacional de Saúde do Cidadão | `Identifier` | `https://saude.gov.br/fhir/sid/cns` |
+| `cpf` | Cadastro de Pessoas Físicas | `Identifier` | `https://receita.fazenda.gov.br/fhir/sid/cpf` |
+| `nomeCompleto` | Nome civil oficial do paciente | `HumanName.text` | String (ASCII / UTF-8) |
+| `dataNascimento`| Data de nascimento | `date` | Formato YYYY-MM-DD |
+| `sexo` | Sexo administrativo | `code` | `http://hl7.org/fhir/administrative-gender` |
+| `racaCor` | Raça ou cor autodeclarada do SUS | `Extension` | `https://saude.gov.br/fhir/ValueSet/BRRacaCor` |
+| `offlineSyncId`| Identificador temporário UUID | `Identifier` | `https://mareia.saude.gov.br/fhir/sid/offline-id` |
 
 ---
 
-### Tabela de Dados Demográficos e Fatores de Risco
+## 5.2 Elementos Clínicos por Pathway
 
-| ID do Elemento | Rótulo (PT-BR) | Tipo | Valores Permitidos | Código / Sistema |
-|---|---|---|---|---|
-| `dx_dm` | Diagnóstico de Diabetes Mellitus | Boolean | true / false | CID-10: E11 |
-| `dx_has` | Diagnóstico de Hipertensão Arterial | Boolean | true / false | CID-10: I10 |
-| `hx_cv_event` | Histórico de Evento Cardiovascular | Code | nenhum, iam, avc, dap, outro | Local: `cardio-cv-event` |
-| `use_statin` | Uso de Estatina | Boolean | true / false | Local |
-| `use_antihypertensive` | Uso de Anti-hipertensivo | Boolean | true / false | Local |
-| `smoking_status` | Tabagismo | Code | nao-fumante, ex-fumante, fumante | Local: `cardio-smoking-status` |
-| `physical_activity` | Atividade Física | Code | nao-praticante, raramente, regularmente, frequentemente | Local: `cardio-activity-level` |
+### 🫀 CardioRemoto (DM / HAS)
+- **PA Sistólica:** LOINC `8480-6` (`Systolic blood pressure`, unidade `mm[Hg]`).
+- **PA Diastólica:** LOINC `8462-4` (`Diastolic blood pressure`, unidade `mm[Hg]`).
+- **Frequência Cardíaca:** LOINC `8867-4` (`Heart rate`, unidade `/min`).
+- **Glicemia Capilar:** LOINC `14743-9` (`Glucose [Mass/volume] in Capillary blood`, unidade `mg/dL`).
+- **Hemoglobina Glicada:** LOINC `4548-4` (`HbA1c MFr Bld`, unidade `%`).
+- **LDL Colesterol:** LOINC `2089-1` (`Cholesterol in LDL [Mass/volume] in Serum or Plasma`, unidade `mg/dL`).
+- **Creatinina Sérica:** LOINC `2160-0` (`Creatinine [Mass/volume] in Serum or Plasma`, unidade `mg/dL`).
+
+### 🧓 ATENTO 60+ (Pessoa Idosa)
+- **Escore Total IVCF-20:** LOINC `96763-8` / CodeSystem `IvcfItemCS` (Escore total 0–40 pontos).
+- **Classificação Clínico-Funcional:** CodeSystem `IvcfRiskCS` (`robusto`, `risco-fragilizacao`, `fragil`).
+- **Força de Preensão Palmar (Dinamometria):** LOINC `76251-8` (`Hand grip strength`, unidade `kg`).
+- **Velocidade de Marcha (4 metros):** LOINC `96764-6` (`Gait speed`, unidade `m/s`).
+
+### 🏡 FamilIAr_Ativa (Cuidados Paliativos)
+- **Escore de Dor (ESAS):** LOINC `72514-3` (`Pain severity - 0-10 verbal numeric rating scale`).
+- **Escore de Fadiga (ESAS):** LOINC `54647-3` (`Fatigue severity scale`).
+- **Escore de Dispneia (ESAS):** LOINC `72513-5` (`Dyspnea severity scale`).
+- **Sobrecarga do Cuidador (Zarit):** CodeSystem `ZaritItemCS` / `ZaritClassCS` (`pequena-nenhuma`, `moderada`, `severa`).
+
+### 🌾 AgroSUS (Trabalhador Rural)
+- **Colinesterase Eritrocitária:** LOINC `2099-0` (`Acetylcholinesterase [Enzymatic activity/volume] in Red Blood Cells`, unidade `U/L`).
+- **Colinesterase Plasmática:** LOINC `2100-6` (`Cholinesterase [Enzymatic activity/volume] in Serum or Plasma`, unidade `U/L`).
+- **Variação Percentual Enzimática:** Quantidade percentual em relação ao exame basal (`%`).
+- **Intoxicação por Agrotóxicos:** CID-10 `T60` (`Efeito tóxico de pesticidas`).

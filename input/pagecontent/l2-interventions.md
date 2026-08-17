@@ -1,24 +1,63 @@
 # 1. Intervenções e Recomendações de Saúde
 
-O pathway **CardioRemoto** apoia a atenção contínua e a vigilância ativa de pacientes adultos e idosos portadores de **Diabetes Mellitus (DM)** e **Hipertensão Arterial Sistêmica (HAS)**, com fatores de risco cardiovascular aterosclerótico, no âmbito do **Ambulatório de Telessaúde da Endocrinologia do HULW/UFPB**.
+As intervenções de saúde da **Plataforma mareIA** são estruturadas em conformidade com as diretrizes do **Ministério da Saúde**, **Organização Mundial da Saúde (OMS)** e comitês científicos universitários (UFPB, UFPE, UFPel e FATEC), organizadas em 4 linhas de cuidado integradas.
 
 ---
 
-### Recomendações Clínicas Centrais
+## 1.1 🫀 CardioRemoto (DM / HAS e Risco Cardiovascular)
 
-1. **Triagem Antropométrica e Vital Contínua:**
-   * Aferição padronizada da Pressão Arterial com esfigmomanômetro digital Bluetooth certificado pela ANVISA (2 aferições após 5 min de repouso, registrando a média).
-   * Monitoramento capilar da glicemia e dosagem laboratorial periódica de HbA1c, colesterol total, frações (HDL, LDL), triglicerídeos e creatinina.
+- **População-Alvo:** Adultos e idosos com DM2 e/ou HAS no Ambulatório de Telessaúde do HULW/UFPB.
+- **Evidências:** Diretrizes Brasileiras de Hipertensão Arterial (SBC/SBH) e Sociedade Brasileira de Diabetes (SBD).
 
-2. **Estratificação de Controle e Risco Clínico:**
-   * Classificação em três faixas de controle metabólico/pressórico: **Verde (Controlado)**, **Amarelo (Moderado)** e **Vermelho (Grave)**.
-   * Ajuste de metas clínicas individualizadas (ex: PA < 140/90 ou < 130/80 mmHg para alto risco; HbA1c < 7.0% ou < 7.5–8.0% para idosos frágeis).
+### Recomendações Centrais:
+1. **Triagem Antropométrica e Vital Contínua:** Aferição de PA com manguito calibrado Bluetooth (média de 2 aferições após 5 min de repouso), Frequência Cardíaca e Glicemia Capilar.
+2. **Avaliação Laboratorial Trimestral:** Hemoglobina Glicada (HbA1c), Perfil Lipídico (LDL-c, HDL-c, Triglicerídeos), Creatinina e Taxa de Filtração Glomerular (CKD-EPI).
+3. **Estratificação em 3 Níveis de Controle:**
+   - **Verde (Controlado):** PA < 140/90 mmHg, HbA1c < 7.0%, LDL na meta recomendada.
+   - **Amarelo (Moderado):** PA 140–179/90–109 mmHg ou HbA1c 7.0–8.9% sem descompensação aguda.
+   - **Vermelho (Grave):** PA ≥ 180/110 mmHg, Glicemia < 70 ou > 300 mg/dL, ou lesão de órgão-alvo.
+4. **Periodicidade Diferenciada:** Reavaliação a cada 90 dias (Verde) ou a cada 30 dias (Amarelo/Vermelho), com priorização da fila por dias de atraso.
 
-3. **Vigilância por Sentinelas e Alertas em Tempo Real:**
-   * Detecção precoce de crises hipertensivas (PA ≥ 180/120 mmHg), hipotensão severa (PA < 90/60 mmHg), hiperglicemia aguda (≥ 250 mg/dL com sintomas) ou hipoglicemia (< 70 mg/dL).
-   * Encaminhamento prioritário para atendimento médico imediato em situações de emergência (suspeita de Síndrome Coronariana Aguda ou AVC).
+---
 
-4. **Periodicidade Diferenciada e Priorização de Visitas:**
-   * Reavaliação a cada 90 dias para pacientes controlados (Verde).
-   * Reavaliação mensal (a cada 30 dias) para pacientes moderados ou graves (Amarelo / Vermelho).
-   * Ordenação automática da lista de atendimentos por dias de atraso e gravidade clínica.
+## 1.2 🧓 ATENTO 60+ (Telemonitoramento da Pessoa Idosa na APS)
+
+- **População-Alvo:** Pessoas idosas (>= 60 anos) cadastradas na Atenção Primária à Saúde.
+- **Evidências:** Caderneta de Saúde da Pessoa Idosa (MS) e Diretrizes da SBGG.
+
+### Recomendações Centrais:
+1. **Rastreio Multidimensional pelo IVCF-20:** Aplicação semestral ou anual do Índice de Vulnerabilidade Clínico-Funcional (20 itens cobrindo cognição, humor, mobilidade, comunicação e AVDs).
+2. **Estratificação Clínico-Funcional:**
+   - **Robusto (0 a 6 pontos):** Ações de promoção da saúde e envelhecimento ativo na UBS.
+   - **Em Risco de Fragilização (7 a 14 pontos):** Plano de cuidado preventivo compartilhado e telemonitoramento trimestral.
+   - **Frágil (>= 15 pontos):** Avaliação Geriátrica Ampla (AGA), visita domiciliar prioritária e teleintervenção mensal.
+3. **Prevenção de Quedas e Sarcopenia:** Monitoramento ativo de episódios de quedas nos últimos 12 meses e velocidade de marcha.
+
+---
+
+## 1.3 🏡 FamilIAr_Ativa (Cuidados Paliativos Domiciliares)
+
+- **População-Alvo:** Pacientes em cuidados paliativos domiciliares com doenças crônicas avançadas e seus cuidadores familiares.
+- **Evidências:** Academia Nacional de Cuidados Paliativos (ANCP) e Escala de Edmonton (ESAS).
+
+### Recomendações Centrais:
+1. **Monitoramento Sistemático de Sintomas (ESAS):** Registro semanal de 10 sintomas (Dor, Fadiga, Náusea, Depressão, Ansiedade, Sonolência, Apetite, Bem-estar, Dispneia e Outro) em escala 0 a 10.
+2. **Vigilância da Sobrecarga do Cuidador (Escala de Zarit):** Avaliação periódica do esgotamento físico, emocional e financeiro do cuidador familiar.
+3. **Detecção Antecipatória por IA (XAI):** Algoritmos preditivos explicáveis que identificam tendências de piora antes do agravamento da crise.
+4. **Gatilhos de Alerta Clínico:** Notificação imediata para a equipe de saúde em dor intensa (>= 7/10), dispneia aguda ou exaustão do cuidador.
+
+---
+
+## 1.4 🌾 AgroSUS (Saúde do Trabalhador Rural)
+
+- **População-Alvo:** Agricultores familiares e trabalhadores rurais expostos a defensivos agrícolas.
+- **Evidências:** Norma Regulamentadora n.º 7 (NR-7 / Portaria MTP 672) e Diretrizes de Saúde do Trabalhador (SUS/CEREST).
+
+### Recomendações Centrais:
+1. **Anamnese Ocupacional Padronizada:** Coleta de histórico de produtos utilizados, frequência de pulverização, uso/higienização de EPIs e condições de armazenamento.
+2. **Vigilância Biológica da Colinesterase:**
+   - Dosagem da **Colinesterase Plasmática (Butilcolinesterase)** e **Eritrocitária (Acetilcolinesterase)**.
+   - Comparação obrigatória com a linha de base individual (exame pré-exposicional).
+3. **Gatilhos de Afastamento e Conduta:**
+   - **Depressão Enzimática > 30%:** Afastamento temporário imediato da manipulação de organofosforados/carbamatos, retestagem em 15 dias e notificação no SINAN.
+   - **Atenção (15% a 30% de queda):** Reforço no treinamento de uso de EPIs e redução da jornada de aplicação.

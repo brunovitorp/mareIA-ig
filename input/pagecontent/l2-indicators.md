@@ -1,14 +1,18 @@
-# 7. Indicadores de Programa
+# 7. Indicadores de Programa (Measures)
 
-Os indicadores do **CardioRemoto** monitoram tanto os desfechos clínicos (controle pressórico e metabólico) quanto a eficiência dos processos assistenciais e de interoperabilidade:
+Os indicadores da **Plataforma mareIA** são definidos para avaliar o impacto assistencial, a cobertura populacional e os desfechos em saúde no SUS, formalizados como recursos `Measure` do FHIR R4.
 
 ---
 
-### Tabela de Indicadores
+## 7.1 Matriz de Indicadores por Pathway
 
-| Identificador | Nome do Indicador | Tipo | Numerador | Denominador | Meta |
-|---|---|---|---|---|---|
-| `IND-CARDIO-01` | Taxa de Controle Pressórico na Hipertensão | Resultado | Pacientes com PA sistólica < 140 mmHg e diastólica < 90 mmHg na última aferição | Total de pacientes cadastrados no programa com HAS | ≥ 70% |
-| `IND-CARDIO-02` | Taxa de Controle Glicêmico no Diabetes | Resultado | Pacientes com HbA1c < 7.0% no último exame laboratorial realizado | Total de pacientes cadastrados no programa com DM | ≥ 60% |
-| `IND-CARDIO-03` | Taxa de Resposta a Alertas Críticos (Vermelhos) | Processo | Alertas vermelhos com conduta clínica/contato registrado em até 24h | Total de alertas vermelhos emitidos no período | 100% |
-| `IND-CARDIO-04` | Taxa de Sincronização Offline com Sucesso | Processo | Registros coletados em modo offline sincronizados com o banco central | Total de registros coletados offline | ≥ 98% |
+| Pathway | Código Measure | Nome do Indicador | Numerador / Denominador | Meta SUS |
+|---|---|---|---|---|
+| 🫀 **Cardio** | `MeasureCardioHba1cControlada` | Proporção de pacientes com HbA1c controlada | Pacientes com DM2 e HbA1c < 7.0% / Total de diabéticos monitorados | ≥ 70% |
+| 🫀 **Cardio** | `MeasureCardioPAControlada` | Proporção de pacientes com PA controlada | Pacientes com HAS e PA < 140/90 mmHg / Total de hipertensos | ≥ 75% |
+| 🧓 **ATENTO** | `MeasureAtento60CoberturaIVCF` | Cobertura de rastreamento de fragilidade | Idosos com IVCF-20 preenchido no ano / Total de idosos cadastrados | ≥ 80% |
+| 🧓 **ATENTO** | `MeasureAtento60PlanoCuidadoFragil`| Adesão ao PTS em idosos frágeis | Idosos frágeis com plano de cuidado ativo / Total de frágeis | ≥ 90% |
+| 🏡 **FamilIAr** | `MeasureFamiliarAtivaControleDor` | Taxa de alívio rápido de dor intensa | Episódios de dor ≥7 controlados em 24h / Total de crises de dor | ≥ 85% |
+| 🏡 **FamilIAr** | `MeasureFamiliarAtivaSobrecargaCuidador`| Proporção de cuidadores em sobrecarga severa | Cuidadores com Zarit ≥ 17 / Total de cuidadores acompanhados | < 20% |
+| 🌾 **AgroSUS** | `AgroSUSMeasureAdesaoPeriodicidade`| Adesão ao monitoramento de colinesterase | Trabalhadores com colinesterase nos últimos 6m / Total elegíveis | ≥ 80% |
+| 🌾 **AgroSUS** | `AgroSUSMeasureCoberturaAnamnese`| Cobertura da anamnese ocupacional | Trabalhadores com anamnese aplicada / Total de produtores | ≥ 85% |

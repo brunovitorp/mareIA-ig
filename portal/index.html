@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plataforma mareIA — Portal de Diretrizes Digitais (WHO SMART Guidelines)</title>
+  <meta name="description" content="Hub Unificado de Guias de Implementação FHIR R4 e DAKs da Plataforma mareIA para telemonitoramento inteligente no SUS (CardioRemoto, ATENTO 60+, FamilIAr_Ativa e AgroSUS).">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body>
+
+  <!-- Header & Hero -->
+  <header class="header">
+    <div class="container">
+      <div class="top-bar">
+        <div class="brand">
+          <div class="brand-icon">M</div>
+          <div>
+            <div class="brand-title">Plataforma mareIA</div>
+          </div>
+        </div>
+        <div class="brand-badge">RNP · Redes de Colaboração em Saúde Digital 2025</div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-tag">
+          <span>🌐</span> Padrão WHO SMART Guidelines & HL7 FHIR R4
+        </div>
+        <h1 class="hero-title">Hub Unificado de Diretrizes Digitais e Telemonitoramento</h1>
+        <p class="hero-desc">
+          Ecossistema integrado de Guias de Implementação (FHIR R4) e Kits de Adaptação Digital (DAK L2) para interoperabilidade no SUS, suporte à decisão clínica e telecuidado federado.
+        </p>
+
+        <div class="hero-meta-grid">
+          <div>
+            <div class="meta-item-label">Pathways Clínicos</div>
+            <div class="meta-item-value">4 Linhas de Cuidado</div>
+          </div>
+          <div>
+            <div class="meta-item-label">Padrão Semântico</div>
+            <div class="meta-item-value">FHIR R4 · LOINC · CID-10</div>
+          </div>
+          <div>
+            <div class="meta-item-label">Interoperabilidade</div>
+            <div class="meta-item-value">AGHUX / EBSERH / RNDS</div>
+          </div>
+          <div>
+            <div class="meta-item-label">Metodologia</div>
+            <div class="meta-item-value">WHO SMART L1 → L5</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Pathways Section -->
+    <section class="section" id="pathways">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Linhas de Cuidado Federadas</div>
+          <h2 class="section-title">Guias de Implementação por Especialidade</h2>
+          <p class="section-desc">
+            Cada pathway possui seu próprio DAK de 9 componentes (L2) e recursos computáveis FHIR (L3) validados e versionados independentemente.
+          </p>
+        </div>
+
+        <div class="pathway-grid">
+          <!-- Card 1: CardioRemoto -->
+          <article class="pathway-card" id="card-cardio">
+            <div class="pathway-header">
+              <div class="pathway-icon icon-cardio">🫀</div>
+              <span class="status-badge active">v0.1.0 · Draft</span>
+            </div>
+            <div class="pathway-institution">UFPB / HULW (João Pessoa/PB)</div>
+            <h3 class="pathway-title">CardioRemoto</h3>
+            <p class="pathway-desc">
+              Telemonitoramento ativo de pacientes com Diabetes Mellitus (DM) e Hipertensão Arterial Sistêmica (HAS) com fatores de risco cardiovascular aterosclerótico.
+            </p>
+
+            <div class="pathway-highlights">
+              <div class="highlight-row">
+                <span class="highlight-label">Foco:</span>
+                <span class="highlight-value">DM2 / HAS / Risco CV</span>
+              </div>
+              <div class="highlight-row">
+                <span class="highlight-label">Instrumentos:</span>
+                <span class="highlight-value">IoT (PA, FC, Glicemia) + Labs</span>
+              </div>
+              <div class="highlight-row">
+                <span class="highlight-label">ID Canônico:</span>
+                <span class="highlight-value">br.gov.mareia.cardio</span>
+              </div>
+            </div>
+
+            <div class="pathway-actions">
+              <a href="https://mareia.saude.gov.br/ig/cardio/" class="btn btn-primary" target="_blank" rel="noopener">Acessar Guia</a>
+              <a href="https://github.com/brunovitorp/mareIA-ig" class="btn btn-outline" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+
+          <!-- Card 2: ATENTO 60+ -->
+          <article class="pathway-card" id="card-atento">
+            <div class="pathway-header">
+              <div class="pathway-icon icon-atento">🧓</div>
+              <span class="status-badge active">v0.1.0 · Draft</span>
+            </div>
+            <div class="pathway-institution">UFPE / UFPB (Recife/PB)</div>
+            <h3 class="pathway-title">ATENTO 60+</h3>
+            <p class="pathway-desc">
+              Telemonitoramento ativo e suporte à estratificação da pessoa idosa na Atenção Primária à Saúde (APS) com detecção de vulnerabilidade clínico-funcional.
+            </p>
+
+            <div class="pathway-highlights">
+              <div class="highlight-row">
+                <span class="highlight-label">Foco:</span>
+                <span class="highlight-value">Saúde do Idoso / Fragilidade</span>
+              </div>
+              <div class="highlight-row">
+                <span class="highlight-label">Instrumentos:</span>
+                <span class="highlight-value">IVCF-20 / Sarcopenia / Quedas</span>
+              </div>
+              <div class="highlight-row">
+                <span class="highlight-label">ID Canônico:</span>
+                <span class="highlight-value">br.gov.mareia.atento60</span>
+              </div>
+            </div>
+
+            <div class="pathway-actions">
+              <a href="https://italomacedo.github.io/mareIA-ig/en/" class="btn btn-primary" target="_blank" rel="noopener">Acessar Guia</a>
+              <a href="https://github.com/italomacedo/mareIA-ig" class="btn btn-outline" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+
+          <!-- Card 3: FamilIAr_Ativa -->
+          <article class="pathway-card" id="card-familiar">
+            <div class="pathway-header">
+              <div class="pathway-icon icon-familiar">🏡</div>
+              <span class="status-badge active">v0.1.0 · Draft</span>
+            </div>
+            <div class="pathway-institution">UFPel / CUIDATIVA (Pelotas/RS)</div>
+            <h3 class="pathway-title">FamilIAr_Ativa</h3>
+            <p class="pathway-desc">
+              Telemonitoramento domiciliar em cuidados paliativos com predição de risco por Inteligência Artificial Explicável (XAI) e apoio a cuidadores.
+            </p>
+
+            <div class="pathway-highlights">
+              <div class="highlight-row">
+                <span class="highlight-label">Foco:</span>
+                <span class="highlight-value">Cuidados Paliativos / XAI</span>
+              </div>
+              <div class="highlight-row">
+                <span class="highlight-label">Instrumentos:</span>
+                <span class="highlight-value">ESAS (Sintomas) + Zarit (Sobrecarga)</span>
+              </div>
+              <div class="highlight-row">
+                <span class="highlight-label">ID Canônico:</span>
+                <span class="highlight-value">br.gov.mareia.familiarativa</span>
+              </div>
+            </div>
+
+            <div class="pathway-actions">
+              <a href="https://cesarsperb.github.io/mareIA-ig/en/index.html" class="btn btn-primary" target="_blank" rel="noopener">Acessar Guia</a>
+              <a href="https://github.com/cesarsperb/mareIA-ig" class="btn btn-outline" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+
+          <!-- Card 4: AgroSUS -->
+          <article class="pathway-card" id="card-agrosus">
+            <div class="pathway-header">
+              <div class="pathway-icon icon-agrosus">🌾</div>
+              <span class="status-badge active">v0.1.0 · Draft</span>
+            </div>
+            <div class="pathway-institution">FATEC Ferraz de Vasconcelos</div>
+            <h3 class="pathway-title">AgroSUS</h3>
+            <p class="pathway-desc">
+              Telemonitoramento e apoio à identificação precoce de intoxicações e vigilância biológica por defensivos agrícolas em trabalhadores rurais.
+            </p>
+
+            <div class="pathway-highlights">
+              <div class="highlight-row">
+                <span class="highlight-label">Foco:</span>
+                <span class="highlight-value">Trabalhador Rural / Toxicologia</span>
+              </div>
+              <div class="highlight-row">
+                <span class="highlight-label">Instrumentos:</span>
+                <span class="highlight-value">Colinesterase / NR-7 / EPIs</span>
+              </div>
+              <div class="highlight-row">
+                <span class="highlight-label">ID Canônico:</span>
+                <span class="highlight-value">br.gov.mareia.agrosus</span>
+              </div>
+            </div>
+
+            <div class="pathway-actions">
+              <a href="https://jefersonrl.github.io/AgroSUS-FHIR/" class="btn btn-primary" target="_blank" rel="noopener">Acessar Guia</a>
+              <a href="https://github.com/jefersonrl/AgroSUS-FHIR" class="btn btn-outline" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture & SMART Guidelines Section -->
+    <section class="section" style="background: #ffffff; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Metodologia da OMS</div>
+          <h2 class="section-title">As 5 Camadas WHO SMART Guidelines</h2>
+          <p class="section-desc">
+            Transformação rigorosa de diretrizes clínicas narrativas em especificações computáveis para sistemas de saúde digital.
+          </p>
+        </div>
+
+        <div class="layers-grid">
+          <div class="layer-card">
+            <div class="layer-tag">CAMADA L1</div>
+            <h3 class="layer-title">Narrativa Clínica</h3>
+            <p class="layer-desc">
+              Protocolos clínicos, diretrizes assistenciais baseadas em evidências e critérios de elegibilidade das comissões médicas universitárias.
+            </p>
+          </div>
+
+          <div class="layer-card">
+            <div class="layer-tag">CAMADA L2</div>
+            <h3 class="layer-title">DAK (Digital Adaptation Kit)</h3>
+            <p class="layer-desc">
+              9 componentes estruturados (Intervenções, Personas, Cenários, BPMN, Dicionário, Tabelas DMN, Indicadores, Requisitos e Casos de Teste).
+            </p>
+          </div>
+
+          <div class="layer-card">
+            <div class="layer-tag">CAMADA L3</div>
+            <h3 class="layer-title">FHIR R4 Computável</h3>
+            <p class="layer-desc">
+              Perfis de recursos, formulários estruturados (SDC Questionnaire), orquestrações clínicas (PlanDefinition) e medidas CQF compiladas via SUSHI.
+            </p>
+          </div>
+
+          <div class="layer-card">
+            <div class="layer-tag">CAMADA L4</div>
+            <h3 class="layer-title">Serviços Executáveis</h3>
+            <p class="layer-desc">
+              Motores de regras de negócio, integrações REST FHIR com AGHUX/EBSERH e conectividade com dispositivos IoT médicos.
+            </p>
+          </div>
+
+          <div class="layer-card">
+            <div class="layer-tag">CAMADA L5</div>
+            <h3 class="layer-title">Saúde Dinâmica & IA</h3>
+            <p class="layer-desc">
+              Algoritmos de aprendizado contínuo, predição de descompensação e inteligência artificial explicável (XAI) orientada ao cuidado.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="footer-brand">Plataforma mareIA</div>
+          <p style="margin-top: 4px; font-size: 13px;">Rede de Colaboração em Saúde Digital · RNP 2025</p>
+        </div>
+        <div class="footer-partners">
+          <span>UFPB</span> · <span>UFPE</span> · <span>UFPel</span> · <span>FATEC Ferraz</span> · <span>HULW / EBSERH</span> · <span>SUS Digital</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        Conteúdo sob licença CC-BY-SA-4.0 · Padrões HL7® FHIR® e WHO SMART Guidelines.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

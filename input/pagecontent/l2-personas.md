@@ -1,28 +1,49 @@
 # 2. Personas Genéricas
 
-As personas representam os atores-chave envolvidos no ecossistema do **CardioRemoto** (UFPB / HULW / mareIA):
+O ecossistema **mareIA** mapeia atores e papéis clínicos transversais e específicos para cada linha de cuidado no SUS.
 
 ---
 
-### Personas Clínicas e Assistenciais
+## 2.1 Matriz de Personas da Plataforma
 
-#### 1. Paciente com DM e/ou HAS (`patient-cardio`)
-* **Papel:** Pessoa adulta (≥ 18 anos) ou idosa com diagnóstico de Hipertensão Arterial Sistêmica e/ou Diabetes Mellitus acompanhada no Ambulatório de Telessaúde.
-* **Ações:** Realiza aferições domiciliares ou em visitas agendadas, recebe orientações de autocuidado, participa de teleconsultas e recebe lembretes de visitas/exames.
-* **Dispositivos:** Smartphone com aplicativo mareIA, balança, glicosímetro e esfigmomanômetro Bluetooth.
+```
+                                  ┌────────────────────────────────┐
+                                  │      Personas no SUS           │
+                                  └───────────────┬────────────────┘
+                  ┌───────────────────────────────┼───────────────────────────────┐
+                  ▼                               ▼                               ▼
+       ┌──────────────────────┐        ┌──────────────────────┐        ┌──────────────────────┐
+       │   Usuários / Cuidado │        │  Profissionais APS   │        │ Especialistas/Gestão │
+       ├──────────────────────┤        ├──────────────────────┤        ├──────────────────────┤
+       │ • Paciente Crônico   │        │ • Agente de Saúde/ACS│        │ • Médico Especialista│
+       │ • Pessoa Idosa (60+) │        │ • Técnico de Coleta  │        │ • Equipe Telessaúde  │
+       │ • Paciente Paliativo │        │ • Enfermeiro(a) UBS  │        │ • Nutricionista      │
+       │ • Cuidador Familiar  │        │ • Médico da Família  │        │ • Gestor Municipal   │
+       │ • Trabalhador Rural  │        │ • Técnico Enfermagem │        │ • Pesquisador RNP    │
+       └──────────────────────┘        └──────────────────────┘        └──────────────────────┘
+```
 
-#### 2. Agente de Saúde / Técnico de Coleta (`health-agent`)
-* **Papel:** Profissional responsável pelo acolhimento, cadastro inicial, coleta antropométrica/vital e sincronização de dados no ponto de atendimento.
-* **Ações:** Executa o login seguro (RF001), cadastra novos pacientes (RF002), registra visitas e medições IoT (RF005), visualiza histórico e gráficos (RF006) e gerencia a sincronização offline (RF007).
+---
 
-#### 3. Médica Endocrinologista / Cardiologista de Telessaúde (`physician-specialist`)
-* **Papel:** Médica especialista responsável pela condução clínica, teleconsultas, prescrição e avaliação dos alertas no HULW.
-* **Ações:** Acompanha o dashboard clínico, avalia alertas em tempo real (Vermelho, Laranja, Amarelo), ajusta a conduta farmacológica e define o plano de cuidado individualizado.
+## 2.2 Detalhamento por Pathway
 
-#### 4. Nutricionista (`nutritionist`)
-* **Papel:** Profissional da equipe multiprofissional de apoio ao manejo metabólico.
-* **Ações:** Recebe encaminhamentos para pacientes em alerta amarelo/laranja (dislipidemia grave com triglicerídeos > 1000 mg/dL, perda de peso não intencional ≥ 5% ou obesidade/descontrole glicêmico).
+### 🫀 CardioRemoto (UFPB / HULW)
+1. **Paciente Cardiopata / Diabético (Adulto ou Idoso):** Usuário do SUS com DM2 e/ou HAS acompanhado no ambulatório do HULW. Realiza automonitoramento com IoT ou comparece às visitas periódicas.
+2. **Técnico de Coleta / Agente de Telessaúde:** Profissional que executa a triagem com esfigmomanômetro Bluetooth, glicosímetro e balança digital, registrando no aplicativo móvel.
+3. **Médica Endocrinologista / Cardiologista do HULW:** Responsável pela análise dos alertas, teleconsultorias, ajuste de posologia medicamentosa e emissão de laudos integrados ao AGHUX.
+4. **Nutricionista da Equipe Multiprofissional:** Conduz orientações alimentares para controle glicêmico e lipídico com base na evolução longitudinal.
 
-#### 5. Gestor de Telessaúde e Pesquisador UFPB (`manager-researcher`)
-* **Papel:** Responsável pelo monitoramento dos indicadores de programa, conformidade com a LGPD e governança dos dados.
-* **Ações:** Acompanha taxas de controle pressórico, controle glicêmico, tempo de resposta a alertas e completude de registros.
+### 🧓 ATENTO 60+ (UFPE / UFPB)
+1. **Pessoa Idosa na Comunidade:** Cidadão com 60 anos ou mais acompanhado pela ESF, respondente do IVCF-20.
+2. **Agente Comunitário de Saúde (ACS):** Aplica o questionário IVCF-20 em visita domiciliar via tablet/celular com funcionamento offline.
+3. **Enfermeira da ESF / Médico de Família:** Analisa o escore de fragilidade (Robusto / Risco / Frágil) e elabora o Projeto Terapêutico Singular (PTS).
+
+### 🏡 FamilIAr_Ativa (UFPel / CUIDATIVA)
+1. **Paciente em Cuidados Paliativos Domiciliares:** Pessoa portadora de doença crônica ameaçadora da vida, focada no alívio de sintomas e qualidade de vida.
+2. **Cuidador(a) Familiar Principal:** Parente ou responsável pelo suporte diário, que responde a escala de sobrecarga de Zarit e registra a escala ESAS quando o paciente não puder fazê-lo.
+3. **Equipe Interdisciplinar de Cuidados Paliativos:** Médicos, enfermeiros e psicólogos que recebem notificações de piora de sintomas ou sobrecarga do cuidador.
+
+### 🌾 AgroSUS (FATEC Ferraz)
+1. **Trabalhador Rural / Agricultor Familiar:** Produtor rural exposto a defensivos agrícolas em pequenas e médias propriedades rurais.
+2. **Agente Comunitário de Saúde Rural (ACS Rural):** Realiza a anamnese ocupacional e orienta sobre agendamento de exames periódicos de colinesterase.
+3. **Profissional da UBS / Vigilância em Saúde do Trabalhador:** Avalia laudos laboratoriais, investiga casos suspeitos de intoxicação e notifica agravos no SINAN.
