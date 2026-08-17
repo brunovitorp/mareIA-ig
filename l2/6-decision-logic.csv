@@ -1,0 +1,13 @@
+regra_id,dominio,condicao_entrada,resultado,prazo_acao,conduta_clinica,fonte
+DEC-01,Estratificação de Risco,PA < 140/90 E HbA1c < 7% E LDL < 130 E sem evento recente,Verde (Controlado),90 dias,Manter conduta e monitoramento periódico,Metodologia §7.7.3.4
+DEC-02,Estratificação de Risco,1 a 2 parâmetros fora da meta E sem evento recente,Amarelo (Moderado),30 dias,Teleconsulta para ajuste e avaliação nutricional,Metodologia §7.7.3.4
+DEC-03,Estratificação de Risco,>= 3 parâmetros fora da meta OU evento cardiovascular recente (< 1 ano),Vermelho (Grave),30 dias,Avaliação prioritária médica e ajuste intensivo,Metodologia §7.7.3.4
+ALT-01,Alerta Clínico,PA >= 180/120 mmHg OU PA < 90/60 mmHg,Alerta Vermelho,Imediato,Avaliação médica imediata / emergência,Metodologia §7.7.3.6
+ALT-02,Alerta Clínico,Glicemia Capilar >= 250 mg/dL (c/ sintomas) OU < 70 mg/dL,Alerta Vermelho,Imediato,Conduta imediata para hipo/hiperglicemia aguda,Metodologia §7.7.3.6
+ALT-03,Alerta Clínico,Frequência Cardíaca > 100 bpm OU < 50 bpm,Alerta Vermelho,Imediato,Avaliação médica imediata de arritmia,Metodologia §7.7.3.6
+ALT-04,Alerta Clínico,Dor torácica / déficit neurológico / dispneia aguda,Alerta Vermelho,Imediato,Encaminhamento imediato a emergência (SCA/AVC),Metodologia §7.6.3.5
+ALT-05,Alerta Clínico,Triglicerídeos > 1000 mg/dL,Alerta Laranja,Semanal a quinzenal,Avaliação médica e nutricional (risco pancreatite),Metodologia §7.7.3.6
+ALT-06,Alerta Clínico,Perda de peso não intencional >= 5%,Alerta Laranja,Semanal a quinzenal,Investigação clínica e apoio nutricional,Metodologia §7.7.3.6
+ALT-07,Alerta Clínico,PA fora da meta (não crítico: 140-179/90-119 mmHg),Alerta Amarelo,Quinzenal a trimestral,Teleconsulta para ajuste anti-hipertensivo,Metodologia §7.7.3.6
+ALT-08,Alerta Clínico,LDL >= 190 mg/dL OU HbA1c >= 7%,Alerta Amarelo,Quinzenal a trimestral,Ajuste de estatina/hipoglicemiante e dieta,Metodologia §7.7.3.6
+ALT-09,Alerta Clínico,Todos os parâmetros dentro das metas clínicas,Sem disparo (Verde),Conforme risco,Seguir monitoramento regular,Metodologia §7.7.3.6

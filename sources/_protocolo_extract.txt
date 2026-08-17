@@ -1,0 +1,524 @@
+=== FILE: CardioRemoto-Metodologia-HULW-UFPB.docx ===
+
+7.2.3 Cenário Clínico 3 (CardioRemoto — Universidade Federal da Paraíba/UFPB)
+O Cenário Clínico 3 (CardioRemoto) será desenvolvido no Ambulatório de Telessaúde do Hospital Universitário Lauro Wanderley (HULW), vinculado à Universidade Federal da Paraíba (UFPB), localizado na cidade de João Pessoa/PB. O HULW é hospital de ensino, referência em assistência de média e alta complexidade para o Sistema Único de Saúde (SUS) no estado da Paraíba.
+O Ambulatório de Telessaúde da Endocrinologia do HULW atende pacientes com Diabetes Mellitus (DM) e/ou Hipertensão Arterial Sistêmica (HAS), adultos e idosos com fatores de risco cardiovascular aterosclerótico, encaminhados pela rede básica de saúde ou por outros serviços do próprio HULW. O cenário contempla teleconsultas realizadas pela médica endocrinologista da equipe, com telemonitoramento dos parâmetros clínicos e laboratoriais dos pacientes por meio da plataforma mareIA.
+Os dados dos pacientes são registrados no sistema de gestão hospitalar AGHUX do HULW/UFPB. A integração da plataforma mareIA com o AGHUX (por meio de API FHIR ou protocolo proprietário, a ser definido) permitirá a importação de dados demográficos, comorbidades, medicamentos e histórico de eventos cardiovasculares, minimizando a redigitação e potencializando a interoperabilidade com o SUS Digital.
+7.4 Critérios de Inclusão e Exclusão — CardioRemoto (UFPB/HULW)
+Público 1 — Pacientes (pessoas cuidadas)
+Critérios de inclusão:
+• Usuários do SUS com diagnóstico estabelecido de Diabetes Mellitus e/ou Hipertensão Arterial Sistêmica.
+• Adultos (18 anos ou mais) e idosos com fatores de risco cardiovascular aterosclerótico.
+• Pacientes cadastrados no Ambulatório de Telessaúde da Endocrinologia do HULW/UFPB.
+• Capacidade de fornecer consentimento livre e esclarecido, avaliada no momento da abordagem.
+• Possuir acesso a dispositivo móvel (smartphone) com conectividade à internet ou possuir cuidador/familiar que o auxilie no uso do aplicativo.
+Critérios de exclusão:
+• Pacientes com condições clínicas que impossibilitem o seguimento (neoplasia avançada, doença terminal em cuidados paliativos exclusivos).
+• Ausência de capacidade cognitiva para compreender os procedimentos da pesquisa e utilizar a plataforma, sem cuidador/familiar responsável que possa auxiliá-lo.
+• Mudança de domicílio para fora da área de abrangência durante o período de acompanhamento.
+Público 2 — Profissionais de saúde e equipe administrativa
+Critérios de inclusão:
+• Profissionais de saúde (médicos, enfermeiros, nutricionistas, técnicos) da equipe da Endocrinologia e do Ambulatório de Telessaúde do HULW/UFPB.
+• Gestores e equipe administrativa responsáveis pela operacionalização do serviço de telessaúde.
+• Possuir vínculo ativo com o HULW/UFPB no período da pesquisa.
+Critérios de exclusão:
+• Profissionais em férias, afastamento ou licença no período de coleta de dados.
+7.5.3 Recrutamento dos Participantes — CardioRemoto (UFPB/HULW)
+Público 1 (pacientes)
+Os participantes elegíveis serão identificados a partir da lista de pacientes agendados para teleconsulta no Ambulatório de Telessaúde da Endocrinologia do HULW. A identificação considerará o diagnóstico de Diabetes Mellitus e/ou Hipertensão Arterial Sistêmica, registrado no sistema AGHU.
+O recrutamento ocorrerá por convite, no contexto da teleconsulta agendada com a médica endocrinologista da equipe. A pesquisadora responsável (ou membro da equipe de pesquisadores da UFPB) apresentará os objetivos, procedimentos, riscos e benefícios do estudo. O Termo de Consentimento Livre e Esclarecido (TCLE) será apresentado em formato digital (assinatura eletrônica) ou físico (impresso), conforme preferência do participante, em duas vias. Nenhuma coleta de dados precederá o consentimento.
+Público 2 (profissionais de saúde, gestores e equipe administrativa)
+O recrutamento do Público 2 será conduzido pela equipe de pesquisadores da UFPB responsável pelo cenário CardioRemoto, que abordará diretamente os profissionais de saúde, gestores e membros da equipe administrativa do Ambulatório de Telessaúde da Endocrinologia e do HULW. O convite será realizado com esclarecimento sobre os objetivos, procedimentos, riscos e benefícios do estudo. O TCLE será colhido em formato digital ou físico. Nenhuma coleta de dados precederá o consentimento.
+7.6.3 Instrumentos de Coleta de Dados — CardioRemoto (UFPB/HULW)
+Os instrumentos do cenário CardioRemoto serão aplicados no contexto das teleconsultas e das visitas presenciais ao Ambulatório de Telessaúde da Endocrinologia do HULW, conforme detalhado a seguir. Todos os dados serão registrados diretamente na plataforma mareIA, em conformidade com a LGPD.
+7.6.3.1 Dados cadastrais e demográficos
+Coletados via aplicativo mareIA: nome, data de nascimento (idade calculada automaticamente), cidade, estado, CEP, bairro, cor/raça (conforme categorias oficiais), gênero, diagnóstico prévio de diabetes (sim/não), diagnóstico prévio de hipertensão arterial (sim/não), histórico de evento cardiovascular (infarto, AVC isquêmico, doença arterial periférica — sim/não), uso de anti-hipertensivo (sim/não), uso de estatina (sim/não), tabagismo (sim/não/ex-tabagista) e prática de atividade física (sim/não).
+7.6.3.2 Dados antropométricos coletados por dispositivos IoT
+Peso (balança digital com conectividade Bluetooth, certificada pela ANVISA), altura (estadiômetro), circunferência da cintura (fita métrica). O Índice de Massa Corporal (IMC) e a relação cintura/altura serão calculados automaticamente pela plataforma.
+7.6.3.3 Sinais vitais coletados por dispositivos IoT
+Pressão arterial sistólica e diastólica (esfigmomanômetro digital com conectividade Bluetooth, certificado pela ANVISA), frequência cardíaca (bpm), glicemia capilar (glicosímetro digital com conectividade Bluetooth, certificado pela ANVISA). O protocolo de aferição da pressão arterial segue recomendações padronizadas: paciente sentado, com 5 minutos de repouso prévio, realizadas duas medidas com intervalo de 1 minuto, adotando-se a média das duas aferições.
+7.6.3.4 Exames laboratoriais
+Coleta marcada no dia da teleconsulta, no HULW: glicemia de jejum, hemoglobina glicada (HbA1c), colesterol total, HDL-colesterol, LDL-colesterol, triglicerídeos, creatinina, ureia, TSH, TGO, TGP, CPK, hemograma (hemoglobina, hematrócrito, leucócitos, plaquetas) e relação albumina/creatinina urinária. A taxa de filtração glomerular (TFG) e o não-HDL serão calculados automaticamente pela plataforma (TFG pela equação CKD-EPI; não-HDL = colesterol total − HDL).
+7.6.3.5 Fluxogramas clínicos de triagem integrados à plataforma
+A plataforma mareIA incorpora quatro fluxogramas clínicos de triagem, baseados em diretrizes brasileiras, que orientam o encaminhamento dos pacientes a partir dos dados coletados:
+• Fluxograma de Diabetes: baseado nos níveis de HbA1c, glicemia de jejum e glicemia aleatória (HGT). Classifica o controle glicêmico em faixas (HbA1c &lt; 7% controlado; 7–9% não controlado; ≥9% grave) com metas individualizadas para idosos (&lt; 7,5% ou 8%). Inclui protocolos de urgência para hiperglicemia severa (≥250 mg/dL) e hipoglicemia (&lt; 70 mg/dL).
+• Fluxograma de Hipertensão Arterial Sistêmica: baseado nos valores de pressão arterial, com metas diferenciadas para pacientes em uso de anti-hipertensivo (&lt; 130×80 mmHg) e sem uso (&lt; 120×80 mmHg). Identifica: controlado, não controlado (130×80 a 179×119 mmHg), pré-hipertensão (120×80 a 139×89 mmHg), emergência (&gt; 180×120 mmHg) e hipotensão (&lt; 90×60 mmHg).
+• Fluxograma de Dislipidemia: baseado nos níveis de LDL-colesterol e triglicerídeos. Estratifica em quatro faixas de LDL (&lt; 100, 100–159, 160–189 e ≥190 mg/dL) e dois níveis críticos de triglicerídeos (&gt; 500 e &gt; 1000 mg/dL, este último com risco de pancreatite aguda).
+• Fluxograma de Evento Cardiovascular: de caráter exclusivamente de urgência. Qualquer sinal ou sintoma compatível com síndrome coronariana aguda ou acidente vascular cerebral (dor torácica, déficit neurológico agudo, dispneia, síncope, convulsões) gera encaminhamento imediato ao serviço de urgência/emergência.
+7.6.3.6 Instrumentos de usabilidade e avaliação (Etapa 1)
+Na Etapa 1 (pesquisa formativa e usabilidade), serão aplicados instrumentos de usabilidade para os dois públicos-alvo: questionários padronizados de avalição de usabilidade (ex.: System Usability Scale — SUS), roteiros semiestruturados de entrevista e observação do uso da plataforma. Os instrumentos serão definidos em Anexo específico.
+7.6.3.7 Questionários de viabilidade e satisfação (Etapa 2)
+Na Etapa 2 (pesquisa de viabilidade e aceitabilidade), serão aplicados questionários de satisfação e aceitabilidade para os dois públicos-alvo, além da coleta de indicadores de processo (taxa de cadastro, completude de coleta, taxa de sincronização offline, tempo de resposta a alertas). Os instrumentos serão definidos em Anexo específico.
+7.7.3 Procedimentos para Coleta de Dados — CardioRemoto (UFPB/HULW)
+Os procedimentos do cenário CardioRemoto seguem o Fluxo Clínico Geral da Plataforma mareIA, estruturado nas macrofases descritas a seguir, conforme o fluxograma clínico do CardioRemoto (Figura X — a ser anexada).
+7.7.3.1 Capacitação da equipe
+Antes do início da coleta, a equipe de profissionais de saúde do Ambulatório de Telessaúde da Endocrinologia do HULW receberá capacitação conduzida pela equipe de pesquisadores da UFPB responsável pelo CardioRemoto. O conteúdo da capacitação inclui: uso do aplicativo da plataforma mareIA; aplicação do TCLE; coleta de dados com dispositivos IoT (esfigmomanômetro, glicosímetro, balança, estadiômetro); registro dos dados no aplicativo; interpretação dos fluxogramas de triagem clínica; e manejo dos alertas gerados pela plataforma. Os pacientes (Público 1) receberão capacitação para uso do aplicativo, realizada pela equipe de pesquisadores com apoio da médica endocrinologista.
+7.7.3.2 Macrofase 1 — Elegibilidade e entrada do paciente
+A identificação do participante iniciará com a verificação de paciente do ambulatório de Telessaúde da Endocrinologia do HULW diagnosticado com DM e/ou HAS, adulto ou idoso com fatores de risco cardiovascular aterosclerótico. Na teleconsulta, serão verificados os critérios de elegibilidade e realizada a abordagem para consentimento (TCLE). Após o consentimento, os dados cadastrais serão registrados no sistema AGHU e na plataforma mareIA.
+7.7.3.3 Macrofase 2 — Triagem inicial
+Na primeira teleconsulta, serão coletados os dados cadastrais, demográficos e os exames laboratoriais com resultados disponíveis. Posteriormente, em data previamente agendada, os dados antropométricos (peso, altura, circunferência da cintura) por dispositivos IoT; os sinais vitais (pressão arterial, frequência cardíaca, glicemia capilar) por dispositivos IoT. Todos os dados serão registrados no aplicativo mareIA, que exibirá os dados históricos, as metas individualizadas e o status de controle de cada parâmetro.
+7.7.3.4 Macrofase 3 — Análise de risco e classificação
+A plataforma realizará cálculos automáticos de IMC, classificação de controle (pressão arterial, HbA1c, LDL), variação de peso entre visitas e tendências dos parâmetros ao longo do tempo. A classificação de risco será binária, por fator de risco modificável (HAS, DM, Dislipidemia): CONTROLADO (verde) — pressão arterial &lt; 140/90 mmHg (ou meta individualizada), HbA1c &lt; 7% (ou meta individualizada), LDL na meta, sem evento cardiovascular recente, glicemia capilar estável; ou NÃO CONTROLADO, subdividido em Moderado (amarelo) — 1 a 2 parâmetros fora da meta, sem gravidade e sem evento cardiovascular recente; ou Grave (vermelho) — 3 ou mais parâmetros fora da meta, ou qualquer parâmetro crítico, ou evento cardiovascular recente.
+7.7.3.5 Macrofase 4 — Ciclo de monitoramento
+A coleta de dados será alinhada às visitas hospitalares agendadas para realização de exames laboratoriais, sem periodicidade fixa, dependendo da necessidade individual de cada paciente. O monitoramento será estratificado por risco: pacientes CONTROLADOS serão monitorados a cada 3 a 6 meses, com aferição de pressão arterial, frequência cardíaca, glicemia capilar, dados antropométricos e exame de fundo de olho, com manutenção do tratamento e educação em saúde para DCNT; pacientes NÃO CONTROLADOS serão monitorados de forma quinzenal a mensal, com coleta completa (pressão arterial, frequência cardíaca, glicemia capilar, antropometria, exames laboratoriais) e encaminhamento prioritário para avaliação médica e nutricionista, com ajuste terapêutico.
+Em toda visita, serão coletados itens-sentinela: pressão arterial (sentinela principal para HAS), glicemia capilar (sentinela principal para DM), sintomas de hipoglicemia (tremores, sudorese, confusão, desmaio), variação de peso e circunferência da cintura.
+7.7.3.6 Macrofase 5 — Sistema de alertas
+A plataforma gerará alertas em quatro níveis, com prazos e ações específicas:
+Nível
+Gatilhos
+Ação
+Prazo
+Vermelho
+PA ≥180/120 ou &lt; 90/60 mmHg; Glicemia ≥250 mg/dL com sintomas ou &lt; 70 mg/dL; Sinais de evento CV agudo; FC &gt; 100 ou &lt; 50 bpm
+Avaliação médica imediata / encaminhamento a emergência
+Imediato
+Laranja
+Triglicerídeos &gt; 1000 mg/dL; Perda de peso ≥5% involuntária
+Encaminhamento médico + nutricionista
+Semanal a quinzenal
+Amarelo
+PA fora da meta (não crítico); LDL ≥100 mg/dL; HbA1c ≥7%; Glicemia &gt; 300 mg/dL; Variação de peso &gt; 5%
+Teleconsulta + encaminhamento ao nutricionista
+Quinzenal a trimestral
+Sem disparo
+Todos os parâmetros na meta; FC 50–100 bpm; LDL &lt; 100 mg/dL
+Continuar monitoramento conforme protocolo
+Conforme estratificação
+7.7.3.7 Macrofase 6 — Ações da equipe de saúde
+A equipe de saúde atuará por meio de dashboard unificado com dados clínicos, laboratoriais e de IoT, além dos alertas automáticos. A plataforma gerará lista de prioridades ordenada pela gravidade do descontrole e pelos alertas ativos. Diante de alerta vermelho, a equipe procederá à avaliação médica imediata, com encaminhamento ao serviço de emergência se necessário. Diante de alerta amarelo, a equipe agendará teleconsulta para ajuste terapêutico e encaminhará ao nutricionista. A equipe promoverá, de forma contínua, educação em saúde para DCNT, incluindo orientações sobre tratamento, mudanças de estilo de vida, adesão medicamentosa, alimentação e atividade física.
+7.7.3.8 Macrofase 7 — Integração e ciclo contínuo
+Os dados coletados serão integrados ao sistema AGHUX do HULW/UFPB. A plataforma contará com sistema de notificações push e lembretes automáticos para consultas e exames. O ciclo retorna à Macrofase 4 (monitoramento) na próxima visita do paciente, configurando um ciclo contínuo de telemonitoramento.
+7.8.3 Protocolo Clínico do CardioRemoto
+7.8.3.1 Contexto e justificativa clínica
+O Diabetes Mellitus e a Hipertensão Arterial Sistêmica são as principais doenças crônicas não transmissíveis (DCNT) no Brasil, com alta prevalência e impacto significativo na morbimortalidade cardiovascular. No contexto do HULW/UFPB, o Ambulatório de Telessaúde da Endocrinologia atende uma população de pacientes com esses diagnósticos, frequentemente com controle metabólico e pressórico insatisfatório. O acompanhamento convencional, baseado em consultas presenciais periódicas, apresenta limitações como intervalos longos entre avaliações, ausência de monitoramento contínuo dos parâmetros clínicos e dificuldade de identificação precoce de descompensações.
+O CardioRemoto propõe estruturar o telemonitoramento desses pacientes por meio da plataforma mareIA, integrando dispositivos IoT para aferição de sinais vitais, exames laboratoriais e fluxogramas clínicos de triagem baseados em diretrizes brasileiras, com sistema de alertas estratificado por nível de gravidade. O objetivo é apoiar a equipe de saúde na identificação precoce de descontroles, priorizar o atendimento conforme risco e reduzir desfechos adversos cardiovasculares.
+7.8.3.2 Fluxo clínico
+O protocolo clínico do CardioRemoto estrutura-se em sete macrofases sequenciais, conforme detalhado na seção 7.7.3 deste documento: (1) Elegibilidade e entrada do paciente; (2) Triagem inicial (dados cadastrais, antropométricos, vitais e laboratoriais); (3) Análise de risco e classificação automatizada; (4) Ciclo de monitoramento estratificado por risco; (5) Sistema de alertas em quatro níveis (vermelho, laranja, amarelo, sem disparo); (6) Ações da equipe de saúde (dashboard, lista de prioridades, teleconsulta, educação em saúde); e (7) Integração com o AGHUX e ciclo contínuo.
+7.8.3.3 Classificação de risco e lógica de alertas
+A classificação de risco do CardioRemoto opera por fator de risco modificável, com classificação binária (CONTROLADO vs. NÃO CONTROLADO) e subdivideção do não controlado em Moderado e Grave, conforme detalhado na seção 7.7.3.4. Os alertas são gerados por quatro fluxogramas clínicos de triagem (Diabetes, HAS, Dislipidemia e Evento Cardiovascular) integrados à plataforma, com quatro níveis de gravidade (vermelho, laranja, amarelo e sem disparo), conforme detalhado na seção 7.7.3.5 e na Tabela de Alertas.
+7.8.3.4 Suporte à gestão clínica e papel da equipe
+A classificação de risco e os alertas são transmitidos em tempo real à equipe da Endocrinologia do HULW por meio de dashboard clínico na plataforma mareIA, que disponibiliza: (a) lista dinâmica de prioridades, ordenada automaticamente pela gravidade do descontrole e alertas ativos; (b) visão longitudinal individual dos parâmetros coletados; (c) tendências dos dados ao longo do tempo; (d) integração com dados laboratoriais; e (e) canal de comunicação seguro (chat) entre paciente, equipe de saúde e pesquisadores.
+A médica endocrinologista e a equipe multiprofissional têm autonomia para aceitar, modificar ou recusar as sugestões da plataforma, definindo o plano de cuidado conforme a rotina assistencial do HULW. A equipe de gestão do monitoramento (pesquisadores da UFPB) supervisionará o processamento de dados pela plataforma mareIA, dará suporte à equipe assistencial e será ponte entre a equipe de saúde e os desenvolvedores da plataforma.
+8. Aspectos Éticos — Subprojeto CardioRemoto (UFPB/HULW)
+A pesquisa obedecerá aos preceitos éticos das Resoluções CNS nº 466/2012 e nº 510/2016 e à Lei Geral de Proteção de Dados Pessoais (LGPD — Lei nº 13.709/2018). O estudo só será iniciado após aprovação pelo CEP da UFPE e anuência da UFPB. O consentimento (TCLE) precederá qualquer coleta de dados.
+O módulo de telessaúde e de comunicação por chat da Plataforma mareIA caracteriza interação e coleta de dados em ambiente virtual. Essa etapa observará as Instruções da CONEP para a condução de pesquisas em ambiente virtual. O TCLE contemplará expressamente a comunicação por chat entre o participante e a equipe de saúde, e os registros dessa comunicação serão armazenados de forma criptografada, em conformidade com a LGPD.
+Riscos — Público 1 (pacientes)
+A pesquisa CardioRemoto não trará riscos físicos, pois não haverá procedimentos invasivos além daqueles já realizados na rotina assistencial do Ambulatório de Endocrinologia. Os riscos mínimos incluem: (a) constrangimento ou desconforto emocional ao responder aos instrumentos de avaliação, mitigado pela aplicação por profissional capacitado e garantia de pausa ou interrupção a qualquer momento; (b) risco de quebra de sigilo e de privacidade de dados sensíveis de saúde, mitigado por armazenamento criptografado, controle de acesso por perfil, log de auditoria, transmissão por HTTPS/TLS, minimização de dados e desidentificação no dashboard gestor (art. 12 da LGPD); (c) risco relacionado à identificação de situações clínicas graves (ex.: alerta vermelho, sinais de evento cardiovascular agudo), mitigado pela notificação em tempo real e encaminhamento para conduta da equipe de saúde, sem que a coleta retarde o cuidado necessário.
+Riscos — Público 2 (profissionais de saúde, gestores e equipe administrativa)
+A pesquisa CardioRemoto não trará riscos físicos para o Público 2. Os riscos mínimos incluem sobrecarga ou desconforto pela participação na pesquisa (tempa adicional para uso da plataforma e preenchimento de instrumentos de avaliação). A mitigação incluirá garantia de que a participação não trará prejuízo à função do profissional e possibilidade de desistência a qualquer momento.
+Benefícios — Público 1 (pacientes)
+Benefícios diretos: monitoramento mais frequente e estruturado dos parâmetros clínicos (pressão arterial, glicemia, perfil lipídico); apoio à identificação precoce de descompensações metabólicas e pressóricas, com estratificação de risco e priorização do cuidado; acesso a teleconsulta com endocrinologista, reduzindo a necessidade de deslocamento; acesso a conteúdos de educação em saúde e a canal de comunicação seguro com a equipe; e encaminhamento oportuno ao nutricionista quando necessário.
+Benefícios indiretos: contribuição para a geração de evidências sobre telemonitoramento com IA no SUS, especificamente no contexto de DCNT cardiometabólicas, e para o aprimoramento de uma solução de código aberto interoperável com o SUS Digital.
+Benefícios — Público 2 (profissionais de saúde, gestores e equipe administrativa)
+O dashboard em tempo real permitirá que a equipe acompanhe a evolução dos parâmetros clínicos e laboratoriais dos pacientes entre as consultas, reduzindo a invisibilidade clínica no intervalo interconsultas. A lista de prioridades gerada pela plataforma apoiará a organização da agenda conforme a gravidade do descontrole, otimizando o tempo disponível. Os fluxogramas de triagem integrados à plataforma fornecerão suporte à decisão clínica baseada em diretrizes. O canal de comunicação seguro centralizará a interação com os pacientes, substituindo contatos informais por meio de aplicativos de mensageria.
+Armazenamento dos dados coletados
+Os pesquisadores declaram que os dados coletados (dados demográficos, antropométricos, sinais vitais, exames laboratoriais, respostas a instrumentos e dados de uso da plataforma) ficarão armazenados de forma criptografada na infraestrutura da Plataforma mareIA, com controle de acesso por perfil e registro de auditoria, sob a responsabilidade da pesquisadora principal do cenário CardioRemoto/UFPB, pelo período mínimo de 5 (cinco) anos. O participante poderá solicitar acesso, correção ou exclusão de seus dados a qualquer momento.
+9. Análise e Processamento de Dados — CardioRemoto (UFPB/HULW)
+9.1 Análise quantitativa
+Os dados quantitativos serão analisados por meio de estatística descritiva (frequências, porcentagens, médias, medianas, desvios-padrão e amplitude interquartílica) para caracterização da amostra e dos indicadores de processo. Os indicadores de viabilidade incluirão: taxa de cadastro de participantes, completude de coleta de dados (proporção de campos preenchidos versus esperados), taxa de sincronização offline com sucesso, tempo de resposta da equipe aos alertas gerados pela plataforma e proporção de participantes que completaram o seguimento. Quando pertinente, serão reportados intervalos de confiança de 95% para as proporções-chave.
+9.2 Análise qualitativa
+Os dados qualitativos (roteiros semiestruturados de entrevista e observação do uso da plataforma) serão submetidos à análise temática, conforme proposta por Braun e Clarke (2006), com as seguintes etapas: familiarização com os dados, geração inicial de códigos, busca de temas, revisão dos temas, definição e nomeação dos temas e produção do relatório final. O encerramento da coleta qualitativa seguirá o critério de saturação de informações.
+9.3 Análise de usabilidade e aceitabilidade
+Os escores dos instrumentos de usabilidade (ex.: SUS) serão descritos por meio de estatística descritiva, estratificados por público-alvo (Público 1 e Público 2). Os dados de satisfação e aceitabilidade serão igualmente analisados por estatística descritiva, com identificação de pontos fortes e fragilidades percebidos pelos usuários da plataforma mareIA no contexto do CardioRemoto.
+10. Cronograma — CardioRemoto (UFPB/HULW)
+O cronograma abaixo apresenta as atividades previstas para o cenário CardioRemoto, organizadas em meses. A coleta de dados só será iniciada após a aprovação do projeto pelo CEP.
+Atividades
+Mês 1
+Mês 2
+Mês 3
+Mês 4
+Mês 5
+Mês 6
+Mês 7
+Mês 8
+Submissão e aprovação no CEP
+X
+Capacitação da equipe
+X
+Etapa 1 — Pesquisa formativa e usabilidade
+X
+X
+Ajustes na plataforma pós-Etapa 1
+X
+Etapa 2 — Viabilidade e aceitabilidade (piloto)
+X
+X
+X
+X
+X
+Análise dos dados
+X
+X
+Elaboração de relatórios e divulgação
+X
+11. Orçamento — CardioRemoto (UFPB/HULW)
+O orçamento abaixo discrimina os gastos previstos para a execução do cenário CardioRemoto no âmbito do HULW/UFPB. O financiamento é proveniente do Programa Redes de Colaboração em Saúde Digital 2025 da RNP, já aprovado.
+Item
+Quantidade
+Valor unitário (R$)
+Valor total (R$)
+Esfigmomanômetro digital com Bluetooth (ANVISA)
+Glicosímetro digital com Bluetooth (ANVISA)
+Balança digital com Bluetooth (ANVISA)
+Estadiômetro
+Fita métrica (circunferência da cintura)
+Tablets para coleta de dados
+Impressão de TCLE e formulários
+Material de escritório
+Tratamento estatístico dos dados
+Encadernações e documentação
+TOTAL
+
+
+=== FILE: CardioRemotoDocumentoRequisitosV2.docx ===
+
+Documento de Requisitos
+CardioRemoto – Plataforma Digital para Monitoramento de Pacientes Cardiovasculares do Hospital Universitário
+DRAFT
+João Pessoa, maio de 2026
+Objetivo
+O objetivo deste documento é apresentar a especificação de requisitos funcionais e não funcionais, além de estudo de casos, referentes à aplicação CardioRemoto, parte do ecossistema mare.IA. O documento detalha o propósito e as características da aplicação, as interfaces do sistema, o que o sistema fará, as restrições sob as quais deve operar e como o sistema reagirá a estímulos externos. Deste modo, o documento se destina tanto às partes interessadas quanto aos desenvolvedores da aplicação.
+Notação
+Por convenção, a referência a requisitos é feita através do identificador do requisito, de acordo com a especificação a seguir:
+[identificador do requisito]
+Por convenção, os requisitos são indicados e referenciados por um indicador no formato [RFxxx], para os requisitos funcionais, no formato [RNFxxx], para os não funcionais, e no formato [RNxxx], para as regras de negócio, onde xxx se refere ao número do requisito.
+Para estabelecer a prioridade dos requisitos, foram adotadas as denominações “essencial”, “importante” e “desejável”.
+Essencial é o requisito sem o qual o sistema não entra em funcionamento. Requisitos essenciais são requisitos imprescindíveis, que devem ser implementados impreterivelmente.
+Importante é o requisito sem o qual o sistema entra em funcionamento, mas de forma não satisfatória. Requisitos importantes devem ser implementados, mas, se não forem, o sistema poderá ser implantado e usado mesmo assim.
+Desejável é o requisito que não compromete as funcionalidades básicas do sistema, isto é, o sistema pode funcionar de forma satisfatória sem ele. Requisitos desejáveis podem ser deixados para versões posteriores do sistema, caso não haja tempo hábil para implementá-los na versão que está sendo especificada.
+Os casos de uso são indicados e referenciados por um indicador no formato [UCxx], onde xx se refere ao número do caso de uso. Cada caso de uso terá o seguinte formato:
+Atores: Os modelos de usuário que utilizarão o caso de uso;
+Prioridade: Prioridade de implementação deste caso de uso;
+Pré‐condições: Condições que devem ser satisfeitas antes de o caso de uso ser executado;
+Fluxo de eventos: O passo a passo das ações realizadas para que o caso de uso seja concluído, podendo incluir fluxos de eventos secundários e/ou alternativos;
+Pós‐condições: Condições que devem ser satisfeitas depois de o caso de uso ser finalizado.
+História do Usuário
+O agente de saúde (AS) se loga no sistema, o qual inicialmente mostra a lista de todos os pacientes cadastrados. Três funções são disponibilizadas ao AS na página inicial. O AS pode inserir um novo paciente, incluindo os seguintes dados cadastrais:
+Nome social
+Idade
+Gênero
+Data de nascimento
+Tabagismo (fumante/ex-fumante, não-fumante)
+Nível de atividade física (não praticante, raramente, regularmente, frequentemente)
+Uso de estatina (sim/não)
+Histórico de evento cardiovascular aterosclerótico (Não, IAM, AVC, DAP, outro)
+O AS pode adicionar filtros para ver os usuários cadastrados, sendo quatro opções: todos os usuários (opção padrão ao entrar), risco verde, risco amarelo e risco vermelho. Outra opção disponibilizada inicialmente é ordenar os pacientes por prioridade de visita. Ou seja, primeiramente são mostrados os pacientes que possuem o menor espaço de tempo desde o dia atual até o dia agendado para a próxima visita. Seguindo esse mesmo raciocínio, será dada prioridade maior aos pacientes cujas visitas estão com maior atraso. Um exemplo de ordenação é mostrado na tabela abaixo:
+Paciente
+Informação sobre visita
+Maria Silva
+3 dias atrasado
+José Nunes
+1 dia atrasado
+Tiago Feitosa
+Hoje
+Lucas Cavalcante
+2 dias para visita
+Carla Nascimento
+4 dias para visita
+Luana Torres
+5 dias para visita
+...
+...
+Junto a cada paciente da lista, estão associadas duas funções acionáveis. Primeiro, inserir novo registro de visita. Acionando esta função, são mostradas a informação do perfil do paciente escolhido e um formulário para entrada de dados dividido em três partes, como indicado a seguir:
+Dados antropométricos (qualquer um deles pode ser vazio)
+Peso
+Altura
+IMC (calculado automaticamente)
+Circunferência da cintura
+Medições vitais (qualquer um deles pode ser vazio)
+PA sistólica e diastólica
+Frequência cardíaca
+Glicemia capilar
+Exames laboratoriais
+Glicose jejum
+HbA1c
+Colesterol total
+HDL
+LDL
+Triglicérides
+Creatina
+Ureia
+TSH
+TGO
+TGP
+CPK
+Relação albumina/creatinina
+Cada novo registro é incluído junto com a data/horário do dia em que os dados foram obtidos. Alguns desses campos possuem alertas, caso valores específicos sejam digitados. Tais campos e os valores são:
+PA ≥ 180/120 mmHg ou PA &lt; 90/60 mmHg (alerta vermelho)
+Glicemia ≥ 250 mg/dL ou &lt; 70 mg/dL (alerta vermelho)
+LDL ≥ 190 mg/dL (alerta amarelo)
+Na segunda função associada ao paciente, o agente de saúde pode ver a evolução dos valores dos exames. Ou seja, o histórico desses valores são mostrados tanto em forma de tabela como em um gráfico temporal. A melhor maneira de fazer isso deve ser definida durante o projeto do sistema.
+Requisitos Funcionais
+Módulo de coleta
+4.1 [RF001] Logar no sistema (essencial)
+Permite ao usuário informar um login e uma senha para entrar no sistema.
+4.2 [RF002] Cadastrar paciente (essencial)
+Permite que o usuário insira as informações de um novo paciente, sendo elas: identificação (e.g., CPF), nome, data de nascimento (idade é automaticamente calculada), gênero, status de tabagismo (fumante/ex-fumante/não fumante), nível de atividade física (não praticante, raramente, regularmente, frequentemente), uso de estatina (sim/não), histórico de evento cardiovascular aterosclerótico (não, IAM, AVC, DAP, outro).
+4.3 [RF003] Visualizar/Filtrar pacientes por risco (importante)
+Ver a lista de pacientes filtrada por nível de classificação de risco (todos, verde, amarelo e vermelho).
+4.4 [RF004] Visualizar pacientes por ordem de visitas (essencial)
+Mostrar todos os pacientes ordenados de acordo com a necessidade de uma visita. Pacientes que já estão com visita atrasada devem ter prioridade de acordo com os dias de atraso.
+4.5 [RF005] Inserir nova visita (essencial)
+Permite ao usuário informar um ou mais valores para os atributos associados aos dados antropométricos, medições vitais e exames laboratoriais.
+4.6 [RF006] Visualizar evolução dos dados coletados dos pacientes (essencial)
+Visualizar tabela e gráfico temporal, apresentando como os resultados dos dados obtidos estão evoluindo.
+4.7 [RF007] Sincronizar dados manualmente (importante)
+Permite ao agente de saúde acionar manualmente a sincronização dos dados armazenados localmente com o banco de dados central, disponível apenas quando o dispositivo estiver online.
+4.8 [RF008] Encerrar sessão (importante)
+Permite ao usuário encerrar sua sessão de uso do sistema com segurança.
+Requisitos Não-Funcionais
+[RFN001] Funcionamento offline (importante)
+O sistema deve funcionar mesmo estando offline, armazenando todos os dados coletados em um dataset local e permitindo sua sincronização assim que estiver online (forma passiva) ou por comando do agente de saúde (forma ativa).
+[RFN002] Interface responsiva (desejável)
+O sistema deve apresentar interface responsiva, sem rolagem horizontal, nos seguintes breakpoints: 320–480px (mobile pequeno), 481–767px (mobile grande) e 768–1024px (tablet). Imagens, botões e campos devem redimensionar proporcionalmente; menus devem colapsar abaixo de 768px; textos com mínimo de 14px e áreas de toque com mínimo de 44×44px. Validado via Chrome DevTools e em ao menos um dispositivo físico Android e iOS por categoria.
+[RNF003] Proteção de dados sensíveis
+Os dados dos pacientes devem ser armazenados de forma criptografada, de acordo com a LGPD.
+[RNF004] Controle de acesso
+Somente usuários autenticados podem acessar dados clínicos.
+[RNF005] Auditoria
+O sistema deve registrar data, hora e usuário responsável por cada alteração.
+Regras de Negócio
+[RN001] Classificação de risco do paciente
+O sistema deve classificar automaticamente os pacientes em três níveis de risco:
+Verde (controlado)
+Amarelo (moderado)
+Vermelho (grave)
+A classificação deve seguir as seguintes regras:
+Verde (controlado)
+Paciente com:
+PA &lt; 140/90 mmHg
+HbA1c &lt; 7%
+LDL &lt; 130 mg/dL
+Sem evento cardiovascular aterosclerótico no último ano
+Amarelo (moderado)
+Paciente com:
+1 ou 2 parâmetros fora da meta
+Sem histórico recente de evento cardiovascular
+Vermelho (grave)
+Paciente com:
+3 ou mais parâmetros fora da metaOU
+Evento cardiovascular aterosclerótico ocorrido nos últimos 12 meses
+[RN002] Priorização de visitas
+A prioridade da lista de pacientes deve considerar:
+Pacientes com visitas atrasadas
+Quantidade de dias de atraso
+Proximidade da próxima visita
+Ordem de prioridade:
+Mais dias de atraso → maior prioridade
+Visita no dia atual
+Menor quantidade de dias restantes
+[RN003] Periodicidade das visitas
+A frequência mínima de visitas deve obedecer:
+Pacientes verdes: visita a cada 90 dias
+Pacientes amarelos/vermelhos: visita a cada 30 dias
+A próxima visita deve ser calculada automaticamente após o registro de uma nova visita.
+[RN004] Regras de alerta clínico
+O sistema deve emitir alertas automáticos conforme os seguintes valores:
+Indicador
+Condição
+Tipo
+Pressão arterial
+≥ 180/120 ou &lt; 90/60
+Vermelho
+Glicemia
+≥ 250 mg/dL ou &lt; 70 mg/dL
+Vermelho
+LDL
+≥ 190 mg/dL
+Amarelo
+[RN005] Regras de preenchimento de visitas
+Pelo menos um campo clínico deve ser preenchido para salvar uma visita.
+O IMC deve ser calculado automaticamente sempre que peso e altura forem informados.
+Data e horário do registro devem ser gerados automaticamente pelo sistema.
+Modelagem de Requisitos Funcionais (Casos de Uso)
+Casos de Uso
+Identificador:
+[UC01] Logar no sistema
+Descrição:
+Processo de autorização para acesso ao sistema
+Ator:
+Agente de saúde
+Prioridade:
+Essencial
+Pré-condição:
+Usuário já está cadastrado para uso no sistema
+Pós-condição:
+Usuário acessou o sistema
+Fluxo de Eventos Principal
+Agente de saúde entra com o login
+Agente de saúde entra com a sua senha
+Caso login/senha estejam corretos, o usuário tem acesso às funcionalidades do sistema. Caso contrário uma mensagem de erro é mostrada ao usuário
+Ao entrar, uma tela com todos os pacientes cadastrados é mostrada, assim como o acesso às funcionalidades de cadastrar novo paciente, filtrar pacientes por status de risco e ordenar pacientes por prioridade de visita.
+Fluxo Alternativo – Tentativas repetidas de login inválido
+1. Após 5 tentativas consecutivas com login e/ou senha incorretos, o sistema bloqueia temporariamente o acesso por 15 minutos
+2. O sistema exibe mensagem informando o bloqueio e o tempo restante
+3. Após o período de bloqueio, o fluxo principal é retomado a partir do passo 1
+Identificador:
+[UC02] Cadastrar paciente
+Descrição:
+Agente de saúde inclui informações sobre um novo paciente no sistema
+Ator:
+Agente de saúde
+Prioridade:
+Essencial
+Pré-condição:
+Agente de saúde está logado no sistema
+Pós-condição:
+Os dados do novo usuário foram salvos no dataset local
+Fluxo de Eventos Principal
+Agente de saúde inclui o identificador do usuário
+Sistema identifica que o usuário é novo e habilita os demais campos
+Agente de saúde insere nome social do paciente
+Agente de saúde insere data de nascimento
+Sistema automaticamente calcula idade do paciente
+Agente de saúde insere status de tabagismo (fumante/ex-fumante/não fumante)
+Agente de saúde insere nível de atividade física (não praticante, raramente, regularmente, frequentemente)
+Agente de saúde insere resposta binária (sim/não) para o uso de estatina
+Agente de saúde insere histórico de evento cardiovascular aterosclerótico (não, IAM, AVC, DAP, outro)
+Agente de saúde confirma o registro dos dados no dataset local
+Fluxo Alternativo – Identificador já cadastrado
+1. No passo 2, o sistema identifica que o identificador informado já está associado a um paciente cadastrado
+2. O sistema exibe mensagem informando que o paciente já existe e apresenta a opção de visualizar o cadastro existente
+3. O caso de uso é encerrado sem criação de novo registro
+Identificador:
+[UC03] Visualizar paciente por risco
+Descrição:
+Ver a lista de pacientes filtrada por nível de classificação de risco (estado verde – controlado, amarelo – moderado, e vermelho – grave).
+Ator:
+Agente de saúde
+Prioridade:
+Importante
+Pré-condição:
+Agente de saúde está logado no sistema na tela inicial
+Pós-condição:
+Apenas os pacientes com o status do risco selecionado são mostrados
+Fluxo de Eventos Principal
+Agente de saúde seleciona o filtro disponibilizado (todos, verde, amarelo, vermelho)
+Sistema mostra apenas os pacientes associados ao filtro selecionado. Os filtros são controlados de acordo com as seguintes regras:
+Controlado (verde): parâmetros dentro da meta e sem eventos cardiovasculares no último ano
+Moderado (amarelo): 1 ou 2 parâmetros fora da meta e sem histórico de evento cardiovascular aterosclerótico;
+Grave (vermelho): Três ou mais parâmetros fora da meta ou evento recente (dentro de um ano)
+Observações
+PA &lt; 140/90 está dentro da meta
+HbA1c &lt; 7% está na meta
+LDL &lt; 130 mg/dL está na meta
+Identificador:
+[UC04] Visualizar pacientes por prioridade de visita
+Descrição:
+Mostrar todos os pacientes ordenados de acordo com a necessidade de visita
+Ator:
+Agente de Saúde
+Prioridade:
+Essencial
+Pré-condição:
+Agente de saúde está logado no sistema na tela inicial
+Pós-condição:
+Pacientes listados de acordo com a prioridade de visita
+Fluxo de Eventos Principal
+Agente de saúde seleciona a função de visualizar pacientes por prioridade de visita
+Sistema retorna a lista de pacientes por prioridade de visita, a qual é baseada na data chamada “visita mais recente” e os dias que faltam ou passaram para a nova data calculada
+Observações
+Para os pacientes controlados (verde), as visitas devem ocorrer a cada três meses
+Para pacientes não controlados (amarelo e vermelho), as visitas devem ocorrer a cada mês
+Identificador:
+[UC05] Inserir nova visita
+Descrição:
+Permite ao usuário informar um ou mais dos valores para os atributos associados aos dados antropométricos, medições vitais e exames laboratoriais
+Ator:
+Agente de Saúde
+Prioridade:
+Essencial
+Pré-condição:
+Agente logado no sistema
+Pós-condição:
+Nova visita incluída no banco de dados
+Fluxo de Eventos Principal
+Na lista de pacientes disponíveis, o usuário aciona a opção de inserir nova visita associada ao paciente escolhido
+O sistema retorna um conjunto de campos a serem preenchidos pelo agente de saúde, onde pelo menos um deve ser preenchido. Por questões de organização, os campos de entrada de dados são agrupados em antropométricos, medições vitais e exames laboratoriais
+Valores indicados como anormais (ver observações abaixo) devem gerar alertas
+Após a inclusão de pelo menos um dos dados, o agente de saúde salva localmente os dados e o sistema realiza a sincronização com o banco de dados central caso esteja online
+O atributo “visita mais recente” é atualizado com a data do registro de forma que o algoritmo de ordenação das visitas possa utilizá-lo
+Observações
+PA ≥ 180/120 mmHg ou PA &lt; 90/60 mmHg (alerta vermelho)
+Glicemia ≥ 250 mg/dL ou &lt; 70 mg/dL (alerta vermelho)
+LDL ≥ 190 mg/dL (alerta amarelo)
+Fluxo de Exceção – Nenhum campo preenchido
+1. No passo 4, o agente aciona a confirmação do registro sem ter preenchido nenhum campo
+2. O sistema exibe mensagem informando que ao menos um campo deve ser preenchido para registrar a visita
+3. O sistema mantém o formulário aberto para que o agente realize a entrada de dados
+4. O fluxo retorna ao passo 2
+Identificador:
+[UC06] Visualizar evolução dos dados coletados
+Descrição:
+Exibir tabela e gráfico temporal mostrando como os resultados dos dados obtidos estão evoluindo
+Ator:
+Agente de Saúde
+Prioridade:
+Essencial
+Pré-condição:
+Agente logado no sistema e paciente com função de visualização da evolução dos dados disponível
+Pós-condição:
+Os dados de evolução do paciente selecionado são exibidos em tabela e gráfico temporal.
+Fluxo de Eventos Principal
+Na lista de pacientes disponíveis, o usuário aciona a opção de visualizar a evolução dos dados do paciente
+O sistema retorna uma tabela por data mostrando todos os dados coletados
+Um ou mais desses dados pode ser selecionado e mostrado no gráfico para efeitos de análises associativas. Enquanto o eixo x sempre indica tempo em (hora/dia), o eixo y indica os valores das medidas. Este caso requer uma solução criativa para mostrar dados com diferentes valores no mesmo plano bidimensional. Um exemplo é dado abaixo.
+Exemplo de possível visualização usando a estratégia small multiples alinhados temporalmente
+Identificador:
+[UC07] Sincronizar dados manualmente
+Descrição:
+Permite ao agente de saúde acionar manualmente a sincronização dos dados armazenados localmente com o banco de dados central
+Ator:
+Agente de saúde
+Prioridade:
+Importante
+Pré-condição:
+Agente de saúde está logado no sistema e o dispositivo está conectado à internet
+Pós-condição:
+Todos os dados registrados localmente e ainda não sincronizados foram enviados ao banco de dados central
+Fluxo de Eventos Principal
+1. Agente de saúde aciona a opção de sincronização manual
+2. Sistema verifica a conectividade do dispositivo
+3. Sistema envia os dados locais pendentes de sincronização ao banco de dados central
+Sistema exibe confirmação de sincronização concluída, indicando o número de registros sincronizados e o horário
+Fluxo de Exceção – Dispositivo offline
+1. No passo 2, o sistema identifica que o dispositivo não está conectado à internet
+2. Sistema exibe mensagem informando que a sincronização não pode ser realizada sem conexão
+3. O caso de uso é encerrado sem sincronização
+Fluxo de Exceção – Falha durante a sincronização
+1. No passo 3, ocorre uma falha na comunicação com o banco de dados central
+2. Sistema exibe mensagem informando a falha e indica que os dados permanecem armazenados localmente
+3. O caso de uso é encerrado sem perda de dados
+Aspectos Arquiteturais
+As tecnologias indicadas aqui são meros exemplos para discussão e ilustração.
+
+
+=== FILE: UFPB-sugestoes-projeto-CEP-Valeria.docx ===
+
+7.6.3 CardioRemoto
+Os instrumentos do cenário CardioRemoto serão aplicados no contexto das teleconsultas e das visitas presenciais ao Ambulatório de Telessaúde da Endocrinologia do HULW (e das vistas presenciais ao laboratório do HULW para coleta de exames), conforme detalhado a seguir. Todos os dados serão registrados diretamente na plataforma mareIA, em conformidade com a LGPD.
+7.6.3.1 Dados cadastrais e demográficos
+Coletados via aplicativo mareIA: nome, data de nascimento (idade calculada automaticamente), cidade, estado, CEP, bairro, cor/raça (conforme categorias oficiais), gênero, diagnóstico prévio de diabetes (sim/não), diagnóstico prévio de hipertensão arterial (sim/não), histórico de evento cardiovascular (infarto, AVC isquêmico, doença arterial periférica — sim/não), uso de anti-hipertensivo (sim/não), uso de estatina (sim/não), tabagismo (sim/não/ex-tabagista) e prática de atividade física (sim/não).
+7.6.3.2 Dados antropométricos coletados por dispositivos IoT
+Peso (balança digital com conectividade Bluetooth, certificada pela ANVISA), altura (estadiômetro), circunferência da cintura (fita métrica). O Índice de Massa Corporal (IMC) e a relação cintura/altura serão calculados automaticamente pela plataforma.
+7.6.3.3 Sinais vitais coletados por dispositivos IoT
+Pressão arterial sistólica e diastólica (esfigmomanômetro digital com conectividade Bluetooth, certificado pela ANVISA), frequência cardíaca (bpm), glicemia capilar (glicosímetro digital com conectividade Bluetooth, certificado pela ANVISA). O protocolo de aferição da pressão arterial segue recomendações padronizadas: paciente sentado, com 5 minutos de repouso prévio, realizadas duas medidas com intervalo de 1 minuto, adotando-se a média das duas aferições.
+7.6.3.4 Exames laboratoriais
+Coleta marcada no dia da teleconsulta (obs: a consulta não tem como ser no mesmo dia dos exames, pois é preciso dos resultados dos exames para o paciente ser avaliado em consulta). A coleta de dados (preenchimento inicial da plataforma com dados clínicos e medidas antropométricas dos pacientes) ocorrerá no mesmo dia em que o paciente comparecer ao HULW para coleta dos seguintes exames: glicemia de jejum, hemoglobina glicada (HbA1c), colesterol total, HDL-colesterol, LDL-colesterol, triglicerídeos, creatinina, ureia, TSH, TGO, TGP, CPK, hemograma (hemoglobina, hematrócrito, leucócitos, plaquetas) e relação albumina/creatinina urinária. A taxa de filtração glomerular (TFG) e o não-HDL serão calculados automaticamente pela plataforma (TFG pela equação CKD-EPI; não-HDL = colesterol total − HDL).
+SUGESTÃO DE FLUXO PARA A PESQUISA:
+Chamamento de pacientes com diabetes e/ou HAS para a pesquisa através de cartazes colados próximo ao setor de marcação de consultas e no Serviço de Endocrinologia, informando os pacientes dos benefícios da realização da pesquisa (facilidade para realização dos exames laboratoriais listados na pesquisa e acompanhamento com médica endocrinologista em teleconsulta durante a pesquisa – ver a questão dos agendamentos de teleconsulta para priorizarem os pacientes da pesquisa). Deixando número de telefone para quem estiver interessado entrar em contato.
+O paciente interessado entrará em contato e será agendado a coleta de exames no HULW (dúvida: Como será acertado com o laboratório o fluxo desses paciente?). Os exames a serem realizados são o da lista da pesquisa.
+No dia em que o paciente for fazer os exames, será preenchido dados de história clínica (idade, gênero, tabagismo  etc) e dados antropométricos (peso, altura e circunferência da cintura) no aplicativo. Em um segundo tempo, assim que os exames estiverem prontos (tem que ver com o laboratório o prazo, mas geralmente esses exames ficam prontos em até 72h), os dados de exames laboratoriais do respectivo paciente serão preenchidos. Assim, se emitirá o alerta no aplicativo quanto a prioridade de agendamento de consulta, sendo a teleconsulta agendada conforme a orientação do aplicativo.
+Teleconsulta realizada, ajustes clínicos necessários realizados e agendamento de nova data de exames para reavaliação.
+Na data em que os exames forem agendados para reavaliação: a servidora do HULW, repetirá os passos indicados no item 3 para o mesmo paciente (ver essa questão de histórico de preenchimento de dados dos pacientes na plataforma para seguimento) e a nova teleconsulta será agendada conforme orientação do aplicativo. E assim continua-se o ciclo de telemonitoramento contínuo do paciente.
+7.6.3.5 Fluxogramas clínicos de triagem integrados à plataforma
+A plataforma mareIA incorpora quatro fluxogramas clínicos de triagem, baseados em diretrizes brasileiras e internacionais, que orientam o encaminhamento dos pacientes a partir dos dados coletados:
+• Fluxograma de Diabetes: baseado nos níveis de HbA1c, glicemia de jejum e glicemia aleatória (HGT). Classifica o controle glicêmico em faixas (HbA1c &lt; 7% controlado; 7–9% não controlado; ≥9% grave) com metas individualizadas para idosos (&lt; 7,5% ou 8%). Inclui protocolos de urgência para hiperglicemia severa (≥250 mg/dL) com sintomas associados e hipoglicemia (&lt; 70 mg/dL).
+• Fluxograma de Hipertensão Arterial Sistêmica: baseado nos valores de pressão arterial, com metas diferenciadas para pacientes em uso de anti-hipertensivo (&lt; 130×80 mmHg) e sem uso (&lt; 120×80 mmHg). Identifica: controlado, não controlado (130×80 a 179×119 mmHg), pré-hipertensão (120×80 a 139×89 mmHg), emergência (&gt; 180×120 mmHg) e hipotensão (&lt; 90×60 mmHg).
+• Fluxograma de Dislipidemia: baseado nos níveis de LDL-colesterol e triglicerídeos. Estratifica em quatro faixas de LDL (&lt; 100, 100–159, 160–189 e ≥190 mg/dL) e dois níveis críticos de triglicerídeos (&gt; 500 e &gt; 1000 mg/dL, este último com risco de pancreatite aguda).
+• Fluxograma de Evento Cardiovascular: de caráter exclusivamente de urgência. Qualquer sinal ou sintoma compatível com síndrome coronariana aguda ou acidente vascular cerebral (dor torácica, déficit neurológico agudo, dispneia, síncope, convulsões) gera encaminhamento imediato ao serviço de urgência/emergência.
+7.6.3.6 Instrumentos de usabilidade e avaliação (Etapa 1)
+Na Etapa 1 (pesquisa formativa e usabilidade), serão aplicados instrumentos de usabilidade para os dois públicos-alvo: questionários padronizados de avalição de usabilidade (ex.: System Usability Scale — SUS), roteiros semiestruturados de entrevista e observação do uso da plataforma. Os instrumentos serão definidos em Anexo específico.
+7.6.3.7 Questionários de viabilidade e satisfação (Etapa 2)
+Na Etapa 2 (pesquisa de viabilidade e aceitabilidade), serão aplicados questionários de satisfação e aceitabilidade para os dois públicos-alvo, além da coleta de indicadores de processo (taxa de cadastro, completude de coleta, taxa de sincronização offline, tempo de resposta a alertas). Os instrumentos serão definidos em Anexo específico.
+

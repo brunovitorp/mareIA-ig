@@ -1,0 +1,184 @@
+# Factos normalizados extraídos do Protocolo Clínico CardioRemoto (UFPB / HULW)
+# Metodologia WHO SMART Guidelines — Camada L1 -> L2
+
+pathway:
+  id: CardioRemoto
+  title: "Telemonitoramento de Pacientes com Diabetes Mellitus e Hipertensão Arterial Sistêmica"
+  target_population: "Adultos (>= 18 anos) e idosos com diagnóstico de DM e/ou HAS e fatores de risco cardiovascular aterosclerótico"
+  setting: "Ambulatório de Telessaúde da Endocrinologia do Hospital Universitário Lauro Wanderley (HULW/UFPB), João Pessoa/PB"
+  version: "0.1.0"
+  source: "sources/CardioRemoto/CardioRemoto-Metodologia-HULW-UFPB.docx e sources/CardioRemoto/CardioRemotoDocumentoRequisitosV2.docx"
+
+macrofases:
+  - id: M1
+    name: "Elegibilidade e Entrada do Paciente"
+    source: "Metodologia §7.7.3.2 / Requisitos RF001, RF002"
+    description: "Identificação de pacientes no ambulatório do HULW com DM/HAS, aplicação do TCLE e cadastro no sistema mareIA/AGHUX."
+  - id: M2
+    name: "Triagem Inicial e Coleta"
+    source: "Metodologia §7.7.3.3 / Requisitos RF005"
+    description: "Coleta de dados antropométricos e vitais por dispositivos IoT certificados ANVISA e envio para realização de exames laboratoriais."
+  - id: M3
+    name: "Análise de Risco e Classificação Automatizada"
+    source: "Metodologia §7.7.3.4 / Requisitos RN001"
+    description: "Classificação em Verde (Controlado), Amarelo (Moderado) ou Vermelho (Grave)."
+  - id: M4
+    name: "Ciclo de Monitoramento Estratificado"
+    source: "Metodologia §7.7.3.5 / Requisitos RN002, RN003"
+    description: "Visitas periódicas a cada 90 dias (Verde) ou 30 dias (Amarelo/Vermelho), com priorização da agenda por dias de atraso."
+  - id: M5
+    name: "Sistema de Alertas"
+    source: "Metodologia §7.7.3.6 / Requisitos RN004"
+    description: "Geração de alertas em 4 níveis (Vermelho - Imediato, Laranja - Semanal/Quinzenal, Amarelo - Quinzenal/Trimestral, Sem disparo)."
+  - id: M6
+    name: "Ações da Equipe de Saúde"
+    source: "Metodologia §7.7.3.7"
+    description: "Teleconsulta com endocrinologista/cardiologista, avaliação nutricional, suporte por chat e educação em saúde para DCNT."
+  - id: M7
+    name: "Integração Hospitalar e Ciclo Contínuo"
+    source: "Metodologia §7.7.3.8"
+    description: "Sincronização bidirecional com AGHUX (EBSERH) e retorno ao ciclo de monitoramento."
+
+actors:
+  - id: patient-cardio
+    name: "Paciente com DM/HAS"
+    role: "Pessoa cuidada acompanhada pelo Ambulatório de Telessaúde"
+    source: "Metodologia §7.4"
+  - id: health-agent
+    name: "Agente de Saúde / Técnico de Coleta"
+    role: "Profissional responsável pelo cadastro, coleta de vitais IoT e registro de visitas"
+    source: "Requisitos §4"
+  - id: physician-specialist
+    name: "Médica Endocrinologista / Equipe de Telessaúde"
+    role: "Profissional responsável pelas teleconsultas, ajuste terapêutico e condução clínica dos alertas"
+    source: "Metodologia §7.2.3"
+  - id: nutritionist
+    name: "Nutricionista"
+    role: "Profissional de apoio na orientação alimentar, perda de peso e controle lipídico/glicêmico"
+    source: "Metodologia §7.7.3.7"
+  - id: manager-researcher
+    name: "Gestor do Serviço / Pesquisador UFPB"
+    role: "Gestão do programa, acompanhamento de indicadores e suporte à plataforma"
+    source: "Metodologia §7.4"
+
+data_elements:
+  - id: systolic-bp
+    name: "Pressão Arterial Sistólica"
+    loinc: "8480-6"
+    unit: "mmHg"
+    type: "quantity"
+    source: "Metodologia §7.6.3.3"
+  - id: diastolic-bp
+    name: "Pressão Arterial Diastólica"
+    loinc: "8462-4"
+    unit: "mmHg"
+    type: "quantity"
+    source: "Metodologia §7.6.3.3"
+  - id: heart-rate
+    name: "Frequência Cardíaca"
+    loinc: "8867-4"
+    unit: "bpm"
+    type: "quantity"
+    source: "Metodologia §7.6.3.3"
+  - id: capillary-glucose
+    name: "Glicemia Capilar"
+    loinc: "14743-9"
+    unit: "mg/dL"
+    type: "quantity"
+    source: "Metodologia §7.6.3.3"
+  - id: fasting-glucose
+    name: "Glicemia de Jejum"
+    loinc: "1558-6"
+    unit: "mg/dL"
+    type: "quantity"
+    source: "Metodologia §7.6.3.4"
+  - id: hba1c
+    name: "Hemoglobina Glicada (HbA1c)"
+    loinc: "4548-4"
+    unit: "%"
+    type: "quantity"
+    source: "Metodologia §7.6.3.4"
+  - id: ldl-cholesterol
+    name: "Colesterol LDL"
+    loinc: "13457-7"
+    unit: "mg/dL"
+    type: "quantity"
+    source: "Metodologia §7.6.3.4"
+  - id: hdl-cholesterol
+    name: "Colesterol HDL"
+    loinc: "2085-9"
+    unit: "mg/dL"
+    type: "quantity"
+    source: "Metodologia §7.6.3.4"
+  - id: triglycerides
+    name: "Triglicerídeos"
+    loinc: "2571-8"
+    unit: "mg/dL"
+    type: "quantity"
+    source: "Metodologia §7.6.3.4"
+  - id: serum-creatinine
+    name: "Creatinina Sérica"
+    loinc: "2160-0"
+    unit: "mg/dL"
+    type: "quantity"
+    source: "Metodologia §7.6.3.4"
+  - id: body-weight
+    name: "Peso Corporal"
+    loinc: "29463-7"
+    unit: "kg"
+    type: "quantity"
+    source: "Metodologia §7.6.3.2"
+  - id: body-height
+    name: "Altura"
+    loinc: "8302-2"
+    unit: "cm"
+    type: "quantity"
+    source: "Metodologia §7.6.3.2"
+  - id: bmi
+    name: "Índice de Massa Corporal (IMC)"
+    loinc: "39156-5"
+    unit: "kg/m2"
+    type: "quantity"
+    source: "Metodologia §7.6.3.2"
+  - id: waist-circumference
+    name: "Circunferência da Cintura"
+    loinc: "8280-0"
+    unit: "cm"
+    type: "quantity"
+    source: "Metodologia §7.6.3.2"
+
+decision_rules:
+  risk_classification:
+    - classification: "Verde (Controlado)"
+      criteria: "PA < 140/90 mmHg E HbA1c < 7% E LDL < 130 mg/dL E sem evento cardiovascular no último ano"
+      action: "Manutenção do tratamento; monitoramento a cada 90 dias"
+    - classification: "Amarelo (Moderado)"
+      criteria: "1 ou 2 parâmetros fora da meta E sem evento cardiovascular recente"
+      action: "Teleconsulta de ajuste; encaminhamento a nutricionista; monitoramento a cada 30 dias"
+    - classification: "Vermelho (Grave)"
+      criteria: ">= 3 parâmetros fora da meta OU evento cardiovascular nos últimos 12 meses"
+      action: "Avaliação médica prioritária; ajuste terapêutico intensivo; monitoramento a cada 30 dias"
+  alert_triggers:
+    - level: "Vermelho (Imediato)"
+      criteria: "PA >= 180/120 mmHg OU PA < 90/60 mmHg OU Glicemia >= 250 mg/dL com sintomas OU Glicemia < 70 mg/dL OU Sinais de SCA/AVC OU FC > 100 ou < 50 bpm"
+      action: "Avaliação médica imediata / encaminhamento para serviço de emergência"
+    - level: "Laranja (Semanal a Quinzenal)"
+      criteria: "Triglicerídeos > 1000 mg/dL OU Perda de peso involuntária >= 5%"
+      action: "Encaminhamento médico + nutricionista"
+    - level: "Amarelo (Quinzenal a Trimestral)"
+      criteria: "PA fora da meta não crítica OU LDL >= 190 mg/dL OU HbA1c >= 7% OU Glicemia > 300 mg/dL"
+      action: "Teleconsulta agendada + encaminhamento a nutricionista"
+
+indicators:
+  - id: IND-CARDIO-01
+    name: "Proporção de pacientes com PA controlada"
+    numerator: "Pacientes com PA sistólica < 140 mmHg e diastólica < 90 mmHg na última aferição"
+    denominator: "Total de pacientes cadastrados no programa com HAS"
+  - id: IND-CARDIO-02
+    name: "Proporção de pacientes com HbA1c controlada"
+    numerator: "Pacientes com HbA1c < 7.0% no último exame laboratorial"
+    denominator: "Total de pacientes cadastrados no programa com DM"
+  - id: IND-CARDIO-03
+    name: "Taxa de sincronização offline com sucesso"
+    numerator: "Total de registros coletados offline sincronizados com o banco central"
+    denominator: "Total de registros gerados offline"

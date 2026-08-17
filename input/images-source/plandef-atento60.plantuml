@@ -1,0 +1,49 @@
+@startuml
+title PlanDefinition — Atento60RiskStratification
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+
+start
+:Aplicar IVCF-20 e coletar sinais vitais (IoT);
+note right
+  Ação 1 — definitionCanonical →
+  Questionnaire atento60-ivcf20
+end note
+
+:Calcular escore IVCF-20;
+note right
+  library → Atento60Ivcf20Logic (CQL)
+  tetos: AVD-I q3–q5=4; q14=2; q20=4
+end note
+
+switch (Ação 2 — Faixa de risco (escore))
+case ( <= 6 )
+  :Robusto (baixo risco);
+case ( 7–14 )
+  :Risco de fragilização (médio);
+case ( >= 15 )
+  :Frágil (alto risco);
+endswitch
+
+:Ação 3 — Definir periodicidade;
+note right
+  Frágil → 3 meses
+  Médio → 2 meses
+  Robusto → 1 mês
+  (REVISAR ADR-0005)
+end note
+
+:Ação 4 — Avaliar gatilhos de alerta;
+note right
+  queda; internação <6m; IoT crítico (PA/FC/SpO2);
+  perda de peso; IMC<22; humor; autopercepção
+end note
+
+if (Alerta crítico?) then (sim)
+  :Notificar equipes (tempo real);
+  :Antecipar agendamento / aumentar frequência;
+else (não)
+endif
+:Suporte à decisão / plano de cuidado;
+stop
+@enduml

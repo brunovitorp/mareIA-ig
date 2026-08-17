@@ -1,0 +1,21 @@
+@startuml
+title Atores (personas) — ATENTO 60+
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam actorStyle awesome
+
+actor "Pessoa idosa\n(pessoa cuidada)" as P
+actor "Agente Comunitário de Saúde\n(Agente de Coleta)" as ACS
+actor "Equipe de Gestão\ndo Cuidado (ESF)" as EC
+actor "Equipe de Gestão\ndo Monitoramento" as EM
+actor "Gestor da\nunidade de saúde" as G
+
+rectangle "Plataforma mareIA — ATENTO 60+\nM1 Coleta/IA · M2 Telessaúde · M3 Educação" as SYS
+
+P -- SYS
+ACS -- SYS
+EC -- SYS
+EM -- SYS
+G -- SYS
+@enduml

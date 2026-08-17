@@ -1,0 +1,28 @@
+@startuml
+title Cenário ponta a ponta — ATENTO 60+
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+
+actor "Pessoa idosa" as P
+participant "ACS (app)" as ACS
+participant "Plataforma mareIA\n(IA)" as SYS
+participant "Equipe de Gestão\ndo Cuidado" as EC
+participant "Equipe de\nMonitoramento" as EM
+
+ACS -> SYS: Cadastrar paciente (TCLE)
+ACS -> P: Aplicar IVCF-20
+ACS -> SYS: Enviar respostas + sinais vitais (IoT)
+SYS -> SYS: Calcular escore, baseline\ne classificar risco
+alt Dados alterados / gatilho de alerta
+  SYS -> EC: Alerta + notificação (tempo real)
+  SYS -> EM: Encaminhar informação relevante
+end
+EC -> EC: Priorizar e definir conduta
+EC -> P: Plano de cuidado / orientação (telessaúde)
+loop Sentinel loop (periodicidade por risco)
+  ACS -> SYS: Coleta periódica
+  SYS -> SYS: Reanálise + reclassificação
+  SYS -> EC: Atualização / novos alertas
+end
+EM -> EC: Supervisão e apoio clínico
+@enduml

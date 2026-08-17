@@ -1,0 +1,45 @@
+@startuml
+title Fluxo Clínico ATENTO 60+ — 4 macrofases
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+
+|Pré-Intervenção|
+start
+:Identificar pessoa idosa elegível
+(Equipe de Gestão do Cuidado);
+if (Elegível? (>=60 anos, cadastro USF)) then (não)
+  :Não incluído;
+  stop
+else (sim)
+endif
+:Registrar TCLE;
+:Cadastrar na plataforma
+(integração e-SUS APS/Território);
+
+|Intervenção — 1ª etapa (Triagem / Baseline)|
+:Aplicar IVCF-20;
+:Coletar sinais vitais por IoT
+(PA, FC, SpO2, peso, IMC, temperatura);
+:Processar por IA — escore, baseline
+e classificação de risco;
+switch (Faixa de risco IVCF-20)
+case (Robusto 0–6)
+case (Risco fragilização 7–14)
+case (Frágil >=15)
+endswitch
+
+|Pós-Intervenção (Resposta clínica)|
+:Gerar e classificar alertas;
+:Notificar equipes (tempo real);
+:Suporte à decisão — prioridades,
+agendamento e plano de cuidado;
+
+|Intervenção — 2ª etapa (Sentinel loop)|
+repeat
+  :Coleta periódica (frequência por risco);
+  :Reanálise por IA + reclassificação;
+  :Atualizar monitoramento e alertas;
+repeat while (Continua acompanhamento?) is (sim)
+->não;
+stop
+@enduml

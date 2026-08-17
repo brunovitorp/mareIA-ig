@@ -1,0 +1,38 @@
+id,rotulo_pt_br,tipo,valores_unidade,codigo_padrao,obrigatorio,fonte
+patient_name,Nome Completo,string,,Local,Sim,Metodologia §7.6.3.1
+patient_social_name,Nome Social,string,,Local,Não,Requisitos §3
+patient_birthdate,Data de Nascimento,date,AAAA-MM-DD,Local,Sim,Metodologia §7.6.3.1
+patient_gender,Gênero,code,masculino | feminino | outro,Local,Sim,Metodologia §7.6.3.1
+patient_race,Cor/Raça,code,branca | preta | parda | amarela | indigena,Local,Sim,Metodologia §7.6.3.1
+dx_dm,Diagnóstico de Diabetes Mellitus,boolean,true | false,CID-10:E11,Sim,Metodologia §7.6.3.1
+dx_has,Diagnóstico de Hipertensão Arterial,boolean,true | false,CID-10:I10,Sim,Metodologia §7.6.3.1
+hx_cv_event,Histórico de Evento Cardiovascular,code,nenhum | iam | avc | dap | outro,Local,Sim,Metodologia §7.6.3.1
+use_statin,Uso de Estatina,boolean,true | false,Local,Sim,Metodologia §7.6.3.1
+use_antihypertensive,Uso de Anti-hipertensivo,boolean,true | false,Local,Sim,Metodologia §7.6.3.1
+smoking_status,Status de Tabagismo,code,nao-fumante | ex-fumante | fumante,Local,Sim,Metodologia §7.6.3.1
+physical_activity,Nível de Atividade Física,code,nao-praticante | raramente | regularmente | frequentemente,Local,Sim,Metodologia §7.6.3.1
+body_weight,Peso Corporal,quantity,kg,LOINC:29463-7,Não,Metodologia §7.6.3.2
+body_height,Altura,quantity,cm,LOINC:8302-2,Não,Metodologia §7.6.3.2
+bmi,Índice de Massa Corporal (IMC),quantity,kg/m2,LOINC:39156-5,Não,Metodologia §7.6.3.2
+waist_circ,Circunferência da Cintura,quantity,cm,LOINC:8280-0,Não,Metodologia §7.6.3.2
+sbp,Pressão Arterial Sistólica,quantity,mmHg,LOINC:8480-6,Não,Metodologia §7.6.3.3
+dbp,Pressão Arterial Diastólica,quantity,mmHg,LOINC:8462-4,Não,Metodologia §7.6.3.3
+heart_rate,Frequência Cardíaca,quantity,bpm,LOINC:8867-4,Não,Metodologia §7.6.3.3
+capillary_glucose,Glicemia Capilar,quantity,mg/dL,LOINC:14743-9,Não,Metodologia §7.6.3.3
+fasting_glucose,Glicemia de Jejum,quantity,mg/dL,LOINC:1558-6,Não,Metodologia §7.6.3.4
+hba1c,Hemoglobina Glicada (HbA1c),quantity,%,LOINC:4548-4,Não,Metodologia §7.6.3.4
+total_cholesterol,Colesterol Total,quantity,mg/dL,LOINC:2093-3,Não,Metodologia §7.6.3.4
+hdl_cholesterol,Colesterol HDL,quantity,mg/dL,LOINC:2085-9,Não,Metodologia §7.6.3.4
+ldl_cholesterol,Colesterol LDL,quantity,mg/dL,LOINC:13457-7,Não,Metodologia §7.6.3.4
+triglycerides,Triglicerídeos,quantity,mg/dL,LOINC:2571-8,Não,Metodologia §7.6.3.4
+serum_creatinine,Creatinina Sérica,quantity,mg/dL,LOINC:2160-0,Não,Metodologia §7.6.3.4
+serum_urea,Ureia Sérica,quantity,mg/dL,LOINC:3094-0,Não,Metodologia §7.6.3.4
+tsh,TSH,quantity,uIU/mL,LOINC:3016-3,Não,Metodologia §7.6.3.4
+tgo,TGO / AST,quantity,U/L,LOINC:1920-8,Não,Metodologia §7.6.3.4
+tgp,TGP / ALT,quantity,U/L,LOINC:1742-6,Não,Metodologia §7.6.3.4
+cpk,CPK,quantity,U/L,LOINC:2157-6,Não,Metodologia §7.6.3.4
+urine_alb_creat_ratio,Relação Albumina/Creatinina Urinária,quantity,mg/g,LOINC:14958-3,Não,Metodologia §7.6.3.4
+egfr_ckd_epi,Taxa de Filtração Glomerular (CKD-EPI),quantity,mL/min/1.73m2,LOINC:33914-3,Não,Metodologia §7.6.3.4
+non_hdl_cholesterol,Colesterol Não-HDL,quantity,mg/dL,LOINC:43396-1,Não,Metodologia §7.6.3.4
+risk_classification,Classificação de Controle/Risco,code,verde | amarelo | vermelho,Local,Sim,Metodologia §7.7.3.4
+alert_level,Nível de Alerta,code,sem-disparo | amarelo | laranja | vermelho,Local,Sim,Metodologia §7.7.3.6

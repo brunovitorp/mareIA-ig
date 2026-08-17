@@ -1,0 +1,40 @@
+@startuml
+title Casos de uso — ATENTO 60+
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam actorStyle awesome
+
+actor "Pessoa idosa" as P
+actor "ACS\n(Agente de Coleta)" as ACS
+actor "Equipe de Gestão\ndo Cuidado" as EC
+actor "Equipe de Gestão\ndo Monitoramento" as EM
+actor "Gestor da\nunidade" as G
+
+rectangle "Plataforma mareIA — ATENTO 60+" {
+  usecase "Cadastrar paciente\n(com TCLE)" as UC1
+  usecase "Aplicar IVCF-20" as UC2
+  usecase "Coletar sinais vitais\n(IoT)" as UC3
+  usecase "Classificar risco" as UC4
+  usecase "Gerar / responder\nalertas" as UC5
+  usecase "Monitorar\n(Sentinel loop)" as UC6
+  usecase "Construir plano\nde cuidado" as UC7
+  usecase "Supervisionar\nprotocolo" as UC8
+  usecase "Relatórios\ngerenciais" as UC9
+  usecase "Autorrelato /\neducação em saúde" as UC10
+}
+
+ACS --> UC1
+ACS --> UC2
+ACS --> UC3
+ACS --> UC6
+P --> UC10
+P --> UC3
+EC --> UC4
+EC --> UC5
+EC --> UC6
+EC --> UC7
+EM --> UC8
+EM --> UC5
+G --> UC9
+@enduml

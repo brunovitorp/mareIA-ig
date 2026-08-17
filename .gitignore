@@ -1,0 +1,19 @@
+# Saídas de build do IG / SUSHI
+fsh-generated/
+output/
+temp/
+template/
+input-cache/
+.fhir/
+*.log
+
+# Tooling baixada
+input/data/igpublisher.jar
+publisher.jar
+
+# Artefato auto-gerado pelo IG Publisher na raiz
+Requirements-fromNarrative.json
+
+# OS
+.DS_Store
+Thumbs.db

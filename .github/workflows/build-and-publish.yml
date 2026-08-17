@@ -1,0 +1,93 @@
+name: Build IG & Publish to Pages
+
+# Compila o Implementation Guide com a imagem oficial do HL7 FHIR IG Publisher
+# (hl7fhir/ig-publisher-base) e publica o conteudo de output/ no GitHub Pages.
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# Permissoes necessarias para publicar no GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Garante que apenas um deploy por vez ocorra (sem cancelar um em andamento)
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: hl7fhir/ig-publisher-base:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Evitar "dubious ownership" do git dentro do container
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: Baixar o IG Publisher (publisher.jar)
+        shell: bash
+        run: |
+          curl -L --fail --retry 3 \
+            https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar \
+            -o publisher.jar
+          ls -la publisher.jar
+
+      - name: Preparar tooling (SUSHI via npm; Java no PATH)
+        shell: bash
+        run: |
+          set -euo pipefail
+          # A imagem traz node/npm/jekyll em /usr/local/bin e java em /opt/java/openjdk/bin,
+          # mas NAO inclui o SUSHI. Instalamos o fsh-sushi e expomos os diretorios no PATH.
+          npm install -g fsh-sushi
+          echo "$(npm prefix -g)/bin" >> "$GITHUB_PATH"
+          echo "/opt/java/openjdk/bin" >> "$GITHUB_PATH"
+
+      - name: Compilar o IG (SUSHI + IG Publisher)
+        shell: bash
+        run: |
+          set -euo pipefail
+          sushi --version
+          java -version
+          java -jar publisher.jar publisher -ig .
+
+      - name: Falhar se houver erros de QA
+        run: |
+          if [ -f output/qa.txt ]; then
+            echo "===== Resumo do QA ====="
+            grep -iE "Errors:|Warnings:|Broken Links" output/qa.txt | head -5 || true
+            errs=$(grep -m1 -oE "Errors: [0-9]+" output/qa.txt | grep -oE "[0-9]+" || echo 0)
+            echo "Erros de QA: ${errs:-0}"
+            if [ "${errs:-0}" -gt 0 ]; then
+              echo "::error::IG Publisher reportou ${errs} erro(s) de QA. Veja output/qa.html no artefato."
+              exit 1
+            fi
+          else
+            echo "::warning::output/qa.txt nao encontrado; pulando verificacao de QA."
+          fi
+
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+
+      - name: Empacotar o site (output/) como artefato do Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: output
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publicar no GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

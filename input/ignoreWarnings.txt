@@ -1,0 +1,4 @@
+== Suppressed Messages ==
+# Liste aqui mensagens de QA a suprimir (uma por linha), com justificativa em comentário.
+# Exemplo:
+# The code system 'http://loinc.org' is not properly registered

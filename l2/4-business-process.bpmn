@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fonte L1: Protocolo mareIA WP1, §6 (p.9-10). Pathway ATENTO 60+. -->
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  id="Defs_atento60"
+                  targetNamespace="https://mareia.saude.gov.br/bpmn/atento60">
+  <bpmn:process id="Process_atento60" name="ATENTO 60+ — Telemonitoramento da pessoa idosa" isExecutable="false">
+
+    <bpmn:startEvent id="start" name="Pessoa idosa elegível identificada">
+      <bpmn:outgoing>f1</bpmn:outgoing>
+    </bpmn:startEvent>
+
+    <!-- Fase 1: Pré-Intervenção -->
+    <bpmn:task id="t_eleg" name="Verificar critérios de elegibilidade">
+      <bpmn:incoming>f1</bpmn:incoming><bpmn:outgoing>f2</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="g_eleg" name="Elegível?">
+      <bpmn:incoming>f2</bpmn:incoming><bpmn:outgoing>f_sim</bpmn:outgoing><bpmn:outgoing>f_nao</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:endEvent id="end_nao" name="Não incluído">
+      <bpmn:incoming>f_nao</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:task id="t_tcle" name="Registrar TCLE">
+      <bpmn:incoming>f_sim</bpmn:incoming><bpmn:outgoing>f3</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="t_cadastro" name="Cadastrar na plataforma (e-SUS APS/Território)">
+      <bpmn:incoming>f3</bpmn:incoming><bpmn:outgoing>f4</bpmn:outgoing>
+    </bpmn:task>
+
+    <!-- Fase 2: Triagem inicial -->
+    <bpmn:task id="t_ivcf" name="Aplicar IVCF-20">
+      <bpmn:incoming>f4</bpmn:incoming><bpmn:outgoing>f5</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="t_iot" name="Coletar sinais vitais (IoT) — offline-capaz">
+      <bpmn:incoming>f5</bpmn:incoming><bpmn:outgoing>f6</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="t_ia1" name="Processar por IA: escore, baseline e classificação de risco">
+      <bpmn:incoming>f6</bpmn:incoming><bpmn:outgoing>f7</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="g_risco" name="Faixa de risco (IVCF-20)">
+      <bpmn:incoming>f7</bpmn:incoming>
+      <bpmn:outgoing>f_baixo</bpmn:outgoing><bpmn:outgoing>f_medio</bpmn:outgoing><bpmn:outgoing>f_alto</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+
+    <!-- Fase 4: Resposta clínica (convergência) -->
+    <bpmn:task id="t_alertas" name="Gerar/classificar alertas e notificar equipes">
+      <bpmn:incoming>f_baixo</bpmn:incoming><bpmn:incoming>f_medio</bpmn:incoming><bpmn:incoming>f_alto</bpmn:incoming>
+      <bpmn:outgoing>f8</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="t_decisao" name="Suporte à decisão: prioridades, agenda, plano de cuidado">
+      <bpmn:incoming>f8</bpmn:incoming><bpmn:outgoing>f9</bpmn:outgoing>
+    </bpmn:task>
+
+    <!-- Fase 3: Sentinel loop -->
+    <bpmn:task id="t_loop" name="Monitoramento contínuo: coleta periódica + reclassificação (Sentinel loop)">
+      <bpmn:incoming>f9</bpmn:incoming><bpmn:outgoing>f10</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="g_loop" name="Continua acompanhamento?">
+      <bpmn:incoming>f10</bpmn:incoming><bpmn:outgoing>f_continua</bpmn:outgoing><bpmn:outgoing>f_fim</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:endEvent id="end_ok" name="Encerramento do acompanhamento">
+      <bpmn:incoming>f_fim</bpmn:incoming>
+    </bpmn:endEvent>
+
+    <bpmn:sequenceFlow id="f1" sourceRef="start" targetRef="t_eleg"/>
+    <bpmn:sequenceFlow id="f2" sourceRef="t_eleg" targetRef="g_eleg"/>
+    <bpmn:sequenceFlow id="f_sim" name="Sim" sourceRef="g_eleg" targetRef="t_tcle"/>
+    <bpmn:sequenceFlow id="f_nao" name="Não" sourceRef="g_eleg" targetRef="end_nao"/>
+    <bpmn:sequenceFlow id="f3" sourceRef="t_tcle" targetRef="t_cadastro"/>
+    <bpmn:sequenceFlow id="f4" sourceRef="t_cadastro" targetRef="t_ivcf"/>
+    <bpmn:sequenceFlow id="f5" sourceRef="t_ivcf" targetRef="t_iot"/>
+    <bpmn:sequenceFlow id="f6" sourceRef="t_iot" targetRef="t_ia1"/>
+    <bpmn:sequenceFlow id="f7" sourceRef="t_ia1" targetRef="g_risco"/>
+    <bpmn:sequenceFlow id="f_baixo" name="Robusto (0-6)" sourceRef="g_risco" targetRef="t_alertas"/>
+    <bpmn:sequenceFlow id="f_medio" name="Risco fragilização (7-14)" sourceRef="g_risco" targetRef="t_alertas"/>
+    <bpmn:sequenceFlow id="f_alto" name="Frágil (>=15)" sourceRef="g_risco" targetRef="t_alertas"/>
+    <bpmn:sequenceFlow id="f8" sourceRef="t_alertas" targetRef="t_decisao"/>
+    <bpmn:sequenceFlow id="f9" sourceRef="t_decisao" targetRef="t_loop"/>
+    <bpmn:sequenceFlow id="f10" sourceRef="t_loop" targetRef="g_loop"/>
+    <bpmn:sequenceFlow id="f_continua" name="Sim (nova coleta por periodicidade)" sourceRef="g_loop" targetRef="t_iot"/>
+    <bpmn:sequenceFlow id="f_fim" name="Não" sourceRef="g_loop" targetRef="end_ok"/>
+
+  </bpmn:process>
+</bpmn:definitions>
