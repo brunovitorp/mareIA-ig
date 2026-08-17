@@ -19,7 +19,15 @@ O alívio do sofrimento, o controle de sintomas refratários e a preservação d
 
 ---
 
-## 2. Artefatos FHIR R4 Principais
+## 2. Diagrama de Fluxo e Decisão Clínica (PlanDefinition)
+
+<div style="text-align: center; margin: 20px 0;">
+  <img src="plandef-familiarativa.svg" alt="Algoritmo de Decisão FamilIAr_Ativa" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
+</div>
+
+---
+
+## 3. Artefatos FHIR R4 Principais
 
 - **Perfis:** `FamiliarAtivaPatientPalliative`, `RelatedPersonCaregiver`, `ObservationEsasScore`, `ObservationEsasSymptom`, `ObservationZaritScore`, `FlagClinicalAlert`.
 - **Formulários:** `QuestionnaireEsas`, `QuestionnaireZarit`.

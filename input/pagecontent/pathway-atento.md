@@ -20,7 +20,21 @@ O envelhecimento populacional exige ferramentas ágeis de identificação precoc
 
 ---
 
-## 2. Artefatos FHIR R4 Principais
+## 2. Diagramas de Fluxo e Decisão Clínica
+
+### 2.1 Fluxo Clínico em 4 Macrofases
+<div style="text-align: center; margin: 20px 0;">
+  <img src="process-atento60.svg" alt="Fluxo Clínico ATENTO 60+" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
+</div>
+
+### 2.2 Algoritmo de Decisão (PlanDefinition)
+<div style="text-align: center; margin: 20px 0;">
+  <img src="plandef-atento60.svg" alt="Algoritmo de Decisão ATENTO 60+" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
+</div>
+
+---
+
+## 3. Artefatos FHIR R4 Principais
 
 - **Perfis:** `Atento60PatientElderly`, `ObservationIvcfScore`, `ObservationIotVital`.
 - **Formulários:** `QuestionnaireIvcf20` (com scoring automatizado HL7 SDC).

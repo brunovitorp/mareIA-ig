@@ -19,7 +19,15 @@ A exposição ocupacional a defensivos agrícolas (organofosforados, carbamatos,
 
 ---
 
-## 2. Artefatos FHIR R4 Principais
+## 2. Diagrama de Fluxo e Decisão Clínica (PlanDefinition)
+
+<div style="text-align: center; margin: 20px 0;">
+  <img src="plandef-agrosus.svg" alt="Algoritmo de Decisão AgroSUS" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
+</div>
+
+---
+
+## 3. Artefatos FHIR R4 Principais
 
 - **Perfis:** `AgroSUSPatient`, `AgroSUSACS`, `AgroSUSProfissionalUBS`, `AgroSUSVisitaACS`, `AgroSUSAtendimentoUBS`, `AgroSUSResultadoLaboratorial`, `AgroSUSPlanoAcompanhamento`, `AgroSUSIntoxicacaoPesticida`.
 - **Formulários:** `AgroSUSAnamnese` (Anamnese ocupacional e ambiental).

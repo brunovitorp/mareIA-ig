@@ -1,0 +1,62 @@
+@startuml
+title PlanDefinition — FamilIAr_Ativa (Detecção de Risco em Cuidados Paliativos)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+
+start
+:Coleta de Sintomas ESAS (0–10 cada);
+note right
+  Questionnaire familiarativa-esas
+  Dor, Dispneia, Náusea, Cansaço,
+  Sonolência, Ansiedade, Depressão, etc.
+end note
+
+:Avaliação de Sobrecarga Zarit (0–88);
+note right
+  Questionnaire familiarativa-zarit
+  0–20 Leve | 21–40 Moderada | 41–88 Severa
+end note
+
+:Calcular Escore ESAS Total (0–70);
+note right
+  Library EsasZaritLogic (CQL)
+end note
+
+switch (Classificação de Risco ESAS)
+case ( 0–30 )
+  :Baixo Risco (Verde);
+  :Acompanhamento domiciliar de rotina;
+case ( 31–50 )
+  :Médio Risco (Amarelo);
+  :Revisão na UBS / telemonitoramento semanal;
+case ( 51–70 )
+  :Alto Risco (Vermelho);
+  :Alerta prioritário para equipe de paliativos;
+endswitch
+
+:Avaliação de Regras de Alerta (RA-01 a RA-05);
+note right
+  RA-01: ESAS > 50
+  RA-02: Zarit >= 41 (Sobrecarga Severa)
+  RA-03: Queda de adesão (<80%)
+  RA-04: Alerta clínico em aberto
+  RA-05: Risco Alto recente
+end note
+
+:Processamento por Modelo de IA Explicável (XAI);
+note right
+  Predição de descompensação
+  com atributos explicáveis (SHAP)
+end note
+
+if (Gatilho Crítico ou Alerta Ativo?) then (sim)
+  :Disparar FlagClinicalAlert (tempo real);
+  :Acionar Visita Prioritária / Teleconsultoria;
+  :Intensificar coleta ESAS (2x ao dia);
+else (não)
+  :Manter periodicidade padrão (ESAS diário / Zarit mensal);
+endif
+
+:Plano de Cuidado Multiprofissional Atualizado;
+stop
+@enduml

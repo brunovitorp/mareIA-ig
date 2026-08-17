@@ -1,0 +1,50 @@
+@startuml
+title PlanDefinition — AgroSUS (Saúde do Trabalhador Rural e Toxicologia)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+
+start
+:Visita Domiciliar do ACS no Campo;
+note right
+  Questionnaire AgroSUSAnamnese
+  Tipo de lavoura, agrotóxicos usados,
+  Uso de EPI, sintomas agudos, descarte
+end note
+
+:Exame de Vigilância Biológica da Colinesterase;
+note right
+  Colinesterase Plasmática e Eritrocitária (NR-7)
+  Perfis: AgroSUSResultadoLaboratorial
+end note
+
+:Comparação com Linha de Base (Valor Basal Individual);
+note right
+  Library AgroSUSIntoxicacaoLogic (CQL)
+end note
+
+switch (Avaliação de Depressão Enzimática)
+case ( Normal: Redução < 30% )
+  :Exposição controlada;
+  :Periodicidade: Monitoramento semestral de rotina (NR-7);
+case ( Alerta: Depressão 30%–50% )
+  :Sinal de sobre-exposição / absorção ocupacional;
+  :Revisão imediata de uso de EPI e técnicas de aplicação;
+  :Repetir exame em 30 dias na UBS;
+case ( Crítico: Depressão > 50% ou Sintomas Agudos )
+  :Intoxicação aguda confirmada / suspeita grave;
+  :Afastamento imediato da área de exposição;
+  :Encaminhamento médico urgente na UBS / UPA;
+  :Notificação compulsória no SINAN;
+endswitch
+
+if (Necessita Intervenção / Afastamento?) then (sim)
+  :Gerar AgroSUSPlanoAcompanhamento prioritário;
+  :Notificar Vigilância em Saúde do Trabalhador (VISAT);
+  :Orientar acolhimento e monitoramento familiar;
+else (não)
+  :Reforçar orientações de segurança rural e boas práticas;
+endif
+
+:Registro Ocupacional Completo no Prontuário SUS;
+stop
+@enduml

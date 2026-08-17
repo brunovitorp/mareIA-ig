@@ -3,22 +3,11 @@ classifica o risco, define a periodicidade de monitoramento e avalia os gatilhos
 plataforma **apoia** a decisão — o profissional mantém autonomia para aceitar, modificar ou recusar
 as recomendações (Protocolo §9).
 
-```
-[Início] ──► [Aplicação do IVCF-20 + Sinais Vitais]
-                 │
-                 ▼
-         [Cálculo do Escore]
-                 │
-     ┌───────────┼───────────┐
-     ▼           ▼           ▼
-[Robusto: 0-6] [Risco: 7-14] [Frágil: ≥15]
-     │           │           │
-     ▼           ▼           ▼
-[Acomp. Anual] [Plano Prev.] [Avaliação AGA]
-                 │
-                 ▼
-    [Avaliação de Gatilhos de Alerta]
-```
+#### Diagrama do Processo de Decisão (PlantUML)
+
+<div style="text-align: center; margin: 20px 0;">
+  <img src="plandef-atento60.svg" alt="Diagrama de Decisão ATENTO 60+" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
+</div>
 
 #### Estrutura das ações
 1. **Aplicar IVCF-20 e coletar sinais vitais** — `definitionCanonical` → `Questionnaire/atento60-ivcf20`.

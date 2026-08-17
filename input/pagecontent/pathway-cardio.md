@@ -21,7 +21,15 @@ O Diabetes Mellitus (DM) e a Hipertensão Arterial Sistêmica (HAS) são os maio
 
 ---
 
-## 2. Artefatos FHIR R4 Principais
+## 2. Diagrama de Fluxo e Decisão Clínica (PlanDefinition)
+
+<div style="text-align: center; margin: 20px 0;">
+  <img src="plandef-cardio.svg" alt="Algoritmo de Decisão CardioRemoto" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
+</div>
+
+---
+
+## 3. Artefatos FHIR R4 Principais
 
 - **Perfis:** `PatientCardio`, `ObservationCardioVital`, `ObservationCardioLab`, `ObservationCardioRisk`.
 - **Formulários:** `QuestionnaireCardioTriage` (Triagem clínica e antropométrica).

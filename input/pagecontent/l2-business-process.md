@@ -18,6 +18,10 @@ A Plataforma **mareIA** padroniza a esteira de atendimento em **7 Macrofases Ope
  └───────────────┘     └───────────────┘     └───────────────┘
 ```
 
+<div style="text-align: center; margin: 24px 0;">
+  <img src="process-atento60.svg" alt="Fluxo Clínico de Processos" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
+</div>
+
 ---
 
 ## 4.2 Parametrização dos Processos por Pathway

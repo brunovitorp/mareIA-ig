@@ -4,22 +4,11 @@ alerta (RA-01..RA-05) e ajusta a periodicidade de coleta. A detecção segue **p
 (RF-PS05); a predição por IA com **XAI** (RF-PS06) complementa — e não substitui — o julgamento
 clínico.
 
-```
-[Início] ──► [Registro de Sintomas (ESAS) + Sobrecarga (Zarit)]
-                 │
-                 ▼
-     [Estratificação de Risco ESAS + Zarit]
-                 │
-     ┌───────────┼───────────┐
-     ▼           ▼           ▼
-[Baixo: 0-30]  [Médio: 31-50] [Alto: 51-70]
-     │           │           │
-     ▼           ▼           ▼
-[Rotina Domic.] [Revisão UBS] [Alerta Prioritário]
-                 │
-                 ▼
-   [Predição IA / XAI + Regras de Alerta RA-01..05]
-```
+#### Diagrama do Processo de Decisão (PlantUML)
+
+<div style="text-align: center; margin: 20px 0;">
+  <img src="plandef-familiarativa.svg" alt="Diagrama de Decisão FamilIAr_Ativa" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background: #fff;" />
+</div>
 
 #### Estrutura das ações
 

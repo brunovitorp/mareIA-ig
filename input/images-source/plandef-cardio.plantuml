@@ -1,0 +1,56 @@
+@startuml
+title PlanDefinition — CardioRemoto (DM / HAS e Risco Cardiovascular)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+
+start
+:Triagem Clínica e Coleta Antropométrica;
+note right
+  Questionnaire CardioTriage
+  Idade, IMC, histórico DM2/HAS/Tabagismo
+end note
+
+:Aferição Sinais Vitais IoT ANVISA;
+note right
+  PA Sistólica / Diastólica, FC, Glicemia Capilar
+  Perfis: ObservationCardioVital
+end note
+
+:Resultados Laboratoriais Integrados;
+note right
+  HbA1c, Lipídios (LDL, HDL, Triglic.), Creatinina / CKD-EPI
+  Perfis: ObservationCardioLab
+end note
+
+:Estratificação Automatizada de Risco;
+note right
+  Library CardioLogic (CQL)
+end note
+
+switch (Classificação em 3 Estratos)
+case ( Verde: Controlado )
+  :PA < 140/90, HbA1c < 7.0%, LDL na meta;
+  :Periodicidade: Monitoramento a cada 90 dias;
+case ( Amarelo: Moderado )
+  :Desvios moderados de PA ou HbA1c 7.0–9.0%;
+  :Periodicidade: Monitoramento a cada 30 dias;
+  :Teleorientação e ajuste de metas;
+case ( Vermelho: Grave )
+  :PA >= 180/110 mmHg ou Glicemia > 300 / < 70 mg/dL;
+  :Encaminhamento de urgência / Teleintervenção imediata;
+  :Periodicidade: Acompanhamento quinzenal/semanal;
+endswitch
+
+:Protocolo de Alertas em 4 Níveis (Informativo, Atenção, Alerta, Emergência);
+
+if (Alerta Crítico / Emergência?) then (sim)
+  :Notificar Médico e Enfermeiro em tempo real;
+  :Priorizar na Fila de Teleatendimento HULW;
+  :Sincronizar Laudo / Evento com AGHUX (EBSERH);
+else (não)
+  :Registrar acompanhamento no histórico longitudinal;
+endif
+
+:Plano Terapêutico Singular Atualizado;
+stop
+@enduml
