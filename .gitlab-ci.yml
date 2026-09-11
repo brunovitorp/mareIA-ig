@@ -17,7 +17,7 @@ pages:
     - echo "=== 1. Executando SUSHI ==="
     - sushi .
     - echo "=== 2. Executando HL7 IG Publisher ==="
-    - java -Xmx5120m -Dfile.encoding=UTF-8 -jar publisher.jar publisher -ig .
+    - java -Xmx5120m -Dfile.encoding=UTF-8 -jar publisher.jar publisher -ig . -tx n/a
     - |
       if [ -d portal ]; then
         echo "=== 3. Integrando Portal Institucional em output/portal ==="
