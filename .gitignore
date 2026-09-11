@@ -1,6 +1,7 @@
 # Saídas de build do IG / SUSHI
 fsh-generated/
 output/
+public/
 temp/
 template/
 input-cache/

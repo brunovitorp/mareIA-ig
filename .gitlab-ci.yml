@@ -1,0 +1,34 @@
+image: hl7fhir/ig-publisher-base:latest
+
+stages:
+  - deploy
+
+pages:
+  stage: deploy
+  variables:
+    _JAVA_OPTIONS: "-Xmx5120m -Dfile.encoding=UTF-8"
+    JAVA_TOOL_OPTIONS: "-Xmx5120m -Dfile.encoding=UTF-8"
+  before_script:
+    - git config --global --add safe.directory "$CI_PROJECT_DIR"
+    - curl -L --fail --retry 3 https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -o publisher.jar
+    - npm install -g fsh-sushi
+    - export PATH="$(npm prefix -g)/bin:/opt/java/openjdk/bin:/usr/local/bin:/usr/bin:$PATH"
+  script:
+    - echo "=== 1. Executando SUSHI ==="
+    - sushi .
+    - echo "=== 2. Executando HL7 IG Publisher ==="
+    - java -Xmx5120m -Dfile.encoding=UTF-8 -jar publisher.jar publisher -ig .
+    - |
+      if [ -d portal ]; then
+        echo "=== 3. Integrando Portal Institucional em output/portal ==="
+        mkdir -p output/portal
+        cp -r portal/* output/portal/ || true
+      fi
+    - rm -rf public
+    - mv output public
+  artifacts:
+    paths:
+      - public
+    expire_in: 30 days
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
