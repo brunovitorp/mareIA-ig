@@ -1,5 +1,8 @@
 # Plataforma mareIA — SMART Guidelines IG (Guia Integrado de Telemonitoramento)
 
+> 🌐 **Publicação Online do Guia de Implementação:**  
+> Acesse a documentação interativa e o portal completo em: **[https://brunovitorp.github.io/mareIA-ig/](https://brunovitorp.github.io/mareIA-ig/)**
+
 **Implementation Guide Integrado (FHIR R4)** da **Plataforma mareIA** — Guia unificado de telemonitoramento clínico e suporte à decisão assistencial no âmbito do **SUS Digital** e do **Programa RNP Redes de Colaboração em Saúde Digital 2025**.
 
 Este repositório consolida a adaptação digital de **4 Linhas de Cuidado (Pathways)** seguindo a metodologia **WHO SMART Guidelines** (L1 Narrativa → L2 DAK → L3 FHIR Computável):
