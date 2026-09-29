@@ -10,12 +10,14 @@
 ## 1. Justificativa Clínica e Escopo
 
 O envelhecimento populacional exige ferramentas ágeis de identificação precoce da fragilidade clínico-funcional para prevenção de quedas, perda de autonomia e hospitalizações evitáveis. O ATENTO 60+ fundamenta-se em:
-1. **Instrumento IVCF-20 (Índice de Vulnerabilidade Clínico-Funcional):** 20 questões multidimensionais cobrindo idade, autopercepção de saúde, atividades da vida diária (AVDs), cognição, humor, mobilidade, comunicação e comorbidades múltiplas.
-2. **Estratificação em 3 Níveis:**
-   - **Robusto (0 a 6 pontos):** Acompanhamento anual ou semestral de rotina na APS.
-   - **Em Risco de Fragilização (7 a 14 pontos):** Intervenção preventiva com plano de cuidado compartilhado e telemonitoramento trimestral.
-   - **Frágil (>= 15 pontos):** Avaliação Geriátrica Ampla (AGA), visita domiciliar prioritária e teleintervenção mensal.
-3. **Detecção de Quedas e Sinais Vitais IoT:** Monitoramento ativo de eventos sentinela (quedas, internações) e parâmetros hemodinâmicos via Bluetooth.
+1. **Instrumento IVCF-20 (Índice de Vulnerabilidade Clínico-Funcional):** 20 questões multidimensionais cobrindo idade, autopercepção de saúde, atividades da vida diária (AVDs), cognição, humor, mobilidade, continência, comunicação e comorbidades múltiplas (escore de 0 a 40).
+2. **Estratificação em 3 Níveis e Periodicidade de Coleta:**
+   - **Robusto (0 a 6 pontos):** coleta a cada 1 mês.
+   - **Em Risco de Fragilização (7 a 14 pontos):** coleta a cada 2 meses.
+   - **Frágil (>= 15 pontos):** coleta a cada 3 meses.
+
+   > ⚠️ Esta periodicidade é a do protocolo L1 e é inversa ao risco. Está em revisão pela equipe clínica (ver [Lógica de Decisão](l2-decision-logic.html), seção 6.5).
+3. **Gatilhos de Alerta (independentes da faixa):** queda, internação recente (< 6 meses), sinal vital IoT fora da referência crítica (PA, FC, oximetria), perda de peso não intencional, IMC < 22, humor alterado e autopercepção da saúde piorando entre visitas.
 4. **Resiliência Offline-First:** Coleta em tablets por Agentes Comunitários de Saúde (ACS) em domicílio sem necessidade de sinal de celular constante.
 
 ---
@@ -46,7 +48,7 @@ O envelhecimento populacional exige ferramentas ágeis de identificação precoc
 
 ## 3. Artefatos FHIR R4 Principais
 
-- **Perfis:** `Atento60PatientElderly`, `ObservationIvcfScore`, `ObservationIotVital`.
-- **Formulários:** `QuestionnaireIvcf20` (com scoring automatizado HL7 SDC).
-- **Lógica e Suporte:** `PlanDefinitionAtento60`, `Library/Ivcf20Logic`.
-- **Indicadores (Measures):** `MeasureAtento60CoberturaIVCF`, `MeasureAtento60PlanoCuidadoFragil`.
+- **Perfis:** `Atento60PatientElderly`, `Atento60ObservationIvcfScore`, `Atento60ObservationIotVital`.
+- **Formulários:** `Atento60Ivcf20Questionnaire` (pontuação HL7 SDC via `ordinalValue`).
+- **Lógica e Suporte:** `Atento60RiskStratification` (PlanDefinition), `Atento60Ivcf20Logic` (Library).
+- **Indicadores (Measures):** `Atento60MeasureCadastro`, `Atento60MeasureCompletude`, `Atento60MeasureAlertas`, `Atento60MeasureOffline`.

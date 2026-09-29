@@ -13,11 +13,16 @@ O Diabetes Mellitus (DM) e a Hipertensão Arterial Sistêmica (HAS) são os maio
 1. **Sinais Vitais IoT:** Aferição domiciliar ou ambulatorial de Pressão Arterial (sistólica/diastólica), Frequência Cardíaca e Glicemia Capilar com dispositivos Bluetooth homologados ANVISA.
 2. **Avaliação Laboratorial:** Hemoglobina Glicada (HbA1c), LDL-c, HDL-c, Triglicerídeos, Creatinina e Taxa de Filtração Glomerular (CKD-EPI).
 3. **Estratificação Automatizada de Risco:**
-   - **Verde (Controlado):** PA < 140/90 mmHg, HbA1c < 7.0%, LDL na meta.
-   - **Amarelo (Moderado):** Desvios moderados ou não atingimento de meta lipídica/glicêmica sem sintomas de gravidade.
-   - **Vermelho (Grave):** PA >= 180/110 mmHg, Glicemia > 300 mg/dL ou < 70 mg/dL, ou disfunção renal aguda.
-4. **Periodicidade e Agendamento Inteligente:** Monitoramento a cada 90 dias (Verde) ou 30 dias (Amarelo/Vermelho), com priorização da fila por dias de atraso.
-5. **Integração com AGHUX (EBSERH):** Sincronização bidirecional de dados clínicos e laudos de teleconsultoria.
+   - **Verde (Controlado):** PA < 140/90 mmHg, HbA1c < 7,0%, LDL < 130 mg/dL e sem evento cardiovascular nos últimos 12 meses.
+   - **Amarelo (Moderado):** 1 ou 2 desses parâmetros fora da meta, sem evento cardiovascular recente.
+   - **Vermelho (Grave):** 3 parâmetros fora da meta **ou** evento cardiovascular nos últimos 12 meses.
+4. **Alertas em 4 Níveis:**
+   - **Vermelho (imediato):** PA ≥ 180/120 ou < 90/60 mmHg; glicemia ≥ 250 mg/dL com sintomas ou < 70 mg/dL; FC > 100 ou < 50 bpm; sinais de SCA/AVC.
+   - **Laranja (semanal a quinzenal):** triglicerídeos > 1000 mg/dL; perda de peso involuntária ≥ 5%.
+   - **Amarelo (quinzenal a trimestral):** PA fora da meta não crítica; LDL ≥ 190 mg/dL; HbA1c ≥ 7%; glicemia > 300 mg/dL sem sintomas.
+   - **Sem disparo:** todos os parâmetros na meta.
+5. **Periodicidade e Agendamento Inteligente:** Monitoramento a cada 90 dias (Verde) ou 30 dias (Amarelo/Vermelho), com priorização da fila por dias de atraso.
+6. **Integração com AGHUX (EBSERH):** Sincronização bidirecional de dados clínicos e laudos de teleconsultoria.
 
 ---
 
@@ -50,4 +55,4 @@ O Diabetes Mellitus (DM) e a Hipertensão Arterial Sistêmica (HAS) são os maio
 - **Perfis:** `PatientCardio`, `ObservationCardioVital`, `ObservationCardioLab`, `ObservationCardioRisk`.
 - **Formulários:** `QuestionnaireCardioTriage` (Triagem clínica e antropométrica).
 - **Lógica e Suporte:** `PlanDefinitionCardioRemoto`, `Library/CardioLogic`.
-- **Indicadores (Measures):** `MeasureCardioHba1cControlada`, `MeasureCardioPAControlada`.
+- **Indicadores (Measures):** `MeasureCardioBpControl`, `MeasureCardioHba1cControl`.

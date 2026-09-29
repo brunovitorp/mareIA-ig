@@ -10,11 +10,11 @@
 ## 1. Justificativa Clínica e Escopo
 
 O alívio do sofrimento, o controle de sintomas refratários e a preservação do bem-estar do cuidador exigem respostas rápidas e contínuas no ambiente domiciliar. O FamilIAr_Ativa integra:
-1. **Escala de Sintomas de Edmonton (ESAS):** Avaliação de 10 sintomas-chave: Dor, Cansaço, Náusea, Depressão, Ansiedade, Sonolência, Apetite, Bem-estar, Falta de Ar e Sintoma Adicional (escore 0–10).
-2. **Escala de Sobrecarga do Cuidador (Zarit Burden Interview — Versão Breve):** Mensuração do estresse físico, emocional e financeiro do cuidador.
-3. **Detecção Híbrida de Risco (Protocolo + IA Explicável - XAI):**
-   - **Regras Clínicas Determinísticas:** Gatilhos para dor intensa (>= 7/10), dispneia aguda ou exaustão do cuidador.
-   - **Modelos Preditivos de Descompensação:** Algoritmos de aprendizado de máquina com explicabilidade (SHAP/LIME) que alertam a equipe multiprofissional com antecedência.
+1. **Escala de Sintomas de Edmonton (ESAS):** registro diário de 6 domínios — dor, falta de ar, ansiedade, cansaço, falta de apetite e mal-estar —, cada um de 0 a 10. A soma define o nível de risco: Baixo (0–30), Moderado (31–50) ou Alto (≥ 51).
+2. **Escala de Sobrecarga do Cuidador (Zarit, ZBI-22):** 22 itens de 0 a 4 (total 0–88): Leve (0–20), Moderada (21–40) ou Severa (41–88).
+3. **Detecção de Risco (Protocolo Auditável + IA Explicável):**
+   - **Regras de Alerta RA-01 a RA-05:** soma ESAS > 50, Zarit ≥ 41, queda de adesão ao registro, alerta aberto sem resolução e mensagem bidirecional em risco Alto.
+   - **Predição por IA com XAI:** complementa as regras e não substitui o julgamento clínico; a predição é exibida ao profissional com os fatores de maior peso e depende da validação dele.
 4. **Acionamento da Equipe Domiciliar:** Flags clínicos e notificações priorizadas no painel da UBS e do serviço de cuidados paliativos.
 
 ---
@@ -45,7 +45,7 @@ O alívio do sofrimento, o controle de sintomas refratários e a preservação d
 
 ## 3. Artefatos FHIR R4 Principais
 
-- **Perfis:** `FamiliarAtivaPatientPalliative`, `RelatedPersonCaregiver`, `ObservationEsasScore`, `ObservationEsasSymptom`, `ObservationZaritScore`, `FlagClinicalAlert`.
-- **Formulários:** `QuestionnaireEsas`, `QuestionnaireZarit`.
-- **Lógica e Suporte:** `PlanDefinitionFamiliarAtiva`, `Library/EsasZaritLogic`.
-- **Indicadores (Measures):** `MeasureFamiliarAtivaControleDor`, `MeasureFamiliarAtivaSobrecargaCuidador`.
+- **Perfis:** `FamiliarAtivaPatientPalliative`, `FamiliarAtivaRelatedPersonCaregiver`, `FamiliarAtivaObservationEsasScore`, `FamiliarAtivaObservationEsasSymptom`, `FamiliarAtivaObservationZaritScore`, `FamiliarAtivaFlagClinicalAlert`.
+- **Formulários:** `FamiliarAtivaEsasQuestionnaire`, `FamiliarAtivaZaritQuestionnaire`.
+- **Lógica e Suporte:** `FamiliarAtivaRiskDetection` (PlanDefinition), `FamiliarAtivaEsasZaritLogic` (Library).
+- **Indicadores (Measures):** `FamiliarAtivaMeasureAdesao`, `FamiliarAtivaMeasureMediaEsas`, `FamiliarAtivaMeasureRiscoAlto`, `FamiliarAtivaMeasureSobrecargaSevera`, `FamiliarAtivaMeasureResolucaoAlertas`, `FamiliarAtivaMeasureTempoResolucao`, `FamiliarAtivaMeasureEngajamentoEducativo`.

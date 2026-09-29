@@ -24,141 +24,162 @@ Todos os pathways compartilham a estrutura canônica de identificação do cidad
 
 ---
 
-## 5.2 🧓 ATENTO 60+ — Dicionário Completo do IVCF-20 e Sinais Vitais
 
-### 5.2.1 Os 20 Itens do Questionário IVCF-20 (`Questionnaire/atento60-ivcf20`)
+## 5.2 🧓 ATENTO 60+ — Dicionário do IVCF-20 e Sinais Vitais
 
-O **Índice de Vulnerabilidade Clínico-Funcional (IVCF-20)** avalia 8 dimensões multidimensionais da pessoa idosa. Cada item possui pontuação ordinal específica e tetos de pontuação para grupos funcionais:
+### 5.2.1 Os 20 Itens do IVCF-20 (`Atento60Ivcf20Questionnaire`)
 
-| LinkId | Dimensão Clínica | Texto da Pergunta | Tipo | Código LOINC / CS | Opções de Resposta e Pontuação Ordinal (`ordinalValue`) | Regra de Grupo / Teto |
-|---|---|---|---|---|---|---|
-| `q01` | **Idade** | Qual é a sua idade? | `choice` | `IvcfItemCS#idade` | • 60 a 74 anos (`0` pts)<br>• 75 a 84 anos (`1` pt)<br>• ≥ 85 anos (`3` pts) | Pontuação direta |
-| `q02` | **Autopercepção** | Comparando com pessoas de sua idade, como você diria que é sua saúde? | `choice` | `IvcfItemCS#saude` | • Excelente, muito boa ou boa (`0` pts)<br>• Regular ou ruim (`1` pt) | Pontuação direta |
-| `q03` | **AVD Instrumental** | Por causa da saúde, deixou de fazer compras? | `choice` | `IvcfItemCS#avdi-compras` | • Não (`0` pts)<br>• Sim (`4` pts) | **Grupo AVD-I (q03–q05)**:<br>Teto máximo do grupo = **4 pontos** |
-| `q04` | **AVD Instrumental** | Deixou de controlar seu dinheiro, gastos ou contas? | `choice` | `IvcfItemCS#avdi-dinheiro` | • Não (`0` pts)<br>• Sim (`4` pts) |
-| `q05` | **AVD Instrumental** | Deixou de realizar pequenos trabalhos domésticos? | `choice` | `IvcfItemCS#avdi-domestico` | • Não (`0` pts)<br>• Sim (`4` pts) |
-| `q06` | **AVD Básica** | Por causa da saúde, deixou de tomar banho sozinho? | `choice` | `IvcfItemCS#avdb-banho` | • Não (`0` pts)<br>• Sim (`6` pts) | Pontuação direta (6 pts = dependência funcional básica) |
-| `q07` | **Cognição** | Algum familiar ou amigo falou que você está esquecido? | `choice` | `IvcfItemCS#cognicao-amigo` | • Não (`0` pts)<br>• Sim (`1` pt) | **Grupo Cognição (q07–q09)**:<br>Soma direta dos pontos |
-| `q08` | **Cognição** | Esse esquecimento está piorando nos últimos meses? | `choice` | `IvcfItemCS#cognicao-piora` | • Não (`0` pts)<br>• Sim (`1` pt) |
-| `q09` | **Cognição** | Esse esquecimento impede você de realizar alguma atividade diária? | `choice` | `IvcfItemCS#cognicao-impede` | • Não (`0` pts)<br>• Sim (`2` pts) |
-| `q10` | **Humor** | No último mês, sentiu-se triste, desanimado ou sem esperança? | `choice` | `IvcfItemCS#humor-triste` | • Não (`0` pts)<br>• Sim (`1` pt) | **Grupo Humor (q10–q11)**:<br>Soma direta (máx 2 pts) |
-| `q11` | **Humor** | No último mês, perdeu o interesse ou prazer por atividades que antes gostava? | `choice` | `IvcfItemCS#humor-interesse` | • Não (`0` pts)<br>• Sim (`1` pt) |
-| `q12` | **Alcance / Membros Sup.** | Tem dificuldade para elevar os braços acima do nível dos ombros? | `choice` | `IvcfItemCS#mobilidade-alcance` | • Não (`0` pts)<br>• Sim (`1` pt) | Pontuação direta |
-| `q13` | **Preensão Palmar** | Tem dificuldade para manusear ou segurar pequenos objetos? | `choice` | `IvcfItemCS#mobilidade-preensao` | • Não (`0` pts)<br>• Sim (`1` pt) | Pontuação direta |
-| `q14` | **Mobilidade / Marcha** | Tem dificuldade para caminhar dentro de casa sem ajuda? | `choice` | `IvcfItemCS#mobilidade-marcha` | • Não (`0` pts)<br>• Sim (`2` pts) | **Grupo Mobilidade (q14–q16)**:<br>Teto máximo do grupo = **2 pontos** |
-| `q15` | **Transferência** | Tem dificuldade para levantar de uma cadeira sem apoiar os braços? | `choice` | `IvcfItemCS#mobilidade-levantar` | • Não (`0` pts)<br>• Sim (`2` pts) |
-| `q16` | **Quedas** | Teve duas ou mais quedas no último ano? | `choice` | `IvcfItemCS#mobilidade-quedas` | • Não (`0` pts)<br>• Sim (`2` pts) |
-| `q17` | **Comunicação / Visão** | Tem dificuldade para enxergar de perto ou de longe mesmo com óculos? | `choice` | `IvcfItemCS#comunicacao-visao` | • Não (`0` pts)<br>• Sim (`1` pt) | Pontuação direta |
-| `q18` | **Comunicação / Audição** | Tem dificuldade para ouvir mesmo com aparelho auditivo? | `choice` | `IvcfItemCS#comunicacao-audicao` | • Não (`0` pts)<br>• Sim (`1` pt) | Pontuação direta |
-| `q19` | **Comorbidades Múltiplas** | Usa 5 ou mais medicamentos diferentes todos os dias (Polifarmácia)? | `choice` | `IvcfItemCS#comorb-polifarmacia` | • Não (`0` pts)<br>• Sim (`2` pts) | **Grupo Comorbidades (q19–q20)**:<br>Teto máximo do grupo = **4 pontos** |
-| `q20` | **Internação Recente** | Esteve internado em hospital nos últimos 6 meses? | `choice` | `IvcfItemCS#comorb-internacao` | • Não (`0` pts)<br>• Sim (`4` pts) |
+O **Índice de Vulnerabilidade Clínico-Funcional (IVCF-20)** tem 20 itens. A pontuação de cada resposta é expressa pela extensão SDC `ordinalValue`, e os códigos dos itens estão em `Atento60IvcfItemCS`. Os itens de `q03` a `q20` são respostas Sim/Não (Não = 0 ponto).
 
-### 5.2.2 Parâmetros Fisiológicos e Sinais Vitais IoT do ATENTO 60+
+| LinkId | Dimensão | Pergunta | Pontuação (Sim) | Regra de grupo |
+|---|---|---|---|---|
+| `q01` | Idade | Qual é a sua idade? | 60–74 anos = 0 · 75–84 = 1 · ≥ 85 = 3 | — |
+| `q02` | Autopercepção | Comparando com pessoas de sua idade, como você diria que é sua saúde? | Excelente/muito boa/boa = 0 · Regular/ruim = 1 | — |
+| `q03` | AVD Instrumental | Por causa da saúde, deixou de fazer compras? | 4 | **Teto de 4 pontos** no grupo q03–q05 |
+| `q04` | AVD Instrumental | Deixou de controlar seu dinheiro, gastos ou contas? | 4 | |
+| `q05` | AVD Instrumental | Deixou de realizar pequenos trabalhos domésticos? | 4 | |
+| `q06` | AVD Básica | Por causa da saúde, deixou de tomar banho sozinho? | 6 | — |
+| `q07` | Cognição | Algum familiar ou amigo falou que você está ficando esquecido? | 1 | — |
+| `q08` | Cognição | Este esquecimento está piorando nos últimos meses? | 1 | — |
+| `q09` | Cognição | Este esquecimento está impedindo a realização de alguma atividade do cotidiano? | 2 | — |
+| `q10` | Humor | No último mês, ficou com desânimo, tristeza ou desesperança? | 2 | — |
+| `q11` | Humor | No último mês, perdeu o interesse ou prazer em atividades antes prazerosas? | 2 | — |
+| `q12` | Mobilidade — membros superiores | Você é incapaz de elevar os braços acima do nível do ombro? | 1 | — |
+| `q13` | Mobilidade — membros superiores | Você é incapaz de manusear ou segurar pequenos objetos? | 1 | — |
+| `q14` | Mobilidade — sarcopenia | Tem perda de peso não intencional, IMC < 22, panturrilha < 31 cm ou marcha de 4 m > 5 s? | 2 | Teto de 2 pontos |
+| `q15` | Marcha | Tem dificuldade para caminhar capaz de impedir alguma atividade do cotidiano? | 2 | — |
+| `q16` | Quedas | Teve duas ou mais quedas no último ano? | 2 | — |
+| `q17` | Continência | Perde urina ou fezes, sem querer, em algum momento? | 2 | — |
+| `q18` | Comunicação — visão | Tem problemas de visão capazes de impedir alguma atividade do cotidiano? | 2 | — |
+| `q19` | Comunicação — audição | Tem problemas de audição capazes de impedir alguma atividade do cotidiano? | 2 | — |
+| `q20` | Comorbidades múltiplas | Tem 5+ doenças crônicas, usa 5+ medicamentos/dia ou foi internado nos últimos 6 meses? | 4 | Teto de 4 pontos |
+| `ivcf-score` | Escore total | Calculado pelas regras de decisão | 0 a 40 | 0–6 robusto · 7–14 risco · ≥ 15 frágil |
 
-| Elemento | Código LOINC | Descrição Semântica | Unidade UCUM | Faixa Normal | Critério de Alerta |
-|---|---|---|---|---|---|
-| **Escore Total IVCF-20** | `96763-8` | Vulnerability index total score | `{score}` (0–40) | 0 a 6 (Robusto) | ≥ 7 (Risco) / ≥ 15 (Frágil) |
-| **Pressão Arterial Sistólica** | `8480-6` | Systolic blood pressure | `mm[Hg]` | < 140 mmHg | ≥ 180 mmHg |
-| **Pressão Arterial Diastólica** | `8462-4` | Diastolic blood pressure | `mm[Hg]` | < 90 mmHg | ≥ 110 mmHg |
-| **Frequência Cardíaca** | `8867-4` | Heart rate | `/min` | 60 a 100 bpm | < 50 bpm / > 120 bpm |
-| **Saturação de Oxigênio (SpO2)** | `59408-5` | Oxygen saturation in Arterial blood | `%` | 95% a 100% | < 92% (Alerta de hipoxemia) |
-| **Índice de Massa Corporal (IMC)** | `39156-5` | Body mass index | `kg/m2` | 22.0 a 27.0 (Idoso) | < 22.0 (Baixo peso) / > 27.0 (Sobrepeso) |
+### 5.2.2 Sinais Vitais IoT do ATENTO 60+ (`Atento60ObservationIotVital`)
+
+| Elemento | Código LOINC | Unidade UCUM | Uso na lógica de decisão |
+|---|---|---|---|
+| **Pressão arterial sistólica / diastólica** | `8480-6` / `8462-4` | `mm[Hg]` | Gatilho `GA-AT-03` fora da referência crítica |
+| **Frequência cardíaca** | `8867-4` | `/min` | Gatilho `GA-AT-03` fora da referência crítica |
+| **Saturação de oxigênio (SpO2)** | `59408-5` | `%` | Gatilho `GA-AT-03` fora da referência crítica |
+| **Peso corporal** | `29463-7` | `kg` | Gatilho `GA-AT-04` (perda não intencional) |
+| **Altura** | `8302-2` | `cm` | Cálculo do IMC |
+| **Índice de massa corporal** | `39156-5` | `kg/m2` | Gatilho `GA-AT-05` (IMC < 22) |
+
+> Os limiares críticos de PA, FC e SpO2 não estão definidos no protocolo L1 e ficam a cargo da equipe clínica (ver [Lógica de Decisão](l2-decision-logic.html), seção 6.5).
 
 ---
 
 ## 5.3 🫀 CardioRemoto — Dicionário de Triagem, IoT e Exames Laboratoriais
 
-### 5.3.1 Triagem Clínica e Fatores de Risco (`Questionnaire/CardioTriage`)
+### 5.3.1 Triagem Clínica (`QuestionnaireCardioTriage`)
 
-| LinkId | Variável | Código LOINC / SCT | Tipo | Valores Permitidos | Impacto no Risco |
-|---|---|---|---|---|---|
-| `has-diagnostico` | Diagnóstico de HAS | SCT `38341003` | `boolean` | `true` \| `false` | Fator maior de risco CV |
-| `dm-diagnostico` | Diagnóstico de DM2 | SCT `44054006` | `boolean` | `true` \| `false` | Fator maior de risco CV |
-| `dm-tempo` | Tempo de Diagnóstico DM2 | LOINC `68555-2` | `quantity` | Anos (`a`) | > 10 anos eleva estrato para Alto Risco |
-| `uso-insulina` | Uso Contínuo de Insulina | LOINC `67713-8` | `boolean` | `true` \| `false` | Indica complexidade glicêmica |
-| `tabagismo` | Status Tabágico | LOINC `72166-2` | `choice` | • Nunca fumou<br>• Ex-fumante<br>• Fumante ativo | Tabagismo ativo duplica risco coronariano |
-| `adesao-medicamentosa` | Adesão ao Tratamento (Morisky-4) | LOINC `89555-7` | `choice` | • Alta (0 erros)<br>• Média (1-2 erros)<br>• Baixa (3-4 erros) | Baixa adesão aciona teleconsulta de enfermagem |
-| `sintomas-precordiais` | Dor no Peito / Angina | SCT `29857009` | `boolean` | `true` \| `false` | `true` = Alerta Vermelho Imediato |
+| LinkId | Variável | Uso na lógica de decisão |
+|---|---|---|
+| `g1-tabagismo` | Status de tabagismo | Fator de risco registrado |
+| `g1-atividade` | Nível de atividade física | Fator de risco registrado |
+| `g1-estatina` | Uso regular de estatina | Contexto terapêutico |
+| `g1-antihipertensivo` | Uso regular de anti-hipertensivo | Contexto terapêutico |
+| `g1-evento-cv` | Histórico de evento cardiovascular prévio | Evento nos últimos 12 meses → estrato Vermelho (`DT-CR-03`) |
+| `g2-dor-toracica` | Dor ou aperto no peito com irradiação recente | Alerta Vermelho (`AL-CR-04`) |
+| `g2-deficit-neuro` | Fraqueza súbita em um lado do corpo, desvio de rima ou fala arrastada | Alerta Vermelho (`AL-CR-04`) |
+| `g2-dispneia-aguda` | Falta de ar intensa súbita ou em repouso | Alerta Vermelho (`AL-CR-04`) |
+| `g2-sintomas-hipo` | Sudorese fria, tremores, tontura severa ou confusão mental | Sintomas associados à glicemia (`AL-CR-02`) |
 
-### 5.3.2 Sinais Vitais IoT e Exames Laboratoriais do CardioRemoto
+### 5.3.2 Sinais Vitais IoT e Exames Laboratoriais
 
-| Parâmetro | Código LOINC | Descrição | Unidade UCUM | Meta Terapêutica SUS | Estrato Amarelo (Moderado) | Estrato Vermelho (Grave / Emergência) |
-|---|---|---|---|---|---|---|
-| **PA Sistólica** | `8480-6` | Systolic blood pressure | `mm[Hg]` | < 130 mmHg (com DM) ou < 140 | 140 a 179 mmHg | **≥ 180 mmHg** ou crise aguda |
-| **PA Diastólica** | `8462-4` | Diastolic blood pressure | `mm[Hg]` | < 80 mmHg (com DM) ou < 90 | 90 a 109 mmHg | **≥ 110 mmHg** |
-| **Glicemia Capilar Jejum** | `14743-9` | Glucose Capillary fasting | `mg/dL` | 70 a 130 mg/dL | 131 a 250 mg/dL | **> 300 mg/dL** ou **< 70 mg/dL** (Hipoglicemia) |
-| **Glicemia Pós-Prandial** | `14745-4` | Glucose Capillary 2h post-meal | `mg/dL` | < 180 mg/dL | 181 a 299 mg/dL | **> 300 mg/dL** |
-| **Frequência Cardíaca** | `8867-4` | Heart rate | `/min` | 60 a 100 bpm | 50–59 ou 101–120 bpm | **< 50 bpm** (Bradicardia) / **> 120 bpm** |
-| **Hemoglobina Glicada (HbA1c)**| `4548-4` | HbA1c MFr Bld | `%` | < 7.0% (Idoso frágil: < 8.0%)| 7.0% a 9.0% | **> 9.0%** (Descontrole glicêmico grave) |
-| **Colesterol LDL** | `2089-1` | Cholesterol in LDL | `mg/dL` | < 70 (Alto Risco) / < 50 (Muito Alto) | 100 a 159 mg/dL | **≥ 160 mg/dL** |
-| **Colesterol HDL** | `2085-9` | Cholesterol in HDL | `mg/dL` | H: > 40 mg/dL / M: > 50 mg/dL| H: 30–39 / M: 40–49 | **< 30 mg/dL** |
-| **Triglicerídeos** | `2571-8` | Triglyceride in Serum | `mg/dL` | < 150 mg/dL (Jejum) | 150 a 499 mg/dL | **≥ 500 mg/dL** (Risco de Pancreatite) |
-| **Creatinina Sérica** | `2160-0` | Creatinine in Serum | `mg/dL` | 0.6 a 1.2 mg/dL | 1.3 a 1.9 mg/dL | **≥ 2.0 mg/dL** ou elevação aguda > 50% |
-| **Taxa de Filtração Glomerular**| `48642-3` | eGFR CKD-EPI (2021) | `mL/min/{1.73_m2}`| ≥ 60 mL/min/1.73m² | 30 a 59 (DRC Estágio 3) | **< 30 mL/min/1.73m²** (DRC Estágio 4/5) |
-| **Relação Albumina/Creatinina**| `14959-1` | Albumin/Creatinine in Urine | `mg/g` | < 30 mg/g (Normoalbuminúria) | 30 a 299 (Microalbuminúria)| **≥ 300 mg/g** (Macroalbuminúria) |
+| Parâmetro | Código LOINC | Unidade UCUM | Meta (estratificação) | Alertas |
+|---|---|---|---|---|
+| **PA sistólica / diastólica** | `8480-6` / `8462-4` | `mm[Hg]` | < 140/90 mmHg | Vermelho: ≥ 180/120 ou < 90/60 · Amarelo: 140–179 / 90–119 |
+| **Frequência cardíaca** | `8867-4` | `/min` | — | Vermelho: > 100 ou < 50 bpm |
+| **Glicemia capilar** | `14743-9` | `mg/dL` | — | Vermelho: ≥ 250 com sintomas ou < 70 · Amarelo: > 300 sem sintomas |
+| **Glicemia de jejum** | `1558-6` | `mg/dL` | — | — |
+| **HbA1c** | `4548-4` | `%` | < 7,0% | Amarelo: ≥ 7,0% |
+| **LDL-colesterol** | `13457-7` | `mg/dL` | < 130 mg/dL | Amarelo: ≥ 190 mg/dL |
+| **HDL-colesterol** | `2085-9` | `mg/dL` | — | — |
+| **Triglicerídeos** | `2571-8` | `mg/dL` | — | Laranja: > 1000 mg/dL |
+| **Creatinina sérica** | `2160-0` | `mg/dL` | — | — |
+| **TFG (CKD-EPI)** | `33914-3` | `mL/min/{1.73_m2}` | — | — |
+| **Microalbumina/creatinina urinária** | `14958-3` | `mg/g` | — | — |
+| **Peso corporal** | `29463-7` | `kg` | — | Laranja: perda involuntária ≥ 5% |
+| **IMC** | `39156-5` | `kg/m2` | — | — |
+| **Circunferência da cintura** | `8280-0` | `cm` | — | — |
+
+Os parâmetros da estratificação são PA, HbA1c e LDL; o estrato depende de quantos estão fora da meta e da presença de evento cardiovascular recente (ver `DT-CR-01` a `DT-CR-03`).
 
 ---
 
-## 5.4 🏡 FamilIAr_Ativa — Dicionário de Sintomas ESAS, Sobrecarga Zarit e IA/XAI
+## 5.4 🏡 FamilIAr_Ativa — Dicionário do ESAS, da Zarit e dos Alertas
 
-### 5.4.1 Escala de Avaliação de Sintomas de Edmonton (ESAS — 0 a 10)
+### 5.4.1 ESAS — 6 Domínios (`FamiliarAtivaEsasQuestionnaire`)
 
-| LinkId | Sintoma Avaliado | Código LOINC | Escala Numérica | Classificação Clínica | Ação do Protocolo |
-|---|---|---|---|---|---|
-| `esas-01` | **Dor** | `72514-3` | `0` (Sem dor) a `10` (Pior dor possível) | 0–3 Leve · 4–6 Moderada · **7–10 Intensa** | Se ≥ 7: Alerta RA-01 (Ajuste álgico urgente) |
-| `esas-02` | **Cansaço / Fadiga** | `54647-3` | `0` (Sem cansaço) a `10` (Pior cansaço) | 0–3 Leve · 4–6 Moderado · **7–10 Severo** | Avaliar anemia, hipoxemia e sobrecarga |
-| `esas-03` | **Sonolência** | `72511-9` | `0` (Sem sonolência) a `10` (Pior sonolência) | 0–3 Leve · 4–6 Moderada · **7–10 Excessiva** | Avaliar toxicidade de opioides/sedativos |
-| `esas-04` | **Náusea** | `72512-7` | `0` (Sem náusea) a `10` (Pior náusea) | 0–3 Leve · 4–6 Moderada · **7–10 Intratável** | Se ≥ 7: Antiemético parenteral / visita |
-| `esas-05` | **Falta de Apetite** | `72510-1` | `0` (Sem falta) a `10` (Pior falta de apetite) | 0–3 Leve · 4–6 Moderada · **7–10 Anorexia** | Orientação nutricional paliativa |
-| `esas-06` | **Falta de Ar (Dispneia)**| `72513-5` | `0` (Sem dispneia) a `10` (Pior falta de ar) | 0–3 Leve · 4–6 Moderada · **7–10 Asfixia** | Se ≥ 7: Alerta RA-01 (Morfina/O2 imediato) |
-| `esas-07` | **Depressão / Tristeza** | `72509-3` | `0` (Sem tristeza) a `10` (Pior depressão) | 0–3 Leve · 4–6 Moderada · **7–10 Sofrimento** | Acionar Psicologia / Terapia de suporte |
-| `esas-08` | **Ansiedade / Nervosismo**| `72508-5` | `0` (Sem ansiedade) a `10` (Pior ansiedade) | 0–3 Leve · 4–6 Moderada · **7–10 Pânico** | Manejo ansiolítico / Acolhimento familiar |
-| `esas-09` | **Mal-estar Geral** | `72507-7` | `0` (Melhor possível) a `10` (Pior possível) | 0–3 Bom · 4–6 Regular · **7–10 Sofrimento global** | Indicador composto de qualidade de vida |
-| `esas-10` | **Outro Sintoma (Livre)** | `72506-9` | `0` a `10` (ex: constipação, insônia, prurido) | Texto livre + escore 0 a 10 | Especificar etiologia |
+Cada domínio é um inteiro de 0 (ausente) a 10 (pior possível). O sistema calcula a soma e grava um timestamp imutável.
 
-### 5.4.2 Escala de Sobrecarga do Cuidador de Zarit (Versão Breve e Completa)
+| LinkId | Domínio | Código LOINC |
+|---|---|---|
+| `dor` | Dor | `38208-5` |
+| `dispneia` | Falta de ar (dispneia) | `89443-6` |
+| `ansiedade` | Ansiedade | `89444-4` |
+| `cansaco` | Cansaço (fadiga) | `89445-1` |
+| `apetite` | Falta de apetite | `89446-9` |
+| `bem-estar` | Mal-estar (bem-estar geral) | `89447-7` |
+| — | **Soma ESAS** (`FamiliarAtivaObservationEsasScore`) | 0 a 60; nível de risco em `FamiliarAtivaEsasRiskCS`: baixo (0–30), moderado (31–50), alto (51–70) |
 
-| LinkId | Dimensão de Sobrecarga | Código CS | Tipo | Opções de Resposta | Pontuação |
-|---|---|---|---|---|---|
-| `zarit-tempo` | Sente que não tem tempo suficiente para si mesmo? | `ZaritItemCS#tempo` | `choice` | • Nunca (`0`) · Raramente (`1`) · Às vezes (`2`) · Frequentemente (`3`) · Quase sempre (`4`) | 0 a 4 |
-| `zarit-estresse` | Sente-se estressado por ter que cuidar do paciente e de outras responsabilidades? | `ZaritItemCS#estresse` | `choice` | • Nunca (`0`) · Raramente (`1`) · Às vezes (`2`) · Frequentemente (`3`) · Quase sempre (`4`) | 0 a 4 |
-| `zarit-saude` | Sente que sua saúde foi prejudicada por causa do seu papel como cuidador? | `ZaritItemCS#saude` | `choice` | • Nunca (`0`) · Raramente (`1`) · Às vezes (`2`) · Frequentemente (`3`) · Quase sempre (`4`) | 0 a 4 |
-| `zarit-esgotamento`| Sente-se exausto ou sem forças para continuar cuidando? | `ZaritItemCS#exaustao` | `choice` | • Nunca (`0`) · Raramente (`1`) · Às vezes (`2`) · Frequentemente (`3`) · Quase sempre (`4`) | 0 a 4 |
-| `zarit-score-total`| **Escore Total de Zarit (0 a 88)** | `ZaritItemCS#score-total` | `quantity` | • **0 a 20:** Sobrecarga Leve ou Ausente<br>• **21 a 40:** Sobrecarga Moderada<br>• **41 a 88:** **Sobrecarga Severa / Esgotamento** | Alerta RA-02 se ≥ 41 |
+> As faixas vêm do DAK de origem e vão até 70, mas o máximo aritmético com 6 domínios é 60 (pendência na seção 6.5 da Lógica de Decisão).
 
-### 5.4.3 Variáveis e Atributos de Inteligência Artificial Explicável (XAI)
+### 5.4.2 Escala de Sobrecarga do Cuidador de Zarit (`FamiliarAtivaZaritQuestionnaire`)
 
-| Campo | Descrição Semântica | Tipo FHIR | Valores / Estrutura | Significado Clínico |
-|---|---|---|---|---|
-| `xai-prob-descompensacao` | Probabilidade Preditiva de Crise nas próximas 48h | `Observation.valueDecimal` | `0.00` a `1.00` (0% a 100%) | Se > 0.70: Dispara Alerta Preditivo |
-| `xai-top-features` | 3 Principais Fatores Contribuintes (SHAP Values) | `Observation.component` | Vetor de strings com pesos (ex: `Dor (+0.35)`, `Dispneia (+0.25)`, `Zarit (+0.18)`) | Justifica auditabilidade médica da decisão |
-| `xai-confianca-modelo` | Índice de Confiança do Modelo | `Observation.component` | `0.00` a `1.00` | Nível de certeza estatística do algoritmo |
+| LinkId | Conteúdo | Pontuação |
+|---|---|---|
+| `z01` a `z22` | 22 itens da Zarit Burden Interview (ZBI-22). O texto oficial dos itens é licenciado e não é reproduzido neste guia. | 0 a 4 por item |
+| — | **Pontuação total** (`FamiliarAtivaObservationZaritScore`, código `FamiliarAtivaObsCodeCS#zarit-total-score`) | 0 a 88; classificação em `FamiliarAtivaZaritClassCS`: leve (0–20), moderada (21–40), severa (41–88) |
+
+### 5.4.3 Alertas Clínicos (`FamiliarAtivaFlagClinicalAlert`)
+
+| Elemento | Valores | Significado |
+|---|---|---|
+| `Flag.code` | `FamiliarAtivaAlertTypeCS`: `esas-alto`, `zarit-severa`, `adesao-baixa` | Regras RA-01, RA-02 e RA-03 |
+| `Flag.status` | `active` (Aberto) · `inactive` (Resolvido) | Um alerta só é resolvido com anotação clínica |
+| `Flag.period.start` | Data e hora | Momento de criação do alerta |
+
+A predição por IA com XAI (RF-PS06) complementa as regras; o protocolo L1 não define variáveis nem limiares de probabilidade para ela.
 
 ---
 
-## 5.5 🌾 AgroSUS — Dicionário de Anamnese Ocupacional e Vigilância Toxicológica
+## 5.5 🌾 AgroSUS — Dicionário da Anamnese Ocupacional e da Vigilância Biológica
 
-### 5.5.1 Anamnese Ocupacional Rural (`Questionnaire/AgroSUSAnamnese`)
+### 5.5.1 Anamnese Ocupacional (`agrosus-anamnese`)
 
-| LinkId | Variável | Código LOINC / CID | Tipo | Valores Permitidos e Detalhamento |
-|---|---|---|---|---|
-| `agro-cultura` | Tipo de Cultivo Principal | SCT `308764002` | `choice` | • Hortaliças / Folhosas · Tomate · Café · Fruticultura · Grãos (Soja/Milho) · Cana-de-açúcar · Outro |
-| `agro-defensivos` | Defensivos Químicos Manipulados | SCT `418706001` | `open-choice` | Lista aberta padronizada de princípios ativos comerciais |
-| `agro-classe-quimica` | Classe Toxicológica Principal | SCT `26400003` | `choice` | • **Organofosforados** (Inibidores da Colinesterase)<br>• **Carbamatos** (Inibidores Reversíveis)<br>• **Piretroides** (Neurotóxicos de canais de sódio)<br>• **Herbicidas / Glifosato**<br>• **Fungicidas Ditiocarbamatos** |
-| `agro-forma-aplicacao` | Forma de Pulverização | SCT `42425007` | `choice` | • Pulverizador Costal Manual (`maior contato dérmico`)<br>• Pulverizador Costal Motorizado<br>• Tratorizado com Barra<br>• Pistola Manual |
-| `agro-frequencia-uso` | Frequência de Aplicação | LOINC `89555-7` | `choice` | • Diária · Semanal · Quinzenal · Mensal · Sazonal (safra) |
-| `agro-epi-mascara` | Uso de Máscara / Respirador com Filtro | SCT `425268008` | `choice` | • Sempre com filtro químico carvão ativado (`0`) · Máscara de pano/cirúrgica inadequada (`3`) · Não usa (`5`) |
-| `agro-epi-luvas` | Uso de Luvas de Proteção Nitrílica | SCT `425268009` | `choice` | • Luvas nitrílicas adequadas (`0`) · Luvas de pano/látex comum (`3`) · Não usa (`5`) |
-| `agro-epi-macacao` | Uso de Macacão Hidrorrepelente | SCT `425268010` | `choice` | • Macacão com CA válido (`0`) · Roupa de algodão comum (`4`) · Sem camisa / bermuda (`6`) |
-| `agro-epi-botas` | Uso de Botas de PVC Impermeáveis | SCT `425268011` | `choice` | • Bota de PVC cano longo (`0`) · Chinelo / sapato de tecido (`5`) |
-| `agro-lavagem-epi` | Local e Forma de Lavagem das Roupas | SCT `306161008` | `choice` | • Lavadas separadas das roupas da família com luvas (`0`) · Lavadas juntas com as roupas dos filhos/cônjuge (`4`) |
-| `agro-descarte-embalagens`| Destino das Embalagens Vazias | SCT `418706002` | `choice` | • Tríplice lavagem e devolução ao posto de recebimento licenciado (`0`) · Queimadas no terreno (`4`) · Reutilizadas para armazenar água/alimentos (`6`) |
-| `agro-sintomas-agudos` | Sintomas Agudos Após Aplicação | SCT `248536006` | `multi-choice`| • Miose / Visão turva · Sialorreia (excesso saliva) · Náuseas / Vômitos · Cólicas abdominais / Diarreia · Fasciculações musculares · Tontura / Cefaleia intensa · Dispneia / Broncoespasmo · Convulsão |
+A anamnese é aplicada pelo ACS e organizada em 18 seções. As seções usadas pela lógica de decisão estão destacadas.
 
-### 5.5.2 Vigilância Laboratorial da Colinesterase (NR-7)
+| Seção | LinkId | Conteúdo | Uso na lógica de decisão |
+|---|---|---|---|
+| 1 | `identificacao-instrumento` | Identificação do instrumento | — |
+| 2 | `dados-pessoais` | Dados pessoais do participante | Contraindicações ao manuseio (6.4.5) |
+| 3 | `caracterizacao-propriedade` | Caracterização da propriedade rural | — |
+| 4 | `assistencia-responsabilidade-tecnica` | Assistência técnica e responsabilidade técnica | — |
+| 5 | `capacitacao-trabalhador` | Capacitação do trabalhador | — |
+| **6** | `defensivos-conformidade` | Defensivos utilizados e conformidade legal | **`GA-AG-02`** (categoria toxicológica 1 ou 2) |
+| 7 | `rastreabilidade-aplicacoes` | Rastreabilidade das aplicações | — |
+| 8 | `frequencia-forma-exposicao` | Frequência e forma de exposição | — |
+| **9** | `equipamentos-protecao-individual` | Equipamentos de Proteção Individual | **`GA-AG-02`** (EPI adequado) |
+| 10 | `armazenamento-defensivos` | Armazenamento dos defensivos | — |
+| 11 | `destinacao-embalagens-vazias` | Destinação das embalagens vazias | — |
+| 12 | `exposicao-familiar-ambiental` | Exposição familiar e ambiental | — |
+| **13** | `condicoes-saude-sintomas` | Condições de saúde e sintomas | **`GA-AG-01`** (sintoma agudo) |
+| **14** | `historico-intoxicacao-vigilancia` | Histórico de intoxicação e vigilância em saúde (inclui `caso-notificado-sinan`) | **`GA-AG-03`** (intoxicação prévia) |
+| 15 | `indicadores-boas-praticas` | Indicadores de boas práticas agrícolas | — |
+| 16 | `vigilancia-sinais-alerta` | Vigilância de sinais de alerta | — |
+| 17 | `observacoes-acs` | Observações do ACS | — |
+| 18 | `encerramento-assistencial` | Encerramento | — |
 
-| Exame | Código LOINC | Unidade UCUM | Valor Basal Pré-Exposição | Limiar de Atenção (NR-7) | Limiar Crítico / Intoxicação |
+### 5.5.2 Vigilância Biológica da Colinesterase (NR-7)
+
+| Exame | Código LOINC | Unidade | Normal | Precaução | Alterado (excede o IBMP) |
 |---|---|---|---|---|---|
-| **Colinesterase Eritrocitária (AChE)** | `2099-0` | `U/L` ou `U/g Hb` | Estabelecido no exame pré-admissional (100%) | **Queda ≥ 30%** em relação ao basal individual | **Queda ≥ 50%** em relação ao basal ou sintomas agudos |
-| **Colinesterase Plasmática (BChE / Pseudocolinesterase)** | `2100-6` | `U/L` | Estabelecido no exame pré-admissional (100%) | **Queda ≥ 50%** em relação ao basal individual | **Queda ≥ 70%** em relação ao basal |
-| **Código CID-10 de Intoxicação** | CID-10 `T60.0` | — | Efeito tóxico de inseticidas organofosforados e carbamatos | Notificação compulsória imediata no SINAN |
+| **Colinesterase plasmática** | `2099-0` | `U/L` | Inibição < 20% | 20% a 50% | **> 50%** |
+| **Colinesterase de sangue total / eritrocitária** | a definir no L3 | `U/L` | Inibição < 20% | 20% a 25% | **> 25%** |
+
+* **% de inibição** = (atividade basal − atividade obtida) ÷ atividade basal × 100.
+* O valor basal é obtido no exame admissional (`AgroSUSSolicitacaoExame` + `AgroSUSResultadoLaboratorial`), antes do manuseio de organofosforados/carbamatos.
+* Um resultado alterado gera afastamento de 30 dias, `AgroSUSPlanoAcompanhamento` e retestagem em 30 dias.
