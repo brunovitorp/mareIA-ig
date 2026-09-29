@@ -1,7 +1,7 @@
 # Plataforma mareIA — SMART Guidelines IG (Guia Integrado de Telemonitoramento)
 
 > 🌐 **Publicação Online do Guia de Implementação:**  
-> Acesse a documentação interativa e o portal completo em: **[https://brunovitorp.github.io/mareIA-ig/](https://brunovitorp.github.io/mareIA-ig/)**
+> Acesse a documentação interativa e o portal completo em: **[https://mareia.nutes.ufpe.br/ig/](https://mareia.nutes.ufpe.br/ig/en/)**
 
 **Implementation Guide Integrado (FHIR R4)** da **Plataforma mareIA** — Guia unificado de telemonitoramento clínico e suporte à decisão assistencial no âmbito do **SUS Digital** e do **Programa RNP Redes de Colaboração em Saúde Digital 2025**.
 
