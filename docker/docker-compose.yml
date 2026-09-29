@@ -1,0 +1,12 @@
+# Implantação no servidor Docker do NUTES (150.161.6.124), em /opt/mareia-ig.
+# Publicado pelo nginx de borda (150.161.6.123) em https://mareia.nutes.ufpe.br/ig/.
+#
+# Atualizar para a versão mais recente do IG:
+#   cd /opt/mareia-ig && docker compose pull && docker compose up -d
+services:
+  mareia-ig:
+    image: ghcr.io/brunovitorp/mareia-ig:latest
+    container_name: mareia-ig
+    restart: unless-stopped
+    ports:
+      - "13010:80"

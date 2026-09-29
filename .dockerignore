@@ -1,0 +1,4 @@
+# Contexto da imagem docker/Dockerfile: só o site gerado e a config do nginx.
+*
+!output/
+!docker/nginx.conf
