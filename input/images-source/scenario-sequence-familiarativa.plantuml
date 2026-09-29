@@ -1,25 +1,30 @@
 @startuml
-title Diagrama de Sequência — Cenário FamilIAr_Ativa (Predição de Risco XAI e Apoio)
+title Diagrama de Sequência — Cenário FamilIAr_Ativa (SC-FAMILIAR-02: Piora dos Sintomas e Sobrecarga)
 skinparam shadowing false
 skinparam defaultFontName Helvetica
 
 actor "Cuidador(a) Familiar" as Cuidador
 participant "App Domiciliar\nFamilIAr_Ativa" as App
 participant "Servidor FHIR\n(Plataforma mareIA)" as FHIR
-participant "Motor IA / XAI\n(Predição de Risco)" as XAI
-participant "Motor de Regras\n(EsasZaritLogic CQL)" as Engine
+participant "Motor de Regras\n(EsasZaritLogic)" as Engine
+participant "Módulo IA / XAI\n(complementar)" as XAI
 actor "Equipe Multiprofissional\n(CUIDATIVA / UFPel)" as Equipe
 actor "Paciente Paliativo" as Paciente
 
-Cuidador -> App: Preenche questionário ESAS (Dor: 8/10, Falta de Ar: 7/10)
-Cuidador -> App: Preenche questionário Zarit (Sobrecarga: 45/88 - Severa)
-App -> FHIR: POST QuestionnaireResponse (ESAS & Zarit)
-FHIR -> Engine: Processa regras determinísticas (RA-01 e RA-02)
-FHIR -> XAI: Processa séries temporais de sintomas
-XAI -> XAI: Prediz risco iminente de descompensação (Confiança: 89%, Fator: Dor Refratária + Sobrecarga)
-XAI -> FHIR: Cria FlagClinicalAlert (Severidade: Alta, Explicação XAI anexada)
-FHIR -> Equipe: Notifica equipe multiprofissional no painel do CUIDATIVA
-Equipe -> Cuidador: Realiza contato de teleorientação prioritária
-Equipe -> Paciente: Realiza visita domiciliar com médico e enfermeiro
-Equipe -> FHIR: Registra ajuste no plano de cuidados e analgesia
+Cuidador -> App: Preenche ESAS (6 domínios, soma = 52)
+App -> FHIR: POST QuestionnaireResponse (ESAS)
+FHIR -> Engine: Classifica soma ESAS
+Engine -> FHIR: Risco Alto; Flag ESAS_ALTO ativo (RA-01)
+FHIR -> Equipe: Notifica profissional vinculado
+FHIR -> Cuidador: Orientação + mensagem bidirecional (RA-05)
+Cuidador -> App: Preenche Zarit (64/88)
+App -> FHIR: POST QuestionnaireResponse (Zarit)
+FHIR -> Engine: Classifica sobrecarga
+Engine -> FHIR: Severa; Flag ZARIT_SEVERA ativo (RA-02)
+FHIR -> XAI: Série temporal de sintomas
+XAI -> Equipe: Exibe predição e fatores de maior peso
+Equipe -> Equipe: Valida a predição (human-in-the-loop)
+Equipe -> Cuidador: Teleorientação e ajuste da analgesia
+Equipe -> Paciente: Visita domiciliar
+Equipe -> FHIR: Resolve alertas com anotação clínica (status inactive)
 @enduml
