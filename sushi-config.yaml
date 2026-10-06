@@ -14,7 +14,7 @@ description: >-
   ATENTO 60+ (Pessoa Idosa), FamilIAr_Ativa (Cuidados Paliativos) e AgroSUS (Trabalhador Rural).
   Programa RNP Redes de Colaboração em Saúde Digital 2025.
 status: draft
-version: 0.2.0
+version: 0.2.1
 fhirVersion: 4.0.1
 copyrightYear: 2026+
 releaseLabel: ci-build
