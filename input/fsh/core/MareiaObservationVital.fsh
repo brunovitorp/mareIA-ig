@@ -7,7 +7,12 @@ Description: "Perfil base de sinal vital e medida antropométrica, comum a todos
 * ^status = #active
 * status MS
 * category 1..* MS
-* category = $obs-category#vital-signs
+* category ^slicing.discriminator.type = #pattern
+* category ^slicing.discriminator.path = "$this"
+* category ^slicing.rules = #open
+* category ^slicing.description = "Contém vital-signs; outras categorias são permitidas"
+* category contains VSCat 1..1 MS
+* category[VSCat] = $obs-category#vital-signs
 * code MS
 * code from MareiaVitalLoincVS (extensible)
 * subject 1..1 MS

@@ -43,7 +43,7 @@ Os sinais vitais e as medidas antropométricas podem ser coletados por qualquer 
 
 1. **Número de série estável e único** por aparelho, em `Device.identifier` com sistema `https://mareia.nutes.ufpe.br/fhir/sid/device-serial`.
 2. **Um Device por aparelho:** criar com criação condicional (`ifNoneExist: identifier=https://mareia.nutes.ufpe.br/fhir/sid/device-serial|<serial>`), para que envios seguintes reaproveitem o registro.
-3. **Um DeviceMetric por aparelho e tipo de medida**, também com criação condicional.
+3. **Um DeviceMetric por aparelho e tipo de medida**, identificado por `<serial>-<loinc>` (ex.: `GLI-0001-41653-7`) no sistema `https://mareia.nutes.ufpe.br/fhir/sid/device-metric` e criado com criação condicional (`ifNoneExist: identifier=https://mareia.nutes.ufpe.br/fhir/sid/device-metric|<serial>-<loinc>`). No Bundle `transaction`, o `source` aponta para o `fullUrl` do Device criado na mesma transação.
 4. **Horário da medição** em `effectiveDateTime`, com fuso (ex.: `2026-10-05T10:00:00-03:00`), conforme informado pelo aparelho.
 5. **Valor já na unidade UCUM da tabela**, com `valueQuantity.system = http://unitsofmeasure.org` e `valueQuantity.code` preenchido (ex.: glicemia em `mg/dL`, não `mmol/L`).
 6. Medidas **digitadas** não têm `device`.

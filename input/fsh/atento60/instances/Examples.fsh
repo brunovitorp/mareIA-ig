@@ -30,7 +30,7 @@ Usage: #example
 Title: "Exemplo — Peso por IoT (balança digital)"
 Description: "Peso corporal coletado por balança digital (IoT)."
 * status = #final
-* category = $obs-category#vital-signs
+* category[VSCat] = $obs-category#vital-signs
 * code = $loinc#29463-7
 * subject = Reference(atento60-patient-example)
 * effectiveDateTime = "2026-06-15T09:00:00-03:00"

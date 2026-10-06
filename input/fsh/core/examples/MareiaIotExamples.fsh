@@ -18,6 +18,7 @@ InstanceOf: MareiaDeviceMetric
 Usage: #example
 Title: "Exemplo — Glicemia capilar medida pelo glicosímetro (DeviceMetric)"
 Description: "Tipo de medida (LOINC) e unidade (UCUM) do glicosímetro de exemplo."
+* identifier[metricKey].value = "GLI-0001-41653-7"
 * type = $loinc#41653-7 "Glucose [Mass/volume] in Capillary blood by Glucometer"
 * unit = $ucum#mg/dL "mg/dL"
 * source = Reference(mareia-device-glucometer-example)
@@ -29,7 +30,7 @@ Usage: #example
 Title: "Exemplo — Glicemia capilar por glicosímetro (ATENTO 60+)"
 Description: "Medição recebida do glicosímetro de exemplo, rastreável até o aparelho via DeviceMetric."
 * status = #final
-* category = $obs-category#vital-signs
+* category[VSCat] = $obs-category#vital-signs
 * code = $loinc#41653-7 "Glucose [Mass/volume] in Capillary blood by Glucometer"
 * subject = Reference(atento60-patient-example)
 * effectiveDateTime = "2026-10-05T10:00:00-03:00"
@@ -42,7 +43,7 @@ Usage: #example
 Title: "Exemplo — Glicemia capilar por glicosímetro (CardioRemoto)"
 Description: "Mesma estrutura de medição IoT aplicada ao CardioRemoto."
 * status = #final
-* category = $obs-category#vital-signs
+* category[VSCat] = $obs-category#vital-signs
 * code = $loinc#41653-7 "Glucose [Mass/volume] in Capillary blood by Glucometer"
 * subject = Reference(ExamplePatientCardio)
 * effectiveDateTime = "2026-10-05T10:05:00-03:00"
