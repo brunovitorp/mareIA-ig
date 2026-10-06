@@ -3,7 +3,7 @@
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                   id="Defs_atento60"
-                  targetNamespace="https://mareia.saude.gov.br/bpmn/atento60">
+                  targetNamespace="https://mareia.nutes.ufpe.br/bpmn/atento60">
   <bpmn:process id="Process_atento60" name="ATENTO 60+ — Telemonitoramento da pessoa idosa" isExecutable="false">
 
     <bpmn:startEvent id="start" name="Pessoa idosa elegível identificada">

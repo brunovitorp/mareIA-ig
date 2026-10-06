@@ -7,7 +7,7 @@ Os **Indicadores de Programa da Plataforma mareIA** mensuram o desempenho clíni
 ## 7.1 Indicadores do CardioRemoto (UFPB / HULW)
 
 ### 1. `MeasureCardioHba1cControlada` — Taxa de Controle Glicêmico
-* **ID Canônico:** `https://mareia.saude.gov.br/ig/Measure/MeasureCardioHba1cControlada`
+* **ID Canônico:** `https://mareia.nutes.ufpe.br/ig/Measure/MeasureCardioHba1cControlada`
 * **Tipo:** Desfecho Clínico (Outcome)
 * **Objetivo:** Avaliar a proporção de pacientes diabéticos que atingiram controle glicêmico adequado (HbA1c < 7.0% para adultos ou < 8.0% para idosos frágeis).
 * **População Inicial (Initial Population):** Pacientes com diagnóstico de Diabetes Mellitus Tipo 2 (`SCT 44054006`) acompanhados há mais de 90 dias no ambulatório do HULW.
@@ -16,7 +16,7 @@ Os **Indicadores de Programa da Plataforma mareIA** mensuram o desempenho clíni
 * **Meta Programática SUS:** $\ge 70\%$ da coorte monitorada.
 
 ### 2. `MeasureCardioPAControlada` — Taxa de Controle Pressórico
-* **ID Canônico:** `https://mareia.saude.gov.br/ig/Measure/MeasureCardioPAControlada`
+* **ID Canônico:** `https://mareia.nutes.ufpe.br/ig/Measure/MeasureCardioPAControlada`
 * **Tipo:** Desfecho Clínico (Outcome)
 * **Objetivo:** Avaliar a proporção de pacientes hipertensos com pressão arterial controlada.
 * **Denominador:** Pacientes com diagnóstico de Hipertensão Arterial Sistêmica (`SCT 38341003`) em telemonitoramento ativo.
@@ -28,7 +28,7 @@ Os **Indicadores de Programa da Plataforma mareIA** mensuram o desempenho clíni
 ## 7.2 Indicadores do ATENTO 60+ (UFPE / Recife-PE)
 
 ### 3. `MeasureAtento60CoberturaIVCF` — Cobertura de Rastreamento de Fragilidade
-* **ID Canônico:** `https://mareia.saude.gov.br/ig/Measure/MeasureAtento60CoberturaIVCF`
+* **ID Canônico:** `https://mareia.nutes.ufpe.br/ig/Measure/MeasureAtento60CoberturaIVCF`
 * **Tipo:** Processo / Cobertura Assistencial
 * **Objetivo:** Mensurar o alcance da busca ativa de vulnerabilidade funcional na pessoa idosa na Atenção Primária.
 * **Denominador:** Total de pessoas idosas (idade $\ge 60$ anos) cadastradas no território da equipe da ESF.
@@ -36,7 +36,7 @@ Os **Indicadores de Programa da Plataforma mareIA** mensuram o desempenho clíni
 * **Meta Programática SUS:** $\ge 80\%$ da população idosa do território.
 
 ### 4. `MeasureAtento60PlanoCuidadoFragil` — Adesão ao Projeto Terapêutico Singular
-* **ID Canônico:** `https://mareia.saude.gov.br/ig/Measure/MeasureAtento60PlanoCuidadoFragil`
+* **ID Canônico:** `https://mareia.nutes.ufpe.br/ig/Measure/MeasureAtento60PlanoCuidadoFragil`
 * **Tipo:** Processo e Qualidade
 * **Objetivo:** Avaliar se os idosos identificados como fráveis receberam plano de intervenção multiprofissional.
 * **Denominador:** Idosos com escore total IVCF-20 $\ge 15$ pontos (Classificados como Frágeis).
@@ -48,7 +48,7 @@ Os **Indicadores de Programa da Plataforma mareIA** mensuram o desempenho clíni
 ## 7.3 Indicadores do FamilIAr_Ativa (UFPel / CUIDATIVA)
 
 ### 5. `MeasureFamiliarAtivaControleDor` — Eficácia no Controle de Dor Aguda
-* **ID Canônico:** `https://mareia.saude.gov.br/ig/Measure/MeasureFamiliarAtivaControleDor`
+* **ID Canônico:** `https://mareia.nutes.ufpe.br/ig/Measure/MeasureFamiliarAtivaControleDor`
 * **Tipo:** Desfecho Clínico
 * **Objetivo:** Mensurar a capacidade de resolução rápida de episódios de dor intensa em ambiente domiciliar.
 * **Denominador:** Total de episódios de dor intensa ($\text{ESAS-Dor} \ge 7/10$) registrados no aplicativo.
@@ -56,7 +56,7 @@ Os **Indicadores de Programa da Plataforma mareIA** mensuram o desempenho clíni
 * **Meta Programática SUS:** $\ge 85\%$ dos episódios críticos resolvidos em 24h.
 
 ### 6. `MeasureFamiliarAtivaSobrecargaCuidador` — Prevalência de Esgotamento do Cuidador
-* **ID Canônico:** `https://mareia.saude.gov.br/ig/Measure/MeasureFamiliarAtivaSobrecargaCuidador`
+* **ID Canônico:** `https://mareia.nutes.ufpe.br/ig/Measure/MeasureFamiliarAtivaSobrecargaCuidador`
 * **Tipo:** Impacto Social e Psicossocial
 * **Objetivo:** Monitorar a proporção de cuidadores familiares em situação de sobrecarga severa.
 * **Denominador:** Total de cuidadores familiares principais acompanhados pelo programa de cuidados paliativos.
@@ -68,7 +68,7 @@ Os **Indicadores de Programa da Plataforma mareIA** mensuram o desempenho clíni
 ## 7.4 Indicadores do AgroSUS (FATEC Ferraz)
 
 ### 7.7 `AgroSUSMeasureAdesaoPeriodicidade` — Adesão à Vigilância Biológica da NR-7
-* **ID Canônico:** `https://mareia.saude.gov.br/ig/Measure/AgroSUSMeasureAdesaoPeriodicidade`
+* **ID Canônico:** `https://mareia.nutes.ufpe.br/ig/Measure/AgroSUSMeasureAdesaoPeriodicidade`
 * **Tipo:** Conformidade Regulatória e Sanitária
 * **Objetivo:** Avaliar o cumprimento da periodicidade de exames laboratoriais de colinesterase em trabalhadores expostos.
 * **Denominador:** Trabalhadores rurais com registro de manipulação frequente de organofosforados ou carbamatos.
@@ -76,7 +76,7 @@ Os **Indicadores de Programa da Plataforma mareIA** mensuram o desempenho clíni
 * **Meta Programática SUS:** $\ge 80\%$ dos trabalhadores com exames periódicos em dia.
 
 ### 8. `AgroSUSMeasureCoberturaAnamnese` — Cobertura da Anamnese Ocupacional em Campo
-* **ID Canônico:** `https://mareia.saude.gov.br/ig/Measure/AgroSUSMeasureCoberturaAnamnese`
+* **ID Canônico:** `https://mareia.nutes.ufpe.br/ig/Measure/AgroSUSMeasureCoberturaAnamnese`
 * **Tipo:** Vigilância em Saúde do Trabalhador
 * **Objetivo:** Medir a proporção de propriedades agrícolas mapeadas com anamnese de defensivos e uso de EPIs.
 * **Denominador:** Total de estabelecimentos e propriedades da agricultura familiar cadastradas na microrregião.

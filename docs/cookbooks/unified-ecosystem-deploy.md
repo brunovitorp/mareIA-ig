@@ -9,7 +9,7 @@ Este guia explica como orquestrar e publicar o **Portal Central mareIA** juntame
 O deploy integrado deve disponibilizar a seguinte estrutura hierárquica de rotas:
 
 ```
-https://mareia.saude.gov.br/ig/
+https://mareia.nutes.ufpe.br/ig/
 ├── index.html                   ← Portal Central (Hub de Diretrizes)
 ├── portal.css                   ← Estilos do Portal
 ├── cardio/                      ← IG CardioRemoto (UFPB / HULW)

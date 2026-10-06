@@ -5,7 +5,7 @@
 # 3. FamilIAr_Ativa (Cuidados Paliativos Domiciliares — UFPel/CUIDATIVA)
 # 4. AgroSUS (Saúde do Trabalhador Rural — FATEC Ferraz)
 id: br.gov.mareia.ig
-canonical: https://mareia.saude.gov.br/ig
+canonical: https://mareia.nutes.ufpe.br/ig
 name: MareIAImplementationGuide
 title: "Plataforma mareIA — SMART Guidelines IG (Guia Integrado de Telemonitoramento)"
 description: >-
@@ -14,14 +14,14 @@ description: >-
   ATENTO 60+ (Pessoa Idosa), FamilIAr_Ativa (Cuidados Paliativos) e AgroSUS (Trabalhador Rural).
   Programa RNP Redes de Colaboração em Saúde Digital 2025.
 status: draft
-version: 0.1.0
+version: 0.2.0
 fhirVersion: 4.0.1
 copyrightYear: 2026+
 releaseLabel: ci-build
 license: CC-BY-SA-4.0
 publisher:
   name: Plataforma mareIA (UFPB / HULW / UFPE / UFPel / FATEC)
-  url: https://mareia.saude.gov.br
+  url: https://mareia.nutes.ufpe.br
 language: pt-BR
 jurisdiction: urn:iso:std:iso:3166#BR "Brazil"
 

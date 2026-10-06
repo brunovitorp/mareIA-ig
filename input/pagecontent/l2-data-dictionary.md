@@ -12,7 +12,7 @@ Todos os pathways compartilham a estrutura canônica de identificação do cidad
 |---|---|---|---|---|---|
 | `cns` | Cartão Nacional de Saúde (CNS) | `Identifier` | `https://saude.gov.br/fhir/sid/cns` | 15 dígitos numéricos (iniciados em 1, 2, 7, 8 ou 9) | Obrigatório no SUS |
 | `cpf` | Cadastro de Pessoas Físicas (CPF) | `Identifier` | `https://receita.fazenda.gov.br/fhir/sid/cpf` | 11 dígitos numéricos com validação de dígitos verificadores | Obrigatório |
-| `offlineSyncId` | Identificador UUID Offline | `Identifier` | `https://mareia.saude.gov.br/fhir/sid/offline-id` | UUID v4 (RFC 4122) para coleta sem conectividade | Obrigatório (ACS) |
+| `offlineSyncId` | Identificador UUID Offline | `Identifier` | `https://mareia.nutes.ufpe.br/fhir/sid/offline-id` | UUID v4 (RFC 4122) para coleta sem conectividade | Obrigatório (ACS) |
 | `nomeCompleto` | Nome Civil Completo | `HumanName.text` | String UTF-8 | Texto livre (sem abreviações artificiais) | Obrigatório |
 | `nomeSocial` | Nome Social (se aplicável) | `HumanName.text` | String UTF-8 | Conforme autodeclaração do usuário | Opcional |
 | `dataNascimento` | Data de Nascimento | `date` | ISO 8601 | `YYYY-MM-DD` | Obrigatório |

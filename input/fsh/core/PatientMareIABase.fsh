@@ -23,7 +23,7 @@ Description: "Perfil base de Paciente SUS compartilhado entre todas as linhas de
 * identifier[cpf].value 1..1 MS
 * identifier[cpf] ^short = "Cadastro de Pessoas Físicas (CPF)"
 
-* identifier[offlineSyncId].system = "https://mareia.saude.gov.br/fhir/sid/offline-id"
+* identifier[offlineSyncId].system = "https://mareia.nutes.ufpe.br/fhir/sid/offline-id"
 * identifier[offlineSyncId].value 1..1 MS
 * identifier[offlineSyncId] ^short = "Identificador temporário de sincronização offline-first"
 

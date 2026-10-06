@@ -18,7 +18,7 @@ O ecossistema adota integralmente a metodologia **WHO SMART Guidelines**, decomp
                                   ┌────────────────────────────────┐
                                   │      Plataforma mareIA         │
                                   │  Portal Central / Hub de IGs   │
-                                  │  https://mareia.saude.gov.br/  │
+                                  │  https://mareia.nutes.ufpe.br/  │
                                   └───────────────┬────────────────┘
                   ┌───────────────────────────────┼───────────────────────────────┐
                   ▼                               ▼                               ▼                               ▼
@@ -45,7 +45,7 @@ O ecossistema adota integralmente a metodologia **WHO SMART Guidelines**, decomp
 | **Gatilhos de Alerta** | 4 níveis (Imediato, Semanal, Quinzenal, Sem disparo) | Alerta de fragilização aguda / risco de queda | Alerta de dor aguda, sofrimento e sobrecarga | Alerta de queda enzimática >30% e sintomas agudos |
 | **Periodicidade de Monitoramento** | 90 dias (Verde) / 30 dias (Amarelo/Vermelho) | Trimestral / Semestral conforme IVCF-20 | Semanal / Quinzenal conforme ESAS | Semestral / Quadrimestral conforme NR-7 |
 | **ID Canônico FHIR** | `br.gov.mareia.cardio` | `br.gov.mareia.atento60` | `br.gov.mareia.familiarativa` | `br.gov.mareia.agrosus` |
-| **URL Canônica** | `https://mareia.saude.gov.br/ig/cardio` | `https://mareia.saude.gov.br/ig/atento60` | `https://mareia.saude.gov.br/ig/familiarativa` | `https://mareia.saude.gov.br/ig/agrosus` |
+| **URL Canônica** | `https://mareia.nutes.ufpe.br/ig/cardio` | `https://mareia.nutes.ufpe.br/ig/atento60` | `https://mareia.nutes.ufpe.br/ig/familiarativa` | `https://mareia.nutes.ufpe.br/ig/agrosus` |
 
 ---
 

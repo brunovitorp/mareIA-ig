@@ -43,7 +43,7 @@ Originalmente, este repositório continha apenas a linha de cuidado *CardioRemot
 ### 3.3 Governança e Configurações
 - `sushi-config.yaml`:
   - `id: br.gov.mareia.ig`
-  - `canonical: https://mareia.saude.gov.br/ig`
+  - `canonical: https://mareia.nutes.ufpe.br/ig`
   - `name: MareIAImplementationGuide`
   - `title: "Plataforma mareIA — SMART Guidelines IG (Guia Integrado de Telemonitoramento)"`
 - `ig.ini`: Aponta para `fsh-generated/resources/ImplementationGuide-br.gov.mareia.ig.json`.
