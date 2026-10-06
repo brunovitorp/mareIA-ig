@@ -18,7 +18,7 @@ waist_circ,Circunferência da Cintura,quantity,cm,LOINC:8280-0,Não,Metodologia 
 sbp,Pressão Arterial Sistólica,quantity,mmHg,LOINC:8480-6,Não,Metodologia §7.6.3.3
 dbp,Pressão Arterial Diastólica,quantity,mmHg,LOINC:8462-4,Não,Metodologia §7.6.3.3
 heart_rate,Frequência Cardíaca,quantity,bpm,LOINC:8867-4,Não,Metodologia §7.6.3.3
-capillary_glucose,Glicemia Capilar,quantity,mg/dL,LOINC:14743-9,Não,Metodologia §7.6.3.3
+capillary_glucose,Glicemia Capilar,quantity,mg/dL,LOINC:41653-7,Não,Metodologia §7.6.3.3
 fasting_glucose,Glicemia de Jejum,quantity,mg/dL,LOINC:1558-6,Não,Metodologia §7.6.3.4
 hba1c,Hemoglobina Glicada (HbA1c),quantity,%,LOINC:4548-4,Não,Metodologia §7.6.3.4
 total_cholesterol,Colesterol Total,quantity,mg/dL,LOINC:2093-3,Não,Metodologia §7.6.3.4

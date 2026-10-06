@@ -92,7 +92,7 @@ O **Índice de Vulnerabilidade Clínico-Funcional (IVCF-20)** tem 20 itens. A po
 |---|---|---|---|---|
 | **PA sistólica / diastólica** | `8480-6` / `8462-4` | `mm[Hg]` | < 140/90 mmHg | Vermelho: ≥ 180/120 ou < 90/60 · Amarelo: 140–179 / 90–119 |
 | **Frequência cardíaca** | `8867-4` | `/min` | — | Vermelho: > 100 ou < 50 bpm |
-| **Glicemia capilar** | `14743-9` | `mg/dL` | — | Vermelho: ≥ 250 com sintomas ou < 70 · Amarelo: > 300 sem sintomas |
+| **Glicemia capilar** | `41653-7` | `mg/dL` | — | Vermelho: ≥ 250 com sintomas ou < 70 · Amarelo: > 300 sem sintomas |
 | **Glicemia de jejum** | `1558-6` | `mg/dL` | — | — |
 | **HbA1c** | `4548-4` | `%` | < 7,0% | Amarelo: ≥ 7,0% |
 | **LDL-colesterol** | `13457-7` | `mg/dL` | < 130 mg/dL | Amarelo: ≥ 190 mg/dL |

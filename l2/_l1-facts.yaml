@@ -82,7 +82,7 @@ data_elements:
     source: "Metodologia §7.6.3.3"
   - id: capillary-glucose
     name: "Glicemia Capilar"
-    loinc: "14743-9"
+    loinc: "41653-7"
     unit: "mg/dL"
     type: "quantity"
     source: "Metodologia §7.6.3.3"

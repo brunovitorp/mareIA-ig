@@ -25,7 +25,7 @@ Os sinais vitais e as medidas antropométricas podem ser coletados por qualquer 
 | Estatura | 8302-2 | `cm` |
 | Circunferência da cintura | 8280-0 | `cm` |
 | IMC | 39156-5 | `kg/m2` |
-| Glicemia capilar (glicosímetro) | 14743-9 | `mg/dL` |
+| Glicemia capilar (glicosímetro) | 41653-7 | `mg/dL` |
 
 ## Tipos de dispositivo ([mareia-device-type-vs](ValueSet-mareia-device-type-vs.html))
 
