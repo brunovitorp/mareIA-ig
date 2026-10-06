@@ -7,7 +7,7 @@ Description: "Conjunto de códigos LOINC dos sinais vitais coletados por disposi
 * ^experimental = false
 * $loinc#8480-6 "Systolic blood pressure"
 * $loinc#8462-4 "Diastolic blood pressure"
-* $loinc#2339-0 "Glucose [Mass/volume] in Blood"
+* $loinc#14743-9 "Glucose [Mass/volume] in Capillary blood by Glucometer"
 * $loinc#59408-5 "Oxygen saturation in Arterial blood by Pulse oximetry"
 * $loinc#8867-4 "Heart rate"
 * $loinc#29463-7 "Body weight"

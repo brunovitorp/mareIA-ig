@@ -23,6 +23,7 @@ Instance: ExampleObservationWeight
 InstanceOf: ObservationCardioVital
 Usage: #example
 * status = #final
+* category = $obs-category#vital-signs
 * subject = Reference(ExamplePatientCardio)
 * effectiveDateTime = "2026-06-20T10:00:00-03:00"
 * code = LOINC#29463-7 "Body weight"

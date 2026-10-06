@@ -33,7 +33,5 @@ Description: "Peso corporal coletado por balança digital (IoT)."
 * category = $obs-category#vital-signs
 * code = $loinc#29463-7
 * subject = Reference(atento60-patient-example)
-* effectiveDateTime = "2026-06-15"
-* valueQuantity = 68 'kg'
-* valueQuantity.unit = "kg"
-* valueQuantity.system = $ucum
+* effectiveDateTime = "2026-06-15T09:00:00-03:00"
+* valueQuantity = 68 'kg' "kg"
