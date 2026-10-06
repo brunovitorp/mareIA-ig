@@ -59,6 +59,8 @@ pages:
     title: 8. Requisitos Funcionais e Não-Funcionais
   l2-test-scenarios.md:
     title: 9. Cenários de Teste
+  iot-vital-signs.md:
+    title: Sinais vitais e dispositivos IoT
   downloads.md:
     title: Downloads
 
@@ -79,6 +81,7 @@ menu:
     7. Indicadores: l2-indicators.html
     8. Requisitos: l2-requirements.html
     9. Testes: l2-test-scenarios.html
+  Sinais Vitais e IoT: iot-vital-signs.html
   Artefatos Computáveis (L3): artifacts.html
   Portal Institucional: portal/index.html
   Downloads: downloads.html
