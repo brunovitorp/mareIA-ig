@@ -8,7 +8,7 @@ Description: "Atendimento fictício para avaliação dos resultados laboratoriai
 
 * language = #pt-BR
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/atendimento-ubs"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-atendimento-ubs"
 * identifier.value = "ATEND-UBS-2026-000002"
 
 * status = #finished
@@ -57,7 +57,7 @@ Description: "Plano fictício para acompanhamento longitudinal de trabalhadora r
 
 * language = #pt-BR
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/plano-acompanhamento"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-plano-acompanhamento"
 * identifier.value = "PLANO-2026-000001"
 
 * instantiatesUri[0] = "https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/normas-regulamentadora/normas-regulamentadoras-vigentes/nr-07-atualizada-2022-1.pdf"

@@ -18,7 +18,7 @@ Description: "Atendimento fictício em que o resultado alterado de colinesterase
 
 * language = #pt-BR
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/atendimento-ubs"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-atendimento-ubs"
 * identifier.value = "ATEND-UBS-2027-000001"
 
 * status = #finished
@@ -62,7 +62,7 @@ Description: "Suspeita clínica fictícia registrada automaticamente pelo médic
 
 * language = #pt-BR
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/condicao-clinica"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-condicao-clinica"
 * identifier.value = "COND-2027-000001"
 
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
@@ -113,7 +113,7 @@ Description: "Plano fictício de afastamento e reavaliação decorrente de resul
 
 * language = #pt-BR
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/plano-acompanhamento"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-plano-acompanhamento"
 * identifier.value = "PLANO-2027-000001"
 
 * instantiatesUri[0] = "https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/normas-regulamentadora/normas-regulamentadoras-vigentes/nr-07-atualizada-2022-1.pdf"

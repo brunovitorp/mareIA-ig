@@ -6,10 +6,10 @@ Description: "Solicitação fictícia de hemograma completo realizada pelo médi
 
 * language = #pt-BR
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/solicitacao-exame"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-solicitacao-exame"
 * identifier.value = "SOL-EXAME-2026-000001"
 
-* requisition.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/requisicao-laboratorial"
+* requisition.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-requisicao-laboratorial"
 * requisition.value = "REQ-LAB-2026-000001"
 
 * status = #completed

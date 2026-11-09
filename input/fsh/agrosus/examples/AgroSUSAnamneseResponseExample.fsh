@@ -4,7 +4,7 @@ Usage: #example
 Title: "Exemplo de Resposta da Anamnese AgroSUS"
 Description: "Resposta parcial fictícia da anamnese AgroSUS registrada durante uma visita do ACS."
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/anamnese"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-anamnese"
 * identifier.value = "ANAMNESE-2026-000001"
 
 * questionnaire = Canonical(agrosus-anamnese)

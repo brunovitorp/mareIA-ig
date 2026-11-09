@@ -4,7 +4,7 @@ Usage: #example
 Title: "Exemplo de Transação da Visita do ACS"
 Description: "Sincronização atômica e idempotente do paciente, visita, anamnese e proveniência registrados pelo aplicativo do ACS."
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/transacao-visita"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-transacao-visita"
 * identifier.value = "TRANSACAO-VISITA-2026-000001"
 * type = #transaction
 * timestamp = "2026-07-20T09:32:00-03:00"

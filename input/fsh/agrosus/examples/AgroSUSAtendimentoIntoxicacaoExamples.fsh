@@ -8,7 +8,7 @@ Description: "Avaliação clínica fictícia realizada após a visita e anamnese
 
 * language = #pt-BR
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/atendimento-ubs"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-atendimento-ubs"
 * identifier.value = "ATEND-UBS-2026-000001"
 
 * status = #finished
@@ -52,7 +52,7 @@ Description: "Suspeita clínica fictícia registrada pelo médico da UBS e manti
 
 * language = #pt-BR
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/condicao-clinica"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-condicao-clinica"
 * identifier.value = "COND-2026-000001"
 
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active

@@ -4,8 +4,6 @@ Usage: #definition
 Title: "Requisitos de capacidade do servidor AgroSUS"
 Description: "Contrato mínimo da API FHIR R4 do AgroSUS para o aplicativo do ACS, o dashboard da UBS e os sistemas laboratoriais."
 
-* url = "https://jefersonrl.github.io/AgroSUS-FHIR/CapabilityStatement/agrosus-server-capabilities"
-* version = "0.1.0"
 * name = "AgroSUSServerCapabilities"
 * title = "Requisitos de capacidade do servidor AgroSUS"
 * status = #draft
@@ -15,7 +13,7 @@ Description: "Contrato mínimo da API FHIR R4 do AgroSUS para o aplicativo do AC
 * description = "Define os recursos, interações, pesquisas e transações que devem ser suportados por uma implementação de servidor compatível com o AgroSUS."
 * jurisdiction = urn:iso:std:iso:3166#BR "Brazil"
 * kind = #requirements
-* implementationGuide = "https://jefersonrl.github.io/AgroSUS-FHIR/ImplementationGuide/io.github.jefersonrl.agrosus"
+* implementationGuide = "https://mareia.nutes.ufpe.br/ig/ImplementationGuide/br.gov.mareia.ig"
 * fhirVersion = #4.0.1
 * format[0] = #json
 * format[1] = #xml

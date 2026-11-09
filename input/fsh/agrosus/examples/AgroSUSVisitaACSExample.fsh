@@ -6,7 +6,7 @@ Description: "Visita fictícia em campo para aplicação inicial da anamnese Agr
 
 * language = #pt-BR
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/visita"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-visita"
 * identifier.value = "VISITA-2026-000001"
 
 * status = #finished

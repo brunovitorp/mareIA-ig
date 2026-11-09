@@ -37,7 +37,7 @@ Title: "Exemplo de Resultado de Hemoglobina"
 
 * language = #pt-BR
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/resultado-laboratorial"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-resultado-laboratorial"
 * identifier.value = "RES-LAB-2026-000001-HB"
 
 * basedOn[0] = Reference(agrosus-solicitacao-hemograma-exemplo)
@@ -72,7 +72,7 @@ Title: "Exemplo de Resultado de Hematócrito"
 
 * language = #pt-BR
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/resultado-laboratorial"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-resultado-laboratorial"
 * identifier.value = "RES-LAB-2026-000001-HT"
 
 * basedOn[0] = Reference(agrosus-solicitacao-hemograma-exemplo)
@@ -106,7 +106,7 @@ Title: "Exemplo de Resultado de Leucócitos"
 
 * language = #pt-BR
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/resultado-laboratorial"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-resultado-laboratorial"
 * identifier.value = "RES-LAB-2026-000001-LEU"
 
 * basedOn[0] = Reference(agrosus-solicitacao-hemograma-exemplo)
@@ -140,7 +140,7 @@ Title: "Exemplo de Resultado de Plaquetas"
 
 * language = #pt-BR
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/resultado-laboratorial"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-resultado-laboratorial"
 * identifier.value = "RES-LAB-2026-000001-PLAQ"
 
 * basedOn[0] = Reference(agrosus-solicitacao-hemograma-exemplo)
@@ -175,7 +175,7 @@ Description: "Laudo fictício que agrupa os resultados individuais do hemograma.
 
 * language = #pt-BR
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/laudo-laboratorial"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-laudo-laboratorial"
 * identifier.value = "LAUDO-LAB-2026-000001"
 
 * basedOn[0] = Reference(agrosus-solicitacao-hemograma-exemplo)

@@ -23,10 +23,10 @@ Description: "Solicitação fictícia do exame de colinesterase realizada na adm
 
 * language = #pt-BR
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/solicitacao-exame"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-solicitacao-exame"
 * identifier.value = "SOL-EXAME-2024-000001"
 
-* requisition.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/requisicao-laboratorial"
+* requisition.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-requisicao-laboratorial"
 * requisition.value = "REQ-LAB-2024-000001"
 
 * status = #completed
@@ -68,7 +68,7 @@ Description: "Valor basal fictício de colinesterase plasmática, obtido na admi
 
 * language = #pt-BR
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/resultado-laboratorial"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-resultado-laboratorial"
 * identifier.value = "RES-LAB-2024-000001-COLIN-BASAL"
 
 * basedOn[0] = Reference(agrosus-solicitacao-colinesterase-basal-exemplo)
@@ -106,10 +106,10 @@ Description: "Solicitação fictícia do exame de colinesterase na periodicidade
 
 * language = #pt-BR
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/solicitacao-exame"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-solicitacao-exame"
 * identifier.value = "SOL-EXAME-2026-000002"
 
-* requisition.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/requisicao-laboratorial"
+* requisition.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-requisicao-laboratorial"
 * requisition.value = "REQ-LAB-2026-000002"
 
 * status = #completed
@@ -154,7 +154,7 @@ Description: "Resultado fictício de colinesterase plasmática dentro do limite 
 
 * language = #pt-BR
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/resultado-laboratorial"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-resultado-laboratorial"
 * identifier.value = "RES-LAB-2026-000002-COLIN"
 
 * basedOn[0] = Reference(agrosus-solicitacao-colinesterase-semestral-2026-exemplo)
@@ -193,10 +193,10 @@ Description: "Solicitação fictícia do exame de colinesterase na periodicidade
 
 * language = #pt-BR
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/solicitacao-exame"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-solicitacao-exame"
 * identifier.value = "SOL-EXAME-2027-000001"
 
-* requisition.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/requisicao-laboratorial"
+* requisition.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-requisicao-laboratorial"
 * requisition.value = "REQ-LAB-2027-000001"
 
 * status = #completed
@@ -236,7 +236,7 @@ Description: "Resultado fictício de colinesterase plasmática dentro do limite 
 
 * language = #pt-BR
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/resultado-laboratorial"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-resultado-laboratorial"
 * identifier.value = "RES-LAB-2027-000001-COLIN"
 
 * basedOn[0] = Reference(agrosus-solicitacao-colinesterase-semestral-2027-01-exemplo)
@@ -275,10 +275,10 @@ Description: "Solicitação fictícia do exame de colinesterase na periodicidade
 
 * language = #pt-BR
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/solicitacao-exame"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-solicitacao-exame"
 * identifier.value = "SOL-EXAME-2027-000003"
 
-* requisition.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/requisicao-laboratorial"
+* requisition.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-requisicao-laboratorial"
 * requisition.value = "REQ-LAB-2027-000003"
 
 * status = #completed
@@ -318,7 +318,7 @@ Description: "Resultado fictício de colinesterase plasmática acima do Índice 
 
 * language = #pt-BR
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/resultado-laboratorial"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-resultado-laboratorial"
 * identifier.value = "RES-LAB-2027-000002-COLIN"
 
 * basedOn[0] = Reference(agrosus-solicitacao-colinesterase-semestral-2027-07-exemplo)
@@ -357,10 +357,10 @@ Description: "Solicitação fictícia de retestagem da colinesterase 30 dias ap�
 
 * language = #pt-BR
 
-* identifier.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/solicitacao-exame"
+* identifier.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-solicitacao-exame"
 * identifier.value = "SOL-EXAME-2027-000002"
 
-* requisition.system = "https://jefersonrl.github.io/AgroSUS-FHIR/sid/requisicao-laboratorial"
+* requisition.system = "https://mareia.nutes.ufpe.br/fhir/sid/agrosus-requisicao-laboratorial"
 * requisition.value = "REQ-LAB-2027-000002"
 
 * status = #active

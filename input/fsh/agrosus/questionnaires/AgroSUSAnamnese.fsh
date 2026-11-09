@@ -4,8 +4,6 @@ Usage: #definition
 Title: "Formulário de Anamnese AgroSUS"
 Description: "Formulário de anamnese ocupacional e ambiental aplicado pelo Agente Comunitário de Saúde aos pequenos produtores rurais."
 
-* url = "https://jefersonrl.github.io/AgroSUS-FHIR/Questionnaire/agrosus-anamnese"
-* version = "0.19.0"
 * name = "AgroSUSAnamnese"
 * title = "Formulário de Anamnese Ocupacional e Ambiental AgroSUS"
 * status = #draft
