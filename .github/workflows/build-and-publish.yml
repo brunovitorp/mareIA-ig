@@ -1,7 +1,9 @@
-name: Build IG & Publish to Pages
+name: Build IG & Publish image
 
 # Compila o Implementation Guide com a imagem oficial do HL7 FHIR IG Publisher
-# (hl7fhir/ig-publisher-base) e publica o conteudo de output/ no GitHub Pages.
+# (hl7fhir/ig-publisher-base) e publica o site (output/) numa imagem nginx no
+# ghcr.io, usada pelo servidor do NUTES (https://mareia.nutes.ufpe.br/ig).
+# O GitHub Pages (brunovitorp.github.io/mareIA-ig) deixou de ser publicado.
 
 on:
   push:
@@ -9,15 +11,12 @@ on:
       - main
   workflow_dispatch:
 
-# Permissoes necessarias para publicar no GitHub Pages
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
-# Garante que apenas um deploy por vez ocorra (sem cancelar um em andamento)
+# Garante que apenas uma publicacao por vez ocorra (sem cancelar uma em andamento)
 concurrency:
-  group: pages
+  group: ig-build
   cancel-in-progress: false
 
 jobs:
@@ -95,24 +94,12 @@ jobs:
             echo "::warning::Arquivo qa.txt nao encontrado."
           fi
 
-      - name: Configurar Pages
-        uses: actions/configure-pages@v5
-
-      - name: Empacotar o site (output/) como artefato do Pages
-        uses: actions/upload-pages-artifact@v3
+      - name: Empacotar o site (output/) como artefato
+        uses: actions/upload-artifact@v4
         with:
+          name: site
           path: output
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Publicar no GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          retention-days: 7
 
   # Empacota o mesmo site em uma imagem nginx para o servidor Docker do NUTES
   # (ver docker/docker-compose.yml). O servidor baixa a imagem manualmente.
@@ -129,14 +116,11 @@ jobs:
       - name: Baixar o site gerado pelo job build
         uses: actions/download-artifact@v4
         with:
-          name: github-pages
-          path: site-artifact
+          name: site
+          path: output
 
-      - name: Extrair o site em output/
-        run: |
-          mkdir -p output
-          tar -xf site-artifact/artifact.tar -C output
-          ls output | head
+      - name: Conferir o site em output/
+        run: ls output | head
 
       - name: Login no GitHub Container Registry
         uses: docker/login-action@v3
